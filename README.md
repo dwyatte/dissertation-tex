@@ -7,7 +7,7 @@ I am open sourcing (and version controlling) my dissertation as I write it.
 
 Why on earth would you do that?
 ----
-Why not? By doing so, I get free off-site backups, version controlling, and a nice web interface. People can track my progress and transparency forces good work habits. And maybe being publically available will make me finish it faster (here's to hoping);
+Why not? By doing so, I get free off-site backups, version controlling, and a nice web interface. People can track my progress and transparency forces good work habits. And maybe being publically available will make me finish it faster (here's to hoping).
 
 That sounds like a terrible idea. Won't you get scooped?
 ----
