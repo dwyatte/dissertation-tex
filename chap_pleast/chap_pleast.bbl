@@ -1,0 +1,83 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Balas}{}{Sinha}{Balas-Sinha}{2009}{BalasSinha09b}]{BalasSinha09b}
+Balas, B.~J., \& Sinha, P. (2009).
+\newblock The role of sequence order in determining view canonicality for novel
+  wire-frame objects.
+\newblock {\em Attention, Perception \& Psychophysics}, {\em 71\/}(4),
+  712--723.
+
+\bibitem[\protect\citename{Brainard}{}{}{Brainard}{1997}{Brainard97}]{Brainard97}
+Brainard, D. (1997).
+\newblock {The Psychophysics Toolbox}.
+\newblock {\em Spatial Vision}, {\em 10\/}(4), 433--436.
+
+\bibitem[\protect\citename{Bulthoff}{}{Edelman}{Bulthoff-Edelman}{1992}{BulthoffEdelman92}]{BulthoffEdelman92}
+Bulthoff, H.~H., \& Edelman, S. (1992).
+\newblock Psychophysical support for a two-dimensional view interpolation
+  theory of object recognition.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, {\em 89\/}(1), 60--64.
+
+\bibitem[\protect\citename{Delorme}{}{Makeig}{Delorme-Makeig}{2004}{DelormeMakeig04}]{DelormeMakeig04}
+Delorme, A., \& Makeig, S. (2004).
+\newblock {EEGLAB}: {An open source toolbox for analysis of single-trial EEG
+  dynamics including independent component analysis.}
+\newblock {\em Journal of Neuroscience Methods}, {\em 134\/}(1), 9--21.
+
+\bibitem[\protect\citename{Doherty}{Rao,
+  Mesulam}{Nobre}{DohertyETAL}{2005}{DohertyRaoMesulamEtAl05}]{DohertyRaoMesulamEtAl05}
+Doherty, J.~R., Rao, A., Mesulam, M.~M., \& Nobre, A.~C. (2005).
+\newblock Synergistic effect of combined temporal and spatial expectations on
+  visual attention.
+\newblock {\em The Journal of Neuroscience}, {\em 25\/}(36), 8259--8266.
+
+\bibitem[\protect\citename{Edelman}{}{Bulthoff}{Edelman-Bulthoff}{1992}{EdelmanBulthoff92}]{EdelmanBulthoff92}
+Edelman, S., \& Bulthoff, H.~H. (1992).
+\newblock Orientation dependence in the recognition of familiar and novel views
+  of three-dimensional objects.
+\newblock {\em Vision Research}, {\em 32\/}(12), 2385--2400.
+
+\bibitem[\protect\citename{Logothetis}{Pauls,
+  Bulthoff}{Poggio}{LogothetisETAL}{1994}{LogothetisPaulsBulthoffEtAl94}]{LogothetisPaulsBulthoffEtAl94}
+Logothetis, N., Pauls, J., Bulthoff, H., \& Poggio, T. (1994).
+\newblock View-dependent object recognition by monkeys.
+\newblock {\em Current Biology}, {\em 4\/}(5), 401--414.
+
+\bibitem[\protect\citename{Logothetis}{Pauls}{Poggio}{LogothetisETAL}{1995}{LogothetisPaulsPoggio95}]{LogothetisPaulsPoggio95}
+Logothetis, N.~K., Pauls, J., \& Poggio, T. (1995).
+\newblock Shape representation in the inferior temporal cortex of monkeys.
+\newblock {\em Current Biology}, {\em 5\/}(5), 552--563.
+
+\bibitem[\protect\citename{Oostenveld}{Fries,
+  Maris}{Schoffelen}{OostenveldETAL}{2011}{OostenveldFriesMarisEtAl11}]{OostenveldFriesMarisEtAl11}
+Oostenveld, R., Fries, P., Maris, E., \& Schoffelen, J.-M. (2011).
+\newblock {FieldTrip}: {Open source software for advanced analysis of MEG, EEG,
+  and invasive electrophysiological data.}
+\newblock {\em Computational Intelligence and Neuroscience}, {\em 2011\/}.
+
+\bibitem[\protect\citename{Pelli}{}{}{Pelli}{1997}{Pelli97}]{Pelli97}
+Pelli, D. (1997).
+\newblock {The VideoToolbox software for visual psychophysics}: {Transforming
+  numbers into movies.}
+\newblock {\em Spatial Vision}, {\em 10\/}(4), 437--442.
+
+\bibitem[\protect\citename{Perrin}{Pernier,
+  Bertrand}{Echallier}{PerrinETAL}{1989}{PerrinPernierBertrandEtAl89}]{PerrinPernierBertrandEtAl89}
+Perrin, F., Pernier, J., Bertrand, O., \& Echallier, J.~F. (1989).
+\newblock Spherical splines for scalp potential and current density mapping.
+\newblock {\em Electroencephalography and Clinical Neurophysiology}, {\em
+  72\/}(2), 184--187.
+
+\bibitem[\protect\citename{Rohenkohl}{}{Nobre}{Rohenkohl-Nobre}{2011}{RohenkohlNobre11}]{RohenkohlNobre11}
+Rohenkohl, G., \& Nobre, A.~C. (2011).
+\newblock Alpha oscillations related to anticipatory attention follow temporal
+  expectations.
+\newblock {\em The Journal of Neuroscience}, {\em 31\/}(40), 14076--14084.
+
+\bibitem[\protect\citename{Sinha}{}{Poggio}{Sinha-Poggio}{1996}{SinhaPoggio96}]{SinhaPoggio96}
+Sinha, P., \& Poggio, T. (1996).
+\newblock Role of learning in three-dimensional form perception.
+\newblock {\em Nature}, {\em 384\/}(6608), 460--463.
+
+\end{thebibliography}

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dwyatte_dissertation.aux
+The style file: apa.bst
+Database file #1: ccnlab.bib
+Warning--empty address in OReillyMunakataFrankEtAl12
+You've used 31 entries,
+            2655 wiz_defined-function locations,
+            809 strings with 10497 characters,
+and the built_in function-call counts, 15733 in all, are:
+= -- 1534
+> -- 790
+< -- 16
++ -- 305
+- -- 299
+* -- 1542
+:= -- 2777
+add.period$ -- 93
+call.type$ -- 31
+change.case$ -- 248
+chr.to.int$ -- 31
+cite$ -- 63
+duplicate$ -- 433
+empty$ -- 997
+format.name$ -- 332
+if$ -- 2973
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 33
+newline$ -- 158
+num.names$ -- 196
+pop$ -- 241
+preamble$ -- 1
+purify$ -- 248
+quote$ -- 0
+skip$ -- 379
+stack$ -- 0
+substring$ -- 1027
+swap$ -- 60
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 273
+warning$ -- 1
+while$ -- 154
+width$ -- 0
+write$ -- 497
+(There was 1 warning)
