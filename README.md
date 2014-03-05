@@ -3,7 +3,7 @@ dissertation-tex
 
 What is dissertation-tex?
 ----
-This repo is an open sourcing (and version controlling) my dissertation as I write it.
+This repo is an open sourcing (and versioning) of my dissertation while I write it.
 
 Why on earth would you do that?
 ----
