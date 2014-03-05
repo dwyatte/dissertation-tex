@@ -2,4 +2,7 @@
 *.log
 *.bbl
 *.blg
+*.toc
+*.lof
+*.lot
 .DS_Store
