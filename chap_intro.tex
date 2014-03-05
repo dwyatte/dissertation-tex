@@ -1,0 +1,24 @@
+\documentclass[dwyatte_dissertation.tex]{subfiles} 
+\begin{document}
+
+\chapter{}
+
+% cheap title
+% \chapter*{What happens next versus when ``next'' happens: \\ Dissociating spatial and temporal prediction mechanisms \\ \vspace{20mm} Dean R.~Wyatte}
+
+% Ripped from proposal, revise
+
+\section{Introduction}
+How does the brain predict what happens from one moment to the next? This is an important question in research on perception across all modalities that is surprisingly often overlooked in the fields of psychology and neuroscience. For example, most experiments are designed to measure evoked responses to a randomly chosen, isolated stimulus under the tacit assumption that response variability is irrelevant noise that should be averaged out across many presentations. Computational models of perceptual processing often operate under similar assumptions in which stimuli are presented as random ``snapshots'' from which some common set of features should be learned to minimize representational variability across presentations (e.g., {\nopcite{SerreOlivaPoggio07,MutchLowe08}; although see \nopcite{Foldiak91}, for a notable exception). These experimental and computational assumptions stand in contrast to the event structure of the physical world, which is deterministic from one moment to the next. 
+
+An equally important question is concerned with how the brain knows when to make its next prediction. Predicting what happens next requires integrating information over some time frame and using the result to drive the actual prediction, but when should integration start? And for how long? Perceptual processing has been shown to undergo temporal fluctuations and in extreme cases, stimuli can be rendered imperceptible if presented during one of these fluctuations (\nopcite{BuschDuboisVanRullen09,VanRullenBuschDrewesEtAl11}; \abbrevnopcite{MathewsonLlerasBeckEtAl11}). Again, many laboratory experiments tend not to be concerned with these temporal fluctuations, as they simply add variability to responses that will average out over a large number of trials and can be mitigated by design decisions such using a fixation cross to denote the start of a trial. Computational models, similarly, often completely ignore time altogether, although recent advances in spiking models of perceptual processing \cite[e.g.,]{MasquelierThorpe07} are beginning to address this issue.
+
+The goal of the proposed work is to begin systematically investigating the neural mechanisms and circuitry related to prediction and temporal integration. Recently, our lab has developed a theoretical framework and general model for describing how these functions are implemented in the brain. This framework, henceforth referred to as \textit{LeabraTI},\footnote{Leabra refers to a general model of learning in the neocortex \protect\cite{OReillyMunakata00,OReillyMunakataFrankEtAl12}; TI to Temporal Integration.} brings together a large number of independent findings from the systems neuroscience literature to describe how multiple interacting mechanisms accomplish prediction and temporal integration in cortex. The fundamental proposal of the LeabraTI theory is that time in the brain is discretized (at least partially) into reference frames that can be associated via general learning mechanisms (e.g., Hebbian and error-driven learning) so that representation of information during one frame can be used to predict what happens during the next. This proposal requires at least two mechanisms: (1.)~A mechanism that establishes reference frames over which information is integrated and, (2.)~A mechanism that generates the actual prediction itself and validates it against what actually happens. 
+
+As will be discussed in detail in Chapter \ref{chap:leabrati}, the LeabraTI theory's proposed mechanisms are suggested to be dissociable, generating signatures at distinct spectral frequencies which can be measured physiologically. The potential dissociability of the spatial and temporal components of prediction establishes a number of immediately testable predictions that will form the experimental component of the proposed work. 
+
+% TODO
+
+\bibliographystyle{apa}
+\bibliography{ccnlab}
+\end{document}
