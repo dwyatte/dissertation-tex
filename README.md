@@ -3,15 +3,15 @@ dissertation-tex
 
 What is dissertation-tex?
 ----
-I am open sourcing (and version controlling) my dissertation as I write it.
+This repo is an open sourcing (and version controlling) my dissertation as I write it.
 
 Why on earth would you do that?
 ----
-Why not? By doing so, I get free off-site backups, version controlling, and a nice web interface. I along with other people can track my progress and I'm a firm believer that transparency forces good work habits. Plus, maybe being publically available will make me finish it faster (here's to hoping).
+Why not? By doing so, I get free off-site backups, version controlling, and a nice web interface. I along with other people can track my progress as I write and I'm a firm believer that this type of transparency encourages good work habits. Plus, maybe being publically available will make me want to finish it faster (here's to hoping).
 
-That sounds like a terrible idea. Won't you get scooped?
+That sounds like a terrible idea. Aren't you afraid of getting scooped?
 ----
-I don't know, this is an experiment. The scientific community is small and I'm pretty sure they are not trolling GitHub for ideas. There are no data or simulations here yet (currently versioned by a private svn repo). Plus, I'm not sure if I will even want to publish it after it's done anyway. In the worst case, I can always make the repo private. In the best (but extremely unlikely) case, maybe someone will make edits or I'll gain a collaborator.
+I don't know, this is an experiment. The scientific community is small and I'm pretty sure they are not trolling GitHub for ideas. There are no data or simulations here yet (currently versioned by a private svn repo). Plus, I'm not sure if I will even want to publish my dissertation after I finish it. In the worst case, I can always make the repo private. In the best (but extremely unlikely) case, maybe someone will want to make edits or I'll gain a collaborator.
 
 Anything else?
 ----
