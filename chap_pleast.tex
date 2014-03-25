@@ -22,7 +22,6 @@ Novel ``paper clip'' objects similar to those used in previous studies \cite{Bul
 % paperclip fig
 % rotations for one obj, several objs
 \begin{figure}[h!]
-\centering
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_rots.pdf} \\
@@ -30,7 +29,7 @@ Novel ``paper clip'' objects similar to those used in previous studies \cite{Bul
 \textbf{B} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_objs.pdf} \\
 \end{tabular}
-\caption{Novel ``paper clip'' objects.}{\textbf{A:} \textbf{B:}}
+\caption{Novel ``paper clip'' objects}{\textbf{A:} Objects were composed of eight three-dimensional vertices joined together with line segments. To render the objects to bitmap images, each object was rotated completely about its vertical axis in steps of 12 degrees and reduced to an orthographic projection. \textbf{B:} Four of the 16 objects used in the experiment.}
 \label{fig:paperclip}
 \end{figure}
 
@@ -43,18 +42,17 @@ During the entraining sequence, object views were presented for 50 ms at either 
 
 % task fig
 \begin{figure}[h!]
-\centering
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_task.pdf} \\
 \textbf{B} \hspace{90mm} \textbf{C} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_ISI.pdf} \\
 \end{tabular}
-\caption{Experimental procedure.}{\textbf{A:} \textbf{B:} \textbf{C:}}
+\caption{Experimental procedure}{\textbf{A:} Experimental trials contained an entraining sequence composed of eight views of a single object, followed by a probe stimulus. Entraining views were spaced 24 degrees apart (blue tick marks). The probe depicted an unseen view from the 12 degree interpolations between views of the entraining sequence (magenta tick marks) or from outside the span of the entraining sequence in increments of 24 degrees (green tick marks). \textbf{B:} Entraining views were either presented at 10 Hz with a 50 ms on time and 50 ms off time or in a temporally unpredictable manner with a 50 ms on time and variable off time. The duration of the total entraining sequence was held constant at 750 ms. \textbf{C:} Order and timing  of events within a single trial.}
 \label{fig:task}
 \end{figure}
 
-The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms. Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize subjects with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
+The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms. Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize participants with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
 
 \subsection{EEG recording and preprocessing}
 % Net Station 4.3.1
@@ -80,10 +78,10 @@ All event-related averaging was further averaged over pools of seven electrodes 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ll}
-\includegraphics[width=80mm]{figs/pleast/channels_oz.pdf} & 
-\includegraphics[width=80mm]{figs/pleast/channels_o1_o2.pdf} \\
-\includegraphics[width=80mm]{figs/pleast/channels_po3_po4.pdf} & 
-\includegraphics[width=80mm]{figs/pleast/channels_po7_po8.pdf} \\
+\includegraphics[width=50mm]{figs/pleast/channels_oz.pdf} & 
+\includegraphics[width=50mm]{figs/pleast/channels_o1_o2.pdf} \\
+\includegraphics[width=50mm]{figs/pleast/channels_po3_po4.pdf} & 
+\includegraphics[width=50mm]{figs/pleast/channels_po7_po8.pdf} \\
 \end{tabular}
 \caption{Electrode poolings.}{}
 \label{fig:channels}
@@ -101,11 +99,13 @@ ITC(f,t) = \bigg{|}\frac{1}{N} \sum_{n=1}^{N}{\frac{F_n(f,t)}{|F_n(f,t)|}}\bigg{
 
 \subsection{Behavioral measures of spatial and temporal predictability}
 
-Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (or greater) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any effects.
+Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any of the within-subjects factors. Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that controls for response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
 
-% acc: spatial F(1,51) = 1.85, p > 0.05
-% acc: temporal F(1,51) = 17.84, p < 0.001
-% acc: int F(1,51) = 6.13, p = 0.017
+Subjects that completed the full EEG experiment were less accurate (\textit{F}(1, 51) = 4.80, \textit{p} = 0.033) but responded more quickly (\textit{F}(1,51) = 10.05, \textit{p} = 0.003) than subjects that completed the solely behavioral experiment. These differences reflect a speed-accuracy tradeoff, likely due to differences in instructions given to subjects by experimenters or motivational differences between subject groups. Importantly, experiment type did not interact with any within-subjects factors (all \textit{p}'s $>$ 0.05).
+
+Overall, subjects were more accurate when the entraining sequence was spatially predictable (\textit{F}(1, 51) = 1.85, \textit{p} $>$ 0.05) and temporally predictabile (\textit{F}(1,51) = 17.84, \textit{p} $<$ 0.001). The interaction between spatial and temporal predictability was also significant (\textit{F}(1,51) = 6.13, \textit{p} = 0.017). 
+
+% acc: int 
 
 % d': spatial F(1,51) = 4.71, p = 0.035
 % d': temporal F(1,51) = 11.99, p < 0.001
@@ -124,29 +124,28 @@ Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (o
 
 % oh, behave
 \begin{figure}[h!]
-\centering
 \begin{tabular}{ll}
 \includegraphics[width=80mm]{figs/pleast/results_accuracy.pdf} & 
 \includegraphics[width=80mm]{figs/pleast/results_dprime.pdf} \\
-\includegraphics[width=80mm]{figs/pleast/results_rt.pdf} & 
+\includegraphics[width=80mm]{figs/pleast/results_rt.pdf} &
 \includegraphics[width=80mm]{figs/pleast/results_ie.pdf} \\
 \end{tabular}
-\caption{Behavioral measures.}{}
+\caption{Behavioral measures}{Accuracy, \textit{d'} (sensitivity), reaction time, and inverse efficiency (reaction time divided by percent correct) as a function of entrainment condition. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Error bars depict standard error of the mean within subjects using the method described in \protect\incite{Cousineau05}.}
 \label{fig:behave}
 \end{figure}
 
-% oh, behave pt 2
-\begin{figure}[h!]
-\centering
-\begin{tabular}{ll}
-\includegraphics[width=80mm]{figs/pleast/results_accuracy_angle.pdf} & 
-\includegraphics[width=80mm]{figs/pleast/results_dprime_angle.pdf} \\
-\includegraphics[width=80mm]{figs/pleast/results_rt_angle.pdf} & 
-\includegraphics[width=80mm]{figs/pleast/results_ie_angle.pdf} \\
-\end{tabular}
-\caption{Behavioral measures for view interpolation versus extrapolation.}{}
-\label{fig:behave}
-\end{figure}
+%% oh, behave pt 2
+%\begin{figure}[h!]
+%\centering
+%\begin{tabular}{ll}
+%\includegraphics[width=80mm]{figs/pleast/results_accuracy_angle.pdf} & 
+%\includegraphics[width=80mm]{figs/pleast/results_dprime_angle.pdf} \\
+%\includegraphics[width=80mm]{figs/pleast/results_rt_angle.pdf} & 
+%\includegraphics[width=80mm]{figs/pleast/results_ie_angle.pdf} \\
+%\end{tabular}
+%\caption{Behavioral measures for view interpolation versus extrapolation.}{}
+%\label{fig:behave}
+%\end{figure}
 
 % on the "duh" factor of entraining at 10 Hz causes more alpha power.
 % from CalderoneLakatosButlerEtAl14
