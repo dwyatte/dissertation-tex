@@ -52,7 +52,7 @@ During the entraining sequence, object views were presented for 50 ms at either 
 \label{fig:task}
 \end{figure}
 
-The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms. Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize participants with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
+The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant 50\% gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms. Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize participants with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
 
 \subsection{EEG recording and preprocessing}
 % Net Station 4.3.1
@@ -99,28 +99,7 @@ ITC(f,t) = \bigg{|}\frac{1}{N} \sum_{n=1}^{N}{\frac{F_n(f,t)}{|F_n(f,t)|}}\bigg{
 
 \subsection{Behavioral measures of spatial and temporal predictability}
 
-Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any of the within-subjects factors. Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that controls for response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
-
-Subjects that completed the full EEG experiment were less accurate (\textit{F}(1, 51) = 4.80, \textit{p} = 0.033) but responded more quickly (\textit{F}(1,51) = 10.05, \textit{p} = 0.003) than subjects that completed the solely behavioral experiment. These differences reflect a speed-accuracy tradeoff, likely due to differences in instructions given to subjects by experimenters or motivational differences between subject groups. Importantly, experiment type did not interact with any within-subjects factors (all \textit{p}'s $>$ 0.05).
-
-Overall, subjects were more accurate when the entraining sequence was spatially predictable (\textit{F}(1, 51) = 1.85, \textit{p} $>$ 0.05) and temporally predictabile (\textit{F}(1,51) = 17.84, \textit{p} $<$ 0.001). The interaction between spatial and temporal predictability was also significant (\textit{F}(1,51) = 6.13, \textit{p} = 0.017). 
-
-% acc: int 
-
-% d': spatial F(1,51) = 4.71, p = 0.035
-% d': temporal F(1,51) = 11.99, p < 0.001
-% d': int F(1,51) = 4.49, p = 0.039
-
-% rt: spatial F(1,51) = 1.957  p > 0.05
-% rt: temporal F(1,51) = 12.38, p < 0.001
-% rt: int F(1,51) = 0.046, p > 0.05
-
-% ie: spatial F(1,51) = 0.002  p > 0.05
-% ie: temporal F(1,51) = 23.31, p < 0.001
-% ie: int F(1,51) = 5.849, p = 0.019
-
-% D464B subs acc=75, rt=624.72
-% E029 subs acc=0.79 rt=742.1212
+Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any of the within-subjects factors. Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that takes into account response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
 
 % oh, behave
 \begin{figure}[h!]
@@ -130,9 +109,28 @@ Overall, subjects were more accurate when the entraining sequence was spatially 
 \includegraphics[width=80mm]{figs/pleast/results_rt.pdf} &
 \includegraphics[width=80mm]{figs/pleast/results_ie.pdf} \\
 \end{tabular}
-\caption{Behavioral measures}{Accuracy, \textit{d'} (sensitivity), reaction time, and inverse efficiency (reaction time divided by percent correct) as a function of entrainment condition. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Error bars depict standard error of the mean within subjects using the method described in \protect\incite{Cousineau05}.}
+\caption{Behavioral measures of spatial and temporal predictability}{Accuracy, \textit{d'} (sensitivity), reaction time, and inverse efficiency (reaction time divided by percent correct) as a function of entrainment condition. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Error bars depict standard error of the mean within subjects using the method described in \protect\incite{Cousineau05}.}
 \label{fig:behave}
 \end{figure}
+
+Subjects that completed the full EEG experiment were on average less accurate (\textit{F}(1, 51) = 4.80, \textit{p} = 0.033) but responded more quickly (\textit{F}(1, 51) = 10.05, \textit{p} = 0.003) than subjects that completed the solely behavioral experiment. These differences reflect a speed-accuracy tradeoff, likely due to differences in instructions given to subjects by experimenters or motivational differences between subject groups. Importantly, experiment type did not interact with any within-subjects factors (all \textit{p}'s $>$ 0.05) indicating that the behavioral measures of interest were not dependent on which type of experiment subjects completed.
+
+Overall, subjects were more accurate when the entraining sequence was temporally predictable (\textit{F}(1, 51) = 17.84, \textit{p} $<$ 0.001). A similar effect for spatial predictability failed to reach significance (\textit{F}(1, 51) = 1.85, \textit{p} = 0.18). The interaction between spatial and temporal predictability, however, was significant (\textit{F}(1, 51) = 6.13, \textit{p} = 0.017). Previous investigations of predictability have suggested that spatial and temporal predictability have an additive effect on behavioral outcomes \cite[e.g.,]{DohertyRaoMesulamEtAl05}. However, the combined spatial and temporal predictability condition here (denoted S+T+ in Figure \ref{fig:behave}) does not exhibit this pattern. Although not significantly different from spatial predictability alone (\textit{t}(52) = 1.29, \textit{p} = 0.204) or temporal predictability alone (\textit{t}(52) = -0.45, \textit{p} = 0.652), this result motivates further investigation. 
+
+%%% 
+
+When transformed to \textit{d'}, there was a significant effect of both spatial (\textit{F}(1, 51) = 4.71, \textit{p} = 0.035) and temporal predictability (\textit{F}(1, 51) = 11.99, \textit{p} < 0.001). The interaction between spatial and temporal predictability was also significant in this case (\textit{F}(1, 51) = 4.49, \textit{p} = 0.039).
+
+% rt: spatial \textit{F}(1, 51) = 1.957  \textit{p} > 0.05
+% rt: temporal \textit{F}(1,51) = 12.38, \textit{p} < 0.001
+% rt: int \textit{F}(1,51) = 0.046, \textit{p} > 0.05
+
+% ie: spatial F(1,51) = 0.002  p > 0.05
+% ie: temporal F(1,51) = 23.31, p < 0.001
+% ie: int F(1,51) = 5.849, p = 0.019
+
+% D464B subs acc=75, rt=624.72
+% E029 subs acc=0.79 rt=742.1212
 
 %% oh, behave pt 2
 %\begin{figure}[h!]
