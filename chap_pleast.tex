@@ -14,7 +14,7 @@ TODO, pull from proposal and proposal-r1.
 % 29 Behavioral only
 % ===
 % 58 total, 27 female (ages 18-28 mean=21)
-A total of 58 students from the University of Colorado Boulder participated in the experiment (ages 18-28 years, mean=21; 31 male, 27 female). EEG was recorded from 29 of the participants while they completed the experiment, while the remaining 29 participated in a solely behavioral experiment without EEG recording. All participants were right-handed and reported normal or corrected-to-normal vision. Participants either received course credit or payment of \$15 per hour as compensation for their participation. Informed consent was obtained from each participant prior to the experiment in accordance with Institutional Review Board policy at the University of Colorado.
+A total of 58 students from the University of Colorado Boulder participated in the experiment (ages 18-28 years, mean=21; 31 male, 27 female). EEG was recorded from 29 of the participants while they completed the experiment. The remaining 29 participants completed a solely behavioral experiment without EEG recording. All participants were right-handed and reported normal or corrected-to-normal vision. Participants either received course credit or payment of \$15 per hour as compensation for their participation. Informed consent was obtained from each participant prior to the experiment in accordance with Institutional Review Board policy at the University of Colorado.
 
 \subsection{Stimuli}
 Novel ``paper clip'' objects similar to those used in previous studies \cite{BulthoffEdelman92,EdelmanBulthoff92,LogothetisPaulsBulthoffEtAl94,LogothetisPaulsPoggio95,SinhaPoggio96} were created using MATLAB. Eight vertices were placed randomly on the surface of a sphere of unit radius and then joined together with line segments. The last and first vertex were also joined to form a closed loop so that line segment terminations were not a salient feature \cite{BalasSinha09b}. Objects were constrained to exclude extremely acute angles between successive segments (less than 20 degrees) and were approximately rotationally balanced (center of mass within 10\% of the origin). Objects were were rotated completely about their vertical axis in steps of 12 degrees and rendered to bitmap images under an orthographic projection. A total of 16 objects were created using this procedure, yielding 480 images (30 images per object). Object examples are shown in Figure \ref{fig:paperclip}.
@@ -54,7 +54,7 @@ During the entraining sequence, object views were presented for 50 ms at either 
 \label{fig:task}
 \end{figure}
 
-The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms . Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize subjects with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
+The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. Stimuli were presented on an isoluminant gray background and subtended approximately 5 degrees of visual angle. Trials began with a fixation cross (200 ms) followed by a blank (400 ms), the entraining sequence (750 ms total), a second blank (200 ms), and ended with the probe stimulus (50 ms) (Figure \ref{fig:task}C). Participants were required to respond within 2000 ms. Trials were separated by a variable intertrial interval of 2000-2400 ms. The experiment contained 500 trials with an additional 20 practice trials that contained a longer blank (1000 ms) between the entraining sequence and the probe to familiarize subjects with the order of events during trials. Participants completed the 20 practice trials (which were discarded from analysis) prior to performing the 500 experimental trials. % random sampling of all variables with replacement
 
 \subsection{EEG recording and preprocessing}
 % Net Station 4.3.1
@@ -126,10 +126,10 @@ Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (o
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ll}
-\includegraphics[width=80mm]{figs/pleast/results_accuracy.eps} & 
-\includegraphics[width=80mm]{figs/pleast/results_dprime.eps} \\
-\includegraphics[width=80mm]{figs/pleast/results_rt.eps} & 
-\includegraphics[width=80mm]{figs/pleast/results_ie.eps} \\
+\includegraphics[width=80mm]{figs/pleast/results_accuracy.pdf} & 
+\includegraphics[width=80mm]{figs/pleast/results_dprime.pdf} \\
+\includegraphics[width=80mm]{figs/pleast/results_rt.pdf} & 
+\includegraphics[width=80mm]{figs/pleast/results_ie.pdf} \\
 \end{tabular}
 \caption{Behavioral measures.}{}
 \label{fig:behave}
@@ -139,10 +139,10 @@ Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (o
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ll}
-\includegraphics[width=80mm]{figs/pleast/results_accuracy_angle.eps} & 
-\includegraphics[width=80mm]{figs/pleast/results_dprime_angle.eps} \\
-\includegraphics[width=80mm]{figs/pleast/results_rt_angle.eps} & 
-\includegraphics[width=80mm]{figs/pleast/results_ie_angle.eps} \\
+\includegraphics[width=80mm]{figs/pleast/results_accuracy_angle.pdf} & 
+\includegraphics[width=80mm]{figs/pleast/results_dprime_angle.pdf} \\
+\includegraphics[width=80mm]{figs/pleast/results_rt_angle.pdf} & 
+\includegraphics[width=80mm]{figs/pleast/results_ie_angle.pdf} \\
 \end{tabular}
 \caption{Behavioral measures for view interpolation versus extrapolation.}{}
 \label{fig:behave}

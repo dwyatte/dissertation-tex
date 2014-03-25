@@ -5,4 +5,5 @@
 *.toc
 *.lof
 *.lot
+*.eps
 .DS_Store
