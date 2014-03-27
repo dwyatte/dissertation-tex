@@ -26,7 +26,6 @@ Novel ``paper clip'' objects similar to those used in previous studies \cite{Bul
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_rots.pdf} \\
-\vspace{5mm} \\
 \textbf{B} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_objs.pdf} \\
 \end{tabular}
@@ -68,6 +67,7 @@ EEG data were preprocessed using the FieldTrip toolbox \cite{OostenveldFriesMari
 Event-related averaging was performed separately for the entraining sequence and the subsequent probe. For the entraining sequence, data were aligned to the onset of entraining views 2 through 8 and averaged from the period beginning 50 ms before each entrainer and ending 50 ms after. Baseline correction was performed using the first 50 ms of this period. For the probe, data were aligned to the probe onset and averaged from the period beginning 200 ms before the probe and ending 400 ms after. This allowed detection of predictability effects during the blank period elicited by the entraining sequence as well as probe-evoked predictability effects.
 
 In both cases, waveforms were further averaged over pools of seven electrodes centered over locations from the 10-10 system that are commonly associated with perceptual processing \cite[e.g.,]{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8) (Figure \ref{fig:channels}).
+
 % windowed analysis for N2 for interaction?
 
 % electrode poolings fig
@@ -86,6 +86,7 @@ In both cases, waveforms were further averaged over pools of seven electrodes ce
 
 \subsection{Time-frequency analysis}
 % convolution method (multitaper)
+% electrode poolings -- POBI?
 % equations for ITC/PLV
 
 \begin{align*}
@@ -138,20 +139,27 @@ Inverse efficiency, which considers reaction time as a function of accuracy (def
 %\end{figure}
 
 \subsection{Time course of spatial and temporal predictability}
+
+A total of five subjects were excluded from EEG analyses -- three for an overabundance of artifacts in the EEG recording resulting low trial counts after rejection and two for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects (these two subjects were also excluded from behavioral analyses, see preceding section). The remaining 24 subjects were included in all EEG analyses. 
+
+A 2x2 ANOVA with spatial and temporal predictability as within-subjects factors was used to assess statistical significance at each time bin of event-related averages. \textit{p}-values were corrected for a maximum false discovery rate (FDR) of 5\% using the method described in \incite{BenjaminiYekutieli01}. Additionally, effects were only considered significant if they persisted for at least 16 ms.
+
 % TODO: multiple comparisons
 
 % entrainment figure, stats for -0.5 to 0.5 (i.e., average of entrainers 2-8)
 % probe ERP with time bin significance -- use pretrial baseline, differential effects for space and time
 % P1/N2 plot Nobre-like LeabraTI sse_sum_inv plots -- don't bother looking for synergistic effect, doesn't exist unless baselining to pre-probe blank, but even then, its tooooo smaaaallll
 
-%% erp
-%\begin{figure}[h!]
-%\includegraphics[width=160mm]{figs/pleast/results_entrain_Oz_-50_prestim_baseline_int.pdf}
-%\caption{}{}
-%\label{fig:erp}
-%\end{figure}
+% erp
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=140mm]{figs/pleast/results_entrain_tla_montage.pdf}
+\end{center}
+\caption{}{}
+\label{fig:entrain}
+\end{figure}
 
-\subsection{Entrainment of alpha oscillations}
+\subsection{Entrainment of 10 Hz oscillations}
 % all time significance seem to be here, but some short spatial effects -- show different window effects
 % model RT data with ITC or something
 
