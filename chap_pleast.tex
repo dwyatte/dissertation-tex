@@ -22,6 +22,7 @@ Novel ``paper clip'' objects similar to those used in previous studies \cite{Bul
 % paperclip fig
 % rotations for one obj, several objs
 \begin{figure}[h!]
+\begin{center}
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_rots.pdf} \\
@@ -29,6 +30,7 @@ Novel ``paper clip'' objects similar to those used in previous studies \cite{Bul
 \textbf{B} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_objs.pdf} \\
 \end{tabular}
+\end{center}
 \caption{Novel ``paper clip'' objects}{\textbf{A:} Objects were composed of eight three-dimensional vertices joined together with line segments. To render the objects to bitmap images, each object was rotated completely about its vertical axis in steps of 12 degrees and reduced to an orthographic projection. \textbf{B:} Four of the 16 objects used in the experiment.}
 \label{fig:paperclip}
 \end{figure}
@@ -42,12 +44,14 @@ During the entraining sequence, object views were presented for 50 ms at either 
 
 % task fig
 \begin{figure}[h!]
+\begin{center}
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_task.pdf} \\
 \textbf{B} \hspace{90mm} \textbf{C} \\
 \includegraphics[width=160mm]{figs/pleast/paperclip_ISI.pdf} \\
 \end{tabular}
+\end{center}
 \caption{Experimental procedure}{\textbf{A:} Experimental trials contained an entraining sequence composed of eight views of a single object, followed by a probe stimulus. Entraining views were spaced 24 degrees apart (blue tick marks). The probe depicted an unseen view from the 12 degree interpolations between views of the entraining sequence (magenta tick marks) or from outside the span of the entraining sequence in increments of 24 degrees (green tick marks). \textbf{B:} Entraining views were either presented at 10 Hz with a 50 ms on time and 50 ms off time or in a temporally unpredictable manner with a 50 ms on time (gray segments) and variable off time (white segments). In both cases, the duration of the total entraining sequence was held constant at 750 ms. \textbf{C:} Order and timing  of events within a single trial.}
 \label{fig:task}
 \end{figure}
@@ -61,28 +65,22 @@ The EEG was recorded using an Electrical Geodesics, Inc. (EGI) system composed o
 EEG data were preprocessed using the FieldTrip toolbox \cite{OostenveldFriesMarisEtAl11}. Raw data were first band-pass filtered between 1 Hz and 100 Hz with a 59-61 Hz band-stop and then epoched into 2350 ms segments that spanned the start of the pre-trial blank to 1000 ms after the probe stimulus. Individual segments were visually inspected and rejected if found to contain muscle artifacts or atypical noise. Bad channels were also identified and temporarily removed from the data before performing ICA decomposition \cite{DelormeMakeig04} to remove of ocular artifacts. Components related to ocular artifacts were identified based on their topographical distribution across electrodes. The data were reconstructed without the ocular components and any bad channels were replaced using spherical spline interpolation \cite{PerrinPernierBertrandEtAl89}. The resulting segments were re-referenced to the average reference.
 
 \subsection{Event-related averaging}
-Event-related averaging was performed separately for the entraining sequence and the subsequent probe. For the entraining sequence, the data were baseline corrected 
+Event-related averaging was performed separately for the entraining sequence and the subsequent probe. For the entraining sequence, data were aligned to the onset of entraining views 2 through 8 and averaged from the period beginning 50 ms before each entrainer and ending 50 ms after. Baseline correction was performed using the first 50 ms of this period. For the probe, data were aligned to the probe onset and averaged from the period beginning 200 ms before the probe and ending 400 ms after. This allowed detection of predictability effects during the blank period elicited by the entraining sequence as well as probe-evoked predictability effects.
 
-% entrainer -- 50 ms before and after each stim
-% probe -- 200 ms before and 400 after, pre-probe baseline
-
-% revise this since we don't actually care about hemisphere as a factor 
-All event-related averaging was further averaged over pools of seven electrodes centered over locations from the 10-10 system that are commonly associated with perceptual processing \cite[e.g.,]{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8) (Figure \ref{fig:channels}).
-
-% baseline descriptions here or inline w/ results since it changes per method?
-% multiple comparisons
+In both cases, waveforms were further averaged over pools of seven electrodes centered over locations from the 10-10 system that are commonly associated with perceptual processing \cite[e.g.,]{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8) (Figure \ref{fig:channels}).
 % windowed analysis for N2 for interaction?
 
 % electrode poolings fig
 \begin{figure}[h!]
-\centering
+\begin{center}
 \begin{tabular}{ll}
 \includegraphics[width=50mm]{figs/pleast/channels_oz.pdf} & 
 \includegraphics[width=50mm]{figs/pleast/channels_o1_o2.pdf} \\
 \includegraphics[width=50mm]{figs/pleast/channels_po3_po4.pdf} & 
 \includegraphics[width=50mm]{figs/pleast/channels_po7_po8.pdf} \\
 \end{tabular}
-\caption{Electrode poolings.}{}
+\end{center}
+\caption{Electrode poolings}{Pools of seven electrodes centered over locations from the 10-10 system used for all event-related averaging. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8).}
 \label{fig:channels}
 \end{figure}
 
@@ -102,12 +100,14 @@ Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (o
 
 % oh, behave
 \begin{figure}[h!]
+\begin{center}
 \begin{tabular}{ll}
 \includegraphics[width=80mm]{figs/pleast/results_accuracy.pdf} & 
 \includegraphics[width=80mm]{figs/pleast/results_dprime.pdf} \\
 \includegraphics[width=80mm]{figs/pleast/results_rt.pdf} &
 \includegraphics[width=80mm]{figs/pleast/results_ie.pdf} \\
 \end{tabular}
+\end{center}
 \caption{Behavioral measures of spatial and temporal predictability}{Accuracy, \textit{d'} (sensitivity), reaction time, and inverse efficiency (reaction time divided by percent correct) as a function of entrainment condition. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Error bars depict within-subjects error using the method described in \protect\incite{Cousineau05} adapted for standard error.}
 \label{fig:behave}
 \end{figure}
@@ -138,6 +138,8 @@ Inverse efficiency, which considers reaction time as a function of accuracy (def
 %\end{figure}
 
 \subsection{Time course of spatial and temporal predictability}
+% TODO: multiple comparisons
+
 % entrainment figure, stats for -0.5 to 0.5 (i.e., average of entrainers 2-8)
 % probe ERP with time bin significance -- use pretrial baseline, differential effects for space and time
 % P1/N2 plot Nobre-like LeabraTI sse_sum_inv plots -- don't bother looking for synergistic effect, doesn't exist unless baselining to pre-probe blank, but even then, its tooooo smaaaallll
