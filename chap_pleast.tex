@@ -64,9 +64,7 @@ The EEG was recorded using an Electrical Geodesics, Inc. (EGI) system composed o
 EEG data were preprocessed using the FieldTrip toolbox \cite{OostenveldFriesMarisEtAl11}. Raw data were first band-pass filtered between 1 Hz and 100 Hz with a 59-61 Hz band-stop and then epoched into 2350 ms segments that spanned the start of the pre-trial blank to 1000 ms after the probe stimulus. Individual segments were visually inspected and rejected if found to contain muscle artifacts or atypical noise. Bad channels were also identified and temporarily removed from the data before performing ICA decomposition \cite{DelormeMakeig04} to remove of ocular artifacts. Components related to ocular artifacts were identified based on their topographical distribution across electrodes. The data were reconstructed without the ocular components and any bad channels were replaced using spherical spline interpolation \cite{PerrinPernierBertrandEtAl89}. The resulting segments were re-referenced to the average reference.
 
 \subsection{Event-related averaging}
-Event-related averaging was performed separately for the entraining sequence and the subsequent probe. For the entraining sequence, data were aligned to the onset of entraining views 2 through 8 and averaged from the period beginning 50 ms before each entrainer and ending 50 ms after. Baseline correction was performed using the first 50 ms of this period. For the probe, data were aligned to the probe onset and averaged from the period beginning 200 ms before the probe and ending 400 ms after. This allowed detection of predictability effects during the blank period elicited by the entraining sequence as well as probe-evoked predictability effects.
-
-%In both cases, waveforms were further averaged over pools of seven electrodes centered over locations from the 10-10 system that are commonly associated with perceptual processing \cite[e.g.,]{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8) (Figure \ref{fig:channels}).
+Event-related averaging was performed separately for the entraining sequence and the subsequent probe. For the entraining sequence, data were aligned to the onset of entraining views 2 through 8 and averaged from the period beginning 50 ms before each entrainer and ending 50 ms after. Baseline correction was performed using the first 50 ms of this period. For the probe, data were aligned to the probe onset and averaged from the period beginning 200 ms before the probe and ending 400 ms after. This allowed detection of predictability effects during the blank period due to differences in phase elicited by the entraining sequence as well as probe-evoked predictability effects.
 
 All waveforms were averaged over a montage of 23 electrodes that covered the occipital and parietal cortices (Figure \ref{fig:channels}). The montage included locations from the 10-10 system that are commonly associated with perceptual processing (Oz, O1/O2, PO3/PO4, and PO7/PO8) \cite[e.g.,]{DohertyRaoMesulamEtAl05,RohenkohlNobre11,FahrenfortScholteLamme07}.
 
@@ -75,19 +73,28 @@ All waveforms were averaged over a montage of 23 electrodes that covered the occ
 \begin{center}
 \includegraphics[width=80mm]{figs/pleast/channels_all.pdf}
 \end{center}
-%\caption{Electrode poolings}{Pools of seven electrodes centered over locations from the 10-10 system used for all event-related averaging. These pools included one midline site (OZ) and three sites over each hemisphere (O1/O2, PO3/PO4, and PO7/PO8).}
-\caption{Electrode pooling}{}
+\caption{Electrode pooling for analyses}{Blue shaded region denotes pooled electrodes. Locations from the 10-10 system are indicated.}
 \label{fig:channels}
 \end{figure}
 
 \subsection{Time-frequency analysis}
-% convolution method (multitaper)
-% electrode poolings -- POBI?
-% equations for ITC/PLV
+Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 4-16 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
 
 \begin{align*}
-ITC(f,t) = \bigg{|}\frac{1}{N} \sum_{n=1}^{N}{\frac{F_n(f,t)}{|F_n(f,t)|}}\bigg{|}
+Power(f,t) = \frac{1}{n} \sum_{k=1}^{n}{|F_k(f,t)|}^2
 \end{align*}
+
+Phase, which is normally computed as the angle of the complex Fourier coefficients, cannot be averaged due to its circularity and thus standard statistical models cannot be applied to assess its significance. One solution to this problem is to compute inter-trial coherence (ITC) instead \cite{LachauxRodriguezMartinerieEtAl99}. ITC is averaged in the complex domain by first normalizing phase information to unit length by dividing off power and computing the magnitude:
+
+\begin{align*}
+ITC(f,t) = \bigg{|}\frac{1}{n} \sum_{k=1}^{n}{\frac{F_k(f,t)}{|F_k(f,t)|}}\bigg{|}
+\end{align*}
+
+ITC varies between 0 and 1 and represents how systematic phase angles are across trials. A value of 0 indicates that phase information is essentially uniformly distributed across trials while a value of 1 indicates a high degree of phase-locking at a particular frequency across trials.
+
+All time-frequency analyses were averaged over the same montage of 23 occipitoparietal electrodes that was used to compute event-related averages (Figure \ref{fig:channels}).
+
+% cutting out windows after?
 
 \section{Results}
 
