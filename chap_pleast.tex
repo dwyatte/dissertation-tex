@@ -183,11 +183,18 @@ In summary, \textbf{TODO}
 
 \subsection{Entrainment of alpha oscillations}
 
+% Entrainers -- 10 Hz pow, ITC signif plots (space and time for both) -- unsurprising
+%		interesting that space does not persist at 10 Hz, although time does
+%		spatial predictability suppresses 10 Hz pow, ITC% Blank -- 10 Hz ITC for time only, no pow
+%		power increase by 3rd entrainer
+%		temporal ITC slightly longer to develop, but persists into (but not through) blank
+%			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+!
+
 The same 24 subjects used in event-related analyses (see preceding section) were used in time-frequency analyses described here. Statistical methods were also identical, consisting of a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and \textit{p}-values were corrected for a 5\% maximum FDR \cite{BenjaminiYekutieli01}. Effects were only considered significant if they persisted for at least 16 ms.
 
 Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\ref{fig:ITC_10Hz})
 
-% 10 hz pow
+% 10 hz entrain pow
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
@@ -196,7 +203,7 @@ Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\re
 \label{fig:pow_10Hz}
 \end{figure}
 
-% 10 Hz ITC
+% 10 Hz entrain ITC
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_ITC_montage.pdf}
@@ -205,12 +212,14 @@ Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\re
 \label{fig:ITC_10Hz}
 \end{figure}
 
-% Entrainers -- 10 Hz pow, ITC signif plots (space and time for both) -- unsurprising
-%		interesting that space does not persist at 10 Hz, although time does
-%		spatial predictability suppresses 10 Hz pow, ITC% Blank -- 10 Hz ITC for time only, no pow
-%		power increase by 3rd entrainer
-%		temporal ITC slightly longer to develop, but persists into (but not through) blank
-%			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+!
+% 10 Hz probe ITC
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=160mm]{figs/pleast/results_powphase_probe_ITC_montage.pdf}
+\end{center}
+\caption{Alpha phase coherence before and after probe}{}
+\label{fig:ITC_10Hz}
+\end{figure}
 
 % exploratory 
 % 5 Hz
