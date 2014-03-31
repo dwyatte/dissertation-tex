@@ -100,7 +100,7 @@ All time-frequency analyses were averaged over the same montage of 23 occipitopa
 
 \subsection{Behavioral measures of spatial and temporal predictability}
 
-Five subjects were excluded from behavioral analyses for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any of the within-subjects factors. Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that takes into account response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
+Five subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. The remaining 53 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors. Experiment type (EEG or behavioral only) was included as an additional between-subjects factor to ensure that it did not interact with any of the within-subjects factors. Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that takes into account response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
 
 % oh, behave
 \begin{figure}[h!]
@@ -143,7 +143,7 @@ Inverse efficiency, which considers reaction time as a function of accuracy (def
 
 \subsection{Time course of spatial and temporal predictability}
 
-A total of five subjects were excluded from EEG analyses -- three for an overabundance of artifacts in the EEG recording resulting in low trial counts after rejection and two for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects (these two subjects were also excluded from behavioral analyses, see preceding section). The remaining 24 subjects were included in all EEG analyses. 
+A total of five subjects were excluded from EEG analysis -- three for an overabundance of artifacts in the EEG recording resulting in low trial counts after rejection and two for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects (these two subjects were also excluded from behavioral analyses, see preceding section). The remaining 24 subjects were included in all EEG analyses. 
 
 A 2x2 ANOVA with spatial and temporal predictability as within-subjects factors was used to assess statistical significance at each time bin of event-related averages. \textit{p}-values were corrected for a maximum false discovery rate (FDR) of 5\% using the method described in \incite{BenjaminiYekutieli01}. Additionally, effects were only considered significant if they persisted for at least 16 ms.
 
@@ -188,7 +188,7 @@ In summary, \textbf{TODO}
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
 \end{center}
-\caption{Effect of entrainment on alpha power}{}
+\caption{Effect of entrainer predictability on alpha power}{}
 \label{fig:powphase_10Hz}
 \end{figure}
 
@@ -197,14 +197,15 @@ In summary, \textbf{TODO}
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_ITC_montage.pdf}
 \end{center}
-\caption{Effect of entrainment on alpha phase coherence}{}
+\caption{Effect of entrainer predictability on alpha phase coherence}{}
 \label{fig:powphase_10Hz}
 \end{figure}
 
 % Entrainers -- 10 Hz pow, ITC signify plots (space and time for both) -- unsurprising
-%		interesting that space first, then time
+%		interesting that space does not persist at 10 Hz, although time does
 % Blank -- 10 Hz ITC for time only, no pow
 
+% exploratory 
 % 5 Hz
 % Entrainers pow effect only (although not space first, then time), no ITC
 % Blank -- pow space, time effect
