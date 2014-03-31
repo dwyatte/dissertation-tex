@@ -10,7 +10,7 @@ TODO, pull from proposal and proposal-r1.
 
 \subsection{Participants}
 
-% 29 D464D EEG 
+% 29 D464B EEG 
 % 29 Behavioral only
 % ===
 % 58 total, 27 female (ages 18-28 mean=21)
@@ -78,23 +78,23 @@ All waveforms were averaged over a montage of 23 electrodes that covered the occ
 \end{figure}
 
 \subsection{Time-frequency analysis}
-Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 4-16 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
+Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-20 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
 
 \begin{align*}
 Power(f,t) = \frac{1}{n} \sum_{k=1}^{n}{|F_k(f,t)|}^2
 \end{align*}
 
-Phase, which is normally computed as the angle of the complex Fourier coefficients, cannot be averaged due to its circularity and thus standard statistical models cannot be applied to assess its significance. One solution to this problem is to compute inter-trial coherence (ITC) instead \cite{LachauxRodriguezMartinerieEtAl99}. ITC is averaged in the complex domain by first normalizing phase information to unit length by dividing off power and computing the magnitude:
+Phase, which is normally defined as the angle of the complex Fourier coefficients, cannot be averaged due to its circularity and thus standard statistical models cannot be applied to assess its significance. One solution to this problem is to compute inter-trial coherence (ITC) instead \cite{LachauxRodriguezMartinerieEtAl99}. ITC is averaged in the complex domain by first normalizing phase information to unit length by dividing off power and computing the magnitude:
 
 \begin{align*}
 ITC(f,t) = \bigg{|}\frac{1}{n} \sum_{k=1}^{n}{\frac{F_k(f,t)}{|F_k(f,t)|}}\bigg{|}
 \end{align*}
 
-ITC varies between 0 and 1 and represents how systematic phase angles are across trials. A value of 0 indicates that phase information is essentially uniformly distributed across trials while a value of 1 indicates a high degree of phase-locking at a particular frequency across trials.
+ITC ranges between 0 and 1 and represents how systematic phase angles are across trials. A value of 0 indicates that phase information is essentially uniformly distributed across trials while a value of 1 indicates a high degree of phase-locking at a particular frequency across trials.
 
 All time-frequency analyses were averaged over the same montage of 23 occipitoparietal electrodes that was used to compute event-related averages (Figure \ref{fig:channels}).
 
-% cutting out windows after?
+% tf calculated over whole trial (including entrainment) and then cut up after, avoids boundary effects where timwin not long enough (http://mailman.science.ru.nl/pipermail/fieldtrip/2012-June/005346.html)
 
 \section{Results}
 
@@ -157,6 +157,7 @@ To investigate the build-up of spatial and temporal predictability over the entr
 \caption{Entrainer-evoked activity}{Grand averages for entrainers 2 through 8 as a function of entrainment condition. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. All plots depict the grand average with gray shaded regions denoting significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms controlling for a maximum false discovery rate (FDR) of 5\%.}
 \label{fig:entrain_tla}
 \end{figure}
+% revision todo: recreate these figs with y-axis numbers
 
 The effect of spatial predictability manifested 26 ms after the onset of the entrainer and persisted for at least another 24 ms (one quarter of the 10 Hz period). Temporal predictability, in contrast, manifested prior to (-38 through -22 ms pre-stimulus) and at the onset of the entrainer (-6 ms pre-stimulus through 18 ms post-stimulus). The effect of temporal predictability appears to be driven by the anti phase relationship between T- and T+ conditions at these time points. Together, these effects demonstrate differential time courses for spatial and temporal predictability. Spatial predictability is a post-stimulus process and might represent a comparison computation between the previous stimulus and the currently presented one. Temporal predictability, in contrast, is a truly anticipatory process, occurring before (and at) the onset of each stimulus. 
 
@@ -173,21 +174,48 @@ To investigate the effect of spatial and temporal predictability on perception o
 \caption{Probe-evoked activity}{Grand averages for the probe stimulus, including the preceding 200 ms blank. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. All plots depict the grand average with gray shaded regions denoting significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms controlling for a maximum false discovery rate (FDR) of 5\%. The asterisk in the interaction plot denotes trending significance at the 5\% level using amplitude averaged within the window defined by the dotted lines.}
 \label{fig:probe_tla}
 \end{figure}
+% revision todo: recreate these figs with y-axis numbers
 
 Unlike the significant interaction between spatial and temporal predictability for entrainers, the interaction for the probe failed to reach significance given the constraints of the statistical test (maximum FDR of 5\%, 16 ms consecutive significance). However, averaging the amplitude within a window defined by exploratory analysis indicated a trending interaction from 170 ms to 210 ms (\textit{F}(1, 22) = 3.97, \textit{p} = 0.059). This effect is more pronounced and reaches significance if only the right hemisphere channels are considered (\textit{F}(1, 22) = 5.61, \textit{p} = 0.027), but fails to reach significance in the left hemisphere (\textit{F}(1, 22) = 2.24, \textit{p} = 0.148) explaining the trending effect when both hemispheres are considered jointly.
 
 In summary, \textbf{TODO}
 % how is all this different than for entrainers?
 
-\subsection{Entrainment of 10 Hz oscillations}
-% all time significance seem to be here, but some short spatial effects -- show different window effects
+\subsection{Entrainment of alpha oscillations}
+
+% timefreq
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
+\end{center}
+\caption{Entrainment of alpha oscillations}{}
+\label{fig:powphase_10Hz}
+\end{figure}
+
+% Entrainers -- 10 Hz pow, ITC signify plots (space and time for both) -- unsurprising
+%		interesting that space first, then time
+% Blank -- 10 Hz ITC for time only, no pow
+
+% 5 Hz
+% Entrainers pow effect only (although not space first, then time), no ITC
+% Blank -- pow space, time effect
+%			ITC time, int* (5 Hz super bonus just starting)
+% Probe -- ITC time, int* (5 Hz super bonus)
+%		-- pow, time
+
 % model RT data with ITC or something
 
+%%%
 % on the "duh" factor of entraining at 10 Hz causes more alpha power.
-% from CalderoneLakatosButlerEtAl14
-% The periodicity of this effect correlated with individual resting alpha-oscillation frequency, suggesting that rhythmic stimulation recruited intrinsic oscillations rather than creating oscillations de novo. 
+%%%
 
-\subsection{Alpha phase at probe onset}
+% from CalderoneLakatosButlerEtAl14
+% The periodicity of this effect correlated with individual resting alpha-oscillation frequency, suggesting that rhythmic stimulation recruited intrinsic oscillations rather than creating oscillations de novo.
+
+% Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner. 
+%%%%% 
+
+%\subsection{Alpha phase at probe onset}
 
 \section{Discussion}
 
