@@ -78,7 +78,9 @@ All waveforms were averaged over a montage of 23 electrodes that covered the occ
 \end{figure}
 
 \subsection{Time-frequency analysis}
-Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-20 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
+Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-20 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). The relatively long time window required for low-frequency bands prevents computation of time-frequency data for short time segments, such as the 200 ms blank before the probe. To address this issue, time-frequency data was computed over the entire 2350 ms trial epoch and then cropped to investigate temporal regions of interest.
+
+Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
 
 \begin{align*}
 Power(f,t) = \frac{1}{n} \sum_{k=1}^{n}{|F_k(f,t)|}^2
@@ -92,9 +94,7 @@ ITC(f,t) = \bigg{|}\frac{1}{n} \sum_{k=1}^{n}{\frac{F_k(f,t)}{|F_k(f,t)|}}\bigg{
 
 ITC ranges between 0 and 1 and represents how systematic phase angles are across trials. A value of 0 indicates that phase information is essentially uniformly distributed across trials while a value of 1 indicates a high degree of phase-locking at a particular frequency across trials.
 
-All time-frequency analyses were averaged over the same montage of 23 occipitoparietal electrodes that was used to compute event-related averages (Figure \ref{fig:channels}).
-
-% tf calculated over whole trial (including entrainment) and then cut up after, avoids boundary effects where timwin not long enough (http://mailman.science.ru.nl/pipermail/fieldtrip/2012-June/005346.html)
+All time-frequency analyses were averaged over the same montage of 23 occipitoparietal electrodes that was used to compute event-related averages (Figure \ref{fig:channels}). 
 
 \section{Results}
 
@@ -183,13 +183,17 @@ In summary, \textbf{TODO}
 
 \subsection{Entrainment of alpha oscillations}
 
+The same 24 subjects used in event-related analyses (see preceding section) were used in time-frequency analyses described here. Statistical methods were also identical, consisting of a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and \textit{p}-values were corrected for a 5\% maximum FDR \cite{BenjaminiYekutieli01}. Effects were only considered significant if they persisted for at least 16 ms.
+
+Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\ref{fig:ITC_10Hz})
+
 % 10 hz pow
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
 \end{center}
 \caption{Effect of entrainer predictability on alpha power}{}
-\label{fig:powphase_10Hz}
+\label{fig:pow_10Hz}
 \end{figure}
 
 % 10 Hz ITC
@@ -198,12 +202,15 @@ In summary, \textbf{TODO}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_ITC_montage.pdf}
 \end{center}
 \caption{Effect of entrainer predictability on alpha phase coherence}{}
-\label{fig:powphase_10Hz}
+\label{fig:ITC_10Hz}
 \end{figure}
 
-% Entrainers -- 10 Hz pow, ITC signify plots (space and time for both) -- unsurprising
+% Entrainers -- 10 Hz pow, ITC signif plots (space and time for both) -- unsurprising
 %		interesting that space does not persist at 10 Hz, although time does
-% Blank -- 10 Hz ITC for time only, no pow
+%		spatial predictability suppresses 10 Hz pow, ITC% Blank -- 10 Hz ITC for time only, no pow
+%		power increase by 3rd entrainer
+%		temporal ITC slightly longer to develop, but persists into (but not through) blank
+%			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+!
 
 % exploratory 
 % 5 Hz
