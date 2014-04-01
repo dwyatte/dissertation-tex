@@ -186,8 +186,11 @@ In summary, \textbf{TODO}
 % Entrainers -- 10 Hz pow, ITC signif plots (space and time for both) -- unsurprising
 %		interesting that space does not persist at 10 Hz, although time does
 %		spatial predictability suppresses 10 Hz pow, ITC% Blank -- 10 Hz ITC for time only, no pow
+%
 %		temporal ITC slightly longer to develop, but persists into (but not through) blank
-%			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+!
+%		It does for 5 Hz ITC though, since blank corresponds to 1 delta-theta cycle
+%			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+ for 10 Hz
+
 
 The same 24 subjects used in event-related analyses (see preceding section) were used in time-frequency analyses described here. Statistical methods were also identical, consisting of a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and \textit{p}-values were corrected for a 5\% maximum FDR \cite{BenjaminiYekutieli01}. Effects were only considered significant if they persisted for at least 16 ms.
 
@@ -198,7 +201,7 @@ Power and inter-trial coherence (ITC), a measure of phase angle consistency acro
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
 \end{center}
-\caption{Effect of entrainer predictability on alpha power}{Alpha-band power over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on oscillatory power in the 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
+\caption{Effect of entrainer predictability on alpha power}{Alpha-band power over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on oscillatory power in the 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
 \label{fig:entrain_pow_10Hz}
 \end{figure}
 
@@ -207,11 +210,11 @@ Power and inter-trial coherence (ITC), a measure of phase angle consistency acro
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_ITC_montage.pdf}
 \end{center}
-\caption{Effect of entrainer predictability on alpha phase coherence}{Alpha-band inter-trial coherence (ITC) over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on ITC coherence in 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
+\caption{Effect of entrainer predictability on alpha phase coherence}{Alpha-band inter-trial coherence (ITC) over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on ITC coherence in 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
 \label{fig:entrain_ITC_10Hz}
 \end{figure}
 
-The effect of spatial predictability only persisted for three entrainers on average (duration ranges for 10 Hz power and ITC: 272-280 ms). Temporal predictability exhibited a sustained effect on 10 Hz power lasting nearly the entire entraining sequence. In the case of ITC, the effect of temporal predictability persisted throughout the blank period that separated the entraining sequence and the probe (Figure \ref{fig:probe_ITC_10Hz}). This result indicates that alpha phase remained aligned even without exogenous entrainment. No alpha-band effects were significant during the actual presentation of the actual probe, however.
+The effect of spatial predictability only persisted for three entrainers on average (duration ranges for 10 Hz power and ITC: 272-280 ms). Temporal predictability exhibited a sustained effect on 10 Hz power lasting nearly the entire entraining sequence. In the case of ITC, the effect of temporal predictability persisted throughout the blank period that separated the entraining sequence and the probe (Figure \ref{fig:probe_ITC_10Hz}). This result indicates that alpha phase remained more aligned for temporally predictable stimuli even without exogenous entrainment. No alpha-band effects were significant during the actual presentation of the actual probe, however.
 
 In summary, \textbf{TODO}
 
@@ -220,7 +223,7 @@ In summary, \textbf{TODO}
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_probe_ITC_montage.pdf}
 \end{center}
-\caption{Alpha phase coherence before and after probe}{Alpha-band inter-trial coherence (ITC) 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross.}
+\caption{Alpha phase coherence before and after probe}{Alpha-band inter-trial coherence (ITC) 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Time axes indicate total trial time after the initial fixation cross.}
 \label{fig:probe_ITC_10Hz}
 \end{figure}
 
@@ -236,15 +239,15 @@ In summary, \textbf{TODO}
 
 % 35 Hz int
 
-The effects of spatial and temporal predictability on alpha oscillatory properties during the probe itself were investigated in other frequency bands to determine 
+The effects of spatial and temporal predictability on oscillatory properties during the probe itself were investigated in the delta-theta band, centered around 5 Hz. This frequency was identified based on exploratory analysis and was also motivated by alternative models of sensory prediction \cite[e.g.,]{ArnalGiraud12}. 5 Hz power and ITC are plotted in Figures \ref{fig:probe_pow_5Hz}-\ref{fig:probe_ITC_5Hz}.
 
 % 5 Hz probe pow
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_probe_5Hz_pow_montage.pdf}
 \end{center}
-\caption{Delta-theta power before and after probe}{Delta-theta power 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded regions depict significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross.}
-\label{fig:entrain_pow_5Hz}
+\caption{Delta-theta power before and after probe}{Delta-theta power 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded regions depict significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges while controlling for a maximum false discovery rate (FDR) of 5\%. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Time axes indicate total trial time after the initial fixation cross.}
+\label{fig:probe_pow_5Hz}
 \end{figure}
 
 % 5 Hz probe pow
@@ -252,9 +255,15 @@ The effects of spatial and temporal predictability on alpha oscillatory properti
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_probe_5Hz_ITC_montage.pdf}
 \end{center}
-\caption{Delta-theta phase coherence before and after probe}{Delta-theta inter-trial coherence (ITC) 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded regions depict significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross.}
-\label{fig:entrain_ITC_5Hz}
+\caption{Delta-theta phase coherence before and after probe}{Delta-theta inter-trial coherence (ITC) 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded regions depict significant effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges while controlling for a maximum false discovery rate (FDR) of 5\%. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Time axes indicate total trial time after the initial fixation cross.}
+\label{fig:probe_ITC_5Hz}
 \end{figure}
+
+Both spatial and temporal predictability had a significant effect on 5 Hz power during the 200 ms blank period preceding the probe. Temporal predictability had a  suppressive effect on 5 Hz power, in contrast to the positive modulation found for 10 Hz power. This effect reversed following the presentation of the probe and persisted for over 300 ms. The interaction between spatial and temporal predictability failed to reach significance for 5 Hz power.
+
+Temporal predictability also had a significant effect on 5 Hz ITC beginning during the 200 ms blank period preceding the probe and lasting nearly 300 ms after the presentation of the probe. Whereas 10 Hz ITC decreased during the blank period (yet remained significantly higher for temporally predictable stimuli), 5 Hz ITC increased, and continued to increase until approximately 100 ms after the probe onset. 5 Hz ITC was highest for the combined spatial and temporal predictability condition (S+T+), indexed by a significant interaction beginning before the probe onset (-78 ms pre-stimulus) and persisting 154 ms after.
+
+In summary, \textbf{TODO}
 
 %\subsection{Alpha phase at probe onset}
 
@@ -267,7 +276,9 @@ The effects of spatial and temporal predictability on alpha oscillatory properti
 % from CalderoneLakatosButlerEtAl14
 % The periodicity of this effect correlated with individual resting alpha-oscillation frequency, suggesting that rhythmic stimulation recruited intrinsic oscillations rather than creating oscillations de novo.
 
-% Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner. 
+% Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner.
+
+% we also see it during the blank, so ha 
 %%%%% 
 
 \bibliographystyle{apa}
