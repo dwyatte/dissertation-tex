@@ -78,7 +78,7 @@ All waveforms were averaged over a montage of 23 electrodes that covered the occ
 \end{figure}
 
 \subsection{Time-frequency analysis}
-Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-20 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). The relatively long time window required for low-frequency bands prevents computation of time-frequency data for short time segments, such as the 200 ms blank before the probe. To address this issue, time-frequency data was computed over the entire 2350 ms trial epoch and then cropped to investigate temporal regions of interest.
+Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-40 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). The relatively long time window required for low-frequency bands prevents computation of time-frequency data for short time segments, such as the 200 ms blank before the probe. To address this issue, time-frequency data was computed over the entire 2350 ms trial epoch and then cropped to investigate temporal regions of interest.
 
 Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
 
@@ -181,26 +181,25 @@ Unlike the significant interaction between spatial and temporal predictability f
 In summary, \textbf{TODO}
 % how is all this different than for entrainers?
 
-\subsection{Entrainment of alpha oscillations}
+\subsection{Predictability entrains alpha oscillations}
 
 % Entrainers -- 10 Hz pow, ITC signif plots (space and time for both) -- unsurprising
 %		interesting that space does not persist at 10 Hz, although time does
 %		spatial predictability suppresses 10 Hz pow, ITC% Blank -- 10 Hz ITC for time only, no pow
-%		power increase by 3rd entrainer
 %		temporal ITC slightly longer to develop, but persists into (but not through) blank
 %			For discussion: better experiment would use a shorter blank (RANDY!) to get bonus effect of S+T+!
 
 The same 24 subjects used in event-related analyses (see preceding section) were used in time-frequency analyses described here. Statistical methods were also identical, consisting of a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and \textit{p}-values were corrected for a 5\% maximum FDR \cite{BenjaminiYekutieli01}. Effects were only considered significant if they persisted for at least 16 ms.
 
-Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\ref{fig:ITC_10Hz})
+Power and inter-trial coherence (ITC), a measure of phase angle consistency across trials \cite{LachauxRodriguezMartinerieEtAl99} were computed over a 5-20 Hz frequency range to investigate the relationship between entrainer predictability and alpha oscillatory properties (Figures \ref{fig:entrain_pow_10Hz}-\ref{fig:entrain_ITC_10Hz}). Both spatial and temporal predictability had a significant effect on 10 Hz power and ITC beginning around 200 ms after the onset of the first entrainer (power: 160-168 ms after entrainer 1; ITC: 136-208 ms after entrainer 1). This result indicates that 10 Hz entrainment takes around 2-3 events to establish, consistent with previous reports \cite{MathewsonFabianiGrattonEtAl10}. Spatial predictability had a suppressive effect on 10 Hz power and phase alignment whereas temporal predictability had a positive effect. 
 
 % 10 hz entrain pow
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_pow_montage.pdf}
 \end{center}
-\caption{Effect of entrainer predictability on alpha power}{}
-\label{fig:pow_10Hz}
+\caption{Effect of entrainer predictability on alpha power}{Alpha-band power over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on oscillatory power in the 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
+\label{fig:entrain_pow_10Hz}
 \end{figure}
 
 % 10 Hz entrain ITC
@@ -208,18 +207,24 @@ Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\re
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_entrain_ITC_montage.pdf}
 \end{center}
-\caption{Effect of entrainer predictability on alpha phase coherence}{}
-\label{fig:ITC_10Hz}
+\caption{Effect of entrainer predictability on alpha phase coherence}{Alpha-band inter-trial coherence (ITC) over the entraining sequence. The top row depicts main effects of spatial and temporal predictability on ITC coherence in 5-20 Hz frequency range. The bottom row depicts 10 Hz only effects of spatial predictability (left), temporal predictability (center), and the interaction between these terms with gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross with 0.4 seconds corresponding to the first entrainer.}
+\label{fig:entrain_ITC_10Hz}
 \end{figure}
+
+The effect of spatial predictability only persisted for three entrainers on average (duration ranges for 10 Hz power and ITC: 272-280 ms). Temporal predictability exhibited a sustained effect on 10 Hz power lasting nearly the entire entraining sequence. In the case of ITC, the effect of temporal predictability persisted throughout the blank period that separated the entraining sequence and the probe (Figure \ref{fig:probe_ITC_10Hz}). This result indicates that alpha phase remained aligned even without exogenous entrainment. No alpha-band effects were significant during the actual presentation of the actual probe, however.
+
+In summary, \textbf{TODO}
 
 % 10 Hz probe ITC
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=160mm]{figs/pleast/results_powphase_probe_ITC_montage.pdf}
 \end{center}
-\caption{Alpha phase coherence before and after probe}{}
-\label{fig:ITC_10Hz}
+\caption{Alpha phase coherence before and after probe}{Alpha-band inter-trial coherence (ITC) 200 ms preceding the probe and 400 ms following. Dotted vertical line indicates probe onset. Gray shaded ranges indicating significance while controlling for a maximum false discovery rate (FDR) of 5\%. Time axes indicate total trial time after the initial fixation cross.}
+\label{fig:probe_ITC_10Hz}
 \end{figure}
+
+\subsection{Predictability effects in other oscillatory bands}
 
 % exploratory 
 % 5 Hz
@@ -229,7 +234,11 @@ Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\re
 % Probe -- ITC time, int* (5 Hz super bonus)
 %		-- pow, time
 
-% model RT data with ITC or something
+% 35 Hz int
+
+%\subsection{Alpha phase at probe onset}
+
+\section{Discussion}
 
 %%%
 % on the "duh" factor of entraining at 10 Hz causes more alpha power.
@@ -240,10 +249,6 @@ Power and inter-trial coherence were computed... (Figures \ref{fig:pow_10Hz}-\re
 
 % Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner. 
 %%%%% 
-
-%\subsection{Alpha phase at probe onset}
-
-\section{Discussion}
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
