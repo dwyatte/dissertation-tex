@@ -118,7 +118,7 @@ Five subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (o
 % E029 subs acc=0.79 rt=742.1212
 Subjects that completed the full EEG experiment were on average less accurate (\textit{F}(1, 51) = 4.80, \textit{p} = 0.033) but responded more quickly (\textit{F}(1, 51) = 10.05, \textit{p} = 0.003) than subjects that completed the solely behavioral experiment. These differences reflect a speed-accuracy tradeoff, likely due to differences in instructions given to subjects by experimenters or motivational differences between subject groups. Importantly, experiment type did not interact with any within-subjects factors (all \textit{p}'s $>$ 0.05) indicating that the behavioral measures of interest were not dependent on which type of experiment subjects completed.
 
-Overall, subjects were more accurate when the entraining sequence was temporally predictable (\textit{F}(1, 51) = 17.84, \textit{p} $<$ 0.001). A similar effect for spatial predictability failed to reach significance (\textit{F}(1, 51) = 1.85, \textit{p} = 0.18). The interaction between spatial and temporal predictability, however, was significant (\textit{F}(1, 51) = 6.13, \textit{p} = 0.017). LeabraTI as well as previous investigations of predictability \cite[e.g.,]{DohertyRaoMesulamEtAl05} suggest that spatial and temporal predictability should have an additive effect on behavioral outcomes. However, the combined spatial and temporal predictability condition here (denoted S+T+ in Figure \ref{fig:behave}) is sub additive. Although not significantly different from spatial predictability alone (\textit{t}(52) = 1.29, \textit{p} = 0.204) or from temporal predictability alone (\textit{t}(52) = 0.45, \textit{p} = 0.652), this result merits further investigation. 
+Overall, subjects were more accurate when the entraining sequence was temporally predictable (\textit{F}(1, 51) = 17.84, \textit{p} $<$ 0.001). A similar effect for spatial predictability failed to reach significance (\textit{F}(1, 51) = 1.85, \textit{p} = 0.18). The interaction between spatial and temporal predictability, however, was significant (\textit{F}(1, 51) = 6.13, \textit{p} = 0.017). The LeabraTI model (Chapter \ref{chap:leabrati}) as well as previous investigations of predictability \cite[e.g.,]{DohertyRaoMesulamEtAl05} suggest that spatial and temporal predictability should have an additive effect on behavioral outcomes. However, the combined spatial and temporal predictability condition here (denoted S+T+ in Figure \ref{fig:behave}) is sub additive. Although not significantly different from spatial predictability alone (\textit{t}(52) = 1.29, \textit{p} = 0.204) or from temporal predictability alone (\textit{t}(52) = 0.45, \textit{p} = 0.652), this result merits further investigation. 
 
 When responses are transformed into \textit{d'}, there is a significant effect of both spatial (\textit{F}(1, 51) = 4.71, \textit{p} = 0.035) and temporal predictability (\textit{F}(1, 51) = 11.99, \textit{p} $<$ 0.001). This result suggests that response bias can at least partially explain why spatial predictability failed to reach significance for raw accuracy. The interaction between spatial and temporal predictability remained significant for \textit{d'} (\textit{F}(1, 51) = 4.49, \textit{p} = 0.039). The interaction is additive, but is driven primarily by the strong effect of introducing spatial or temporal predictability over complete unpredictability (S-T- versus S+T-, \textit{t}(52) = 3.19, \textit{p} = 0.002; S-T- versus S+T+, \textit{t}(52) = 4.26, \textit{p} $<$ 0.001) opposed to any synergistic effect of combined spatial and temporal predictability (S+T+ versus S+T-, \textit{t}(52) = 0.90; S+T+ versus S-T+, \textit{t}(52) = 0.31; both \textit{p}'s $>$ 0.05).
 
@@ -211,8 +211,8 @@ Predictability effects on 10 Hz ITC failed to reach significance during the pres
 \label{fig:probe_ITC_10Hz}
 \end{figure}
 
-\subsection{Predictability effects in delta-theta oscillations}
-The effects of spatial and temporal predictability on oscillatory properties during the probe period (-200 ms pre-stimulus through 400 ms after) were investigated in the delta-theta band, centered around 5 Hz. This frequency was identified based on exploratory analysis and was also motivated by alternative models of sensory prediction \cite[e.g.,]{ArnalGiraud12,GiraudPoeppel12}. 5 Hz power and ITC are plotted in Figures \ref{fig:probe_pow_5Hz}-\ref{fig:probe_ITC_5Hz}.
+\subsection{Predictability effects in delta-theta bands}
+The effects of spatial and temporal predictability on oscillatory properties during the probe period (-200 ms pre-stimulus through 400 ms after) were investigated in the delta-theta bands, centered around 5 Hz. This frequency was identified based on exploratory analysis and was also motivated by alternative models of sensory prediction \cite[e.g.,]{ArnalGiraud12,GiraudPoeppel12}. 5 Hz power and ITC are plotted in Figures \ref{fig:probe_pow_5Hz}-\ref{fig:probe_ITC_5Hz}.
 
 % 5 Hz probe pow
 \begin{figure}[h!]
@@ -236,11 +236,27 @@ Both spatial and temporal predictability had a significant effect on 5 Hz power 
 
 Temporal predictability also had a significant effect on 5 Hz ITC beginning during the 200 ms blank period preceding the probe and lasting nearly 300 ms after the presentation of the probe. Whereas 10 Hz ITC decreased during the blank period (yet remained significantly higher for temporally predictable stimuli), 5 Hz ITC increased, and continued to increase until approximately 100 ms after the onset of the probe. 5 Hz ITC was highest for the combined spatial and temporal predictability condition (S+T+), indexed by a significant interaction beginning before the probe onset (-78 ms pre-stimulus) and persisting 154 ms after.
 
+% \subsection{Predictability effects in gamma oscillations}
 % 35 Hz int ???
 
 %\subsection{Alpha phase at probe onset}
 
 \section{Discussion}
+
+\subsection{Summary of results}
+
+The work described in this chapter investigated how the brain integrates information from one experience to the next and uses it to drive predictions about what will happen. The experimental paradigm used to address this question involved entraining alpha oscillatory activity to determine the effects of spatial and temporal predictability on a novel object recognition task. Behaviorally, there were robust effects of temporal predictability on raw accuracy and reaction times, as well as transformations to \textit{d'}, a measure of sensitivity that takes into account response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. Accuracy was higher and response times were faster for a same-different judgement when entraining stimuli were presented in a temporally predictable manner. Spatial predictability was only significant for \textit{d'} scores with higher sensitivity between ``same'' and ``different'' probes when entraining stimuli were presented in a predictable order, suggesting that raw accuracy might have been contaminated by response bias. Inverse efficiency, which can be thought of as the amount of energy consumed by the system to produce a behavioral outcome \cite{TownshendAshby83}, was lower for temporally predictable stimuli on average, but exhibited an increase for combined spatial and temporal predictability.
+
+Event-related analysis of EEG data indicated that temporal predictability causes a strong periodicity (in this case, 10 Hz) phase aligned approximately to the onset of each temporally predictable entraining stimulus. This alignment approximately 180 degrees out of phase for temporally unpredictable stimuli and these differences in waveform alignment caused amplitude differences that preceded both entraining stimuli and the probe. The effects of spatial predictability generally manifested during the presentation of stimuli. There was an early divergence of probe-evoked activity caused by spatially predictable ordering of entrainers that over 100 ms through the P1 response with several transient effects after. There was evidence that spatial predictability was only effective when stimuli were also temporally predictable. This was evident for entrainers, and over right hemisphere channels during the probe. The effect failed to reach significance for left hemisphere channels and only trended toward significant levels when both hemispheres were considered jointly. It is likely that this is simply an issue of insufficient power, but other explanations such as hemispheric specialization \cite[e.g.,]{Dien09b} cannot be completely ruled out.
+
+Both spatial and temporal predictability had effects on the power and phase coherence (indexed by inter-trial coherence, ITC) of neural oscillations. Spatially predictable entrainment caused a suppression of 10 Hz power with a lower degree of phase alignment than spatial random stimuli. Temporally predictable entrainment had the opposite effect, with increased 10 Hz power and phase alignment. Phase alignment due to temporal predictability remained elevated compared to temporally unpredictable stimuli during a 200 ms period between the entraining sequence, indicating phase alignment could persist without exogenous entrainment. There was evidence of an enhancement in phase alignment for the combined spatial and temporal predictability case. As was the case in event-related analyses, this effect was significant in the right hemisphere, but not the left, and trended toward significance when both hemispheres were considered jointly. Power and phase coherence effects were also examined in the delta-theta bands (5 Hz) during the probe judgement. Results were similar to those found for 10 Hz, but more robust with effects for both power and phase alignment. 
+
+\subsection{Temporal anticipation and spatial postdiction}
+
+\subsection{Low frequency oscillations convey information about spatial predictability}
+
+\subsection{Why does combined spatial and temporal predictability increase inverse efficiency?}
+
 % Discussion outline
 %
 % Behavioral results
@@ -254,11 +270,13 @@ Temporal predictability also had a significant effect on 5 Hz ITC beginning duri
 % 		Spatial predictability is a post-stimulus process and might represent a comparison computation between the previous stimulus and the currently presented one. Temporal predictability, in contrast, is a truly anticipatory process, occurring before (and at) the onset of each stimulus. 
 % * interaction only trending -- why? more power likely needed. laterality effects also possible. also possible that it has no bearing on behavior with the current paradigm, so it will hover around trend levels
 % * similarity of findings btwn probe and entrainers
+% * why spatial effect is transient
 %
 % TimeFreq 
 % * 2-3 entrainers to establish entrainment: consistent with previous reports \cite{MathewsonFabianiGrattonEtAl10}
 % * 10 Hz power Spatial transient, temporal longer, but decays
 % 		* perhaps with less entrainment, would see an effect of spatial information on oscillations and might see it in behave results
+% * Suppression effect for S+ in pow/ITC -- why?
 % * 10 Hz phase (ITC) takes longer to build up but persists into (but not through) blank, at least in the case for temporal info
 %		* phase likely accounts for RT effects, ITC follows same pattern, consistent with prev literature (look up)
 % * No effect of 10 Hz on probe itself, decays through blank, likely because it is too long. S+T+ bonus can be seen in fig, but not as robust of an effect compared to 5 Hz, had to do special averaging tests
@@ -271,9 +289,6 @@ Temporal predictability also had a significant effect on 5 Hz ITC beginning duri
 %	  % Low frequency oscillations seem to capture spatial stuff too, not just temporal stuff although it's hard to know for sure without a better expo
 %	  % 5 Hz better for temporal prediction time window than 10 Hz? Again, at least given current data, but hard to know
 % * Is 5 Hz functionally different? Or just a subharmonic that is better suited for significance given the experimental parameters (200 ms blank)
-
-% Other
-% * Right lateralization
 
 %%%
 % on the "duh" factor of entraining at 10 Hz causes more alpha power.
