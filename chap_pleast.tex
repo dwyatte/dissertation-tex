@@ -4,7 +4,7 @@
 \chapter{Effects of spatial and temporal predictability during novel object recognition: \\ Temporal and spectral signatures}
 
 \section{Introduction}
-TODO, pull from proposal and proposal-r1.
+TODO, pull from proposal and proposal-r1. Try to write without referencing LeabraTI too much, this chapter should stand by itself
 
 \section{Methods}
 
@@ -144,7 +144,7 @@ A total of five subjects were excluded from EEG analysis -- three for an overabu
 
 A 2x2 ANOVA with spatial and temporal predictability as within-subjects factors was used to assess statistical significance at each time bin of event-related averages. \textit{p}-values were corrected for a maximum false discovery rate (FDR) of 5\% using the method described in \incite{BenjaminiYekutieli01}. Additionally, effects were only considered significant if they persisted for at least 16 ms.
 
-To investigate the build-up of spatial and temporal predictability over the entraining sequence, activity from the second through final entraining views was averaged for each condition (the first entraining view is unpredictable, so it is omitted from the average). The results of this analysis are plotted in Figure \ref{fig:entrain_tla}. The first thing worth noting is that a large 10 Hz periodicity is present for the temporally predictable conditions (S-T+ and S+T+), phase aligned approximately to the onset of each entrainer. Temporally unpredictable entrainers (S-T- and S+T-) are also approximately periodic. The reason for the 10 Hz periodicity in these conditions despite being temporally unpredictable is likely due to the 750 ms constant duration of the entraining sequence regardless of condition (Figure \ref{fig:task}B). Presenting eight stimuli in 750 ms with a variable ISI is a 10 Hz presentation rate on average. Still, the temporally unpredictable entrainers exhibit markedly weaker amplitude and are approximately 180 degrees out of phase with the the temporally predictable entrainers.
+To investigate the build-up of spatial and temporal predictability over the entraining sequence, activity from the second through final entraining views was averaged for each condition (the first entraining view is unpredictable, so it is omitted from the average). The results of this analysis are plotted in Figure \ref{fig:entrain_tla}. The first thing worth noting is that a large 10 Hz periodicity is present for the temporally predictable conditions (S-T+ and S+T+), phase-aligned approximately to the onset of each entrainer. Temporally unpredictable entrainers (S-T- and S+T-) are also approximately periodic. The reason for the 10 Hz periodicity in these conditions despite being temporally unpredictable is likely due to the 750 ms constant duration of the entraining sequence regardless of condition (Figure \ref{fig:task}B). Presenting eight stimuli in 750 ms with a variable ISI is a 10 Hz presentation rate on average. Still, the temporally unpredictable entrainers exhibit markedly weaker amplitude and are approximately 180 degrees out of phase with the the temporally predictable entrainers.
 
 % erp - entrain
 \begin{figure}[h!]
@@ -156,7 +156,7 @@ To investigate the build-up of spatial and temporal predictability over the entr
 \end{figure}
 % revision todo: recreate these figs with y-axis numbers
 
-The effect of spatial predictability manifested 26 ms after the onset of the entrainer and persisted for at least another 24 ms (one quarter of the 10 Hz period). Temporal predictability, in contrast, manifested prior to (-38 through -22 ms pre-stimulus) and at the onset of the entrainer (-6 ms pre-stimulus through 18 ms post-stimulus). The effect of temporal predictability appears to be driven by the anti phase relationship between T- and T+ conditions at these time points. Together, these effects demonstrate differential time courses for spatial and temporal predictability.
+The effect of spatial predictability manifested 26 ms after the onset of the entrainer and persisted for at least another 24 ms (one quarter of the 10 Hz period). Temporal predictability, in contrast, manifested prior to (-38 through -22 ms pre-stimulus) and at the onset of the entrainer (-6 ms pre-stimulus through 18 ms post-stimulus). The effect of temporal predictability appears to be driven by the antiphase relationship between T- and T+ conditions at these time points. Together, these effects demonstrate differential time courses for spatial and temporal predictability.
 
 Spatial predictability was enhanced when stimuli were temporally predictable. This effect is characterized by the significant interaction between spatial and temporal predictability starting 14 ms after the onset of the entrainer and persisting for at least another 36 ms. This result indicates that the brain is more capable of differentiating between spatially coherent and random sequences of stimuli when it can properly anticipate the presentation of each stimulus (S-T+ versus S+T+) compared to when the onset is unpredictable.
 
@@ -251,27 +251,26 @@ Event-related analysis of EEG data indicated that temporal predictability causes
 
 Both spatial and temporal predictability had effects on the power and phase coherence (indexed by inter-trial coherence, ITC) of neural oscillations. Spatially predictable entrainment caused a suppression of 10 Hz power with a lower degree of phase alignment than spatial random stimuli. Temporally predictable entrainment had the opposite effect, with increased 10 Hz power and phase alignment. Phase alignment due to temporal predictability remained elevated compared to temporally unpredictable stimuli during a 200 ms period between the entraining sequence, indicating phase alignment could persist without exogenous entrainment. There was evidence of an enhancement in phase alignment for the combined spatial and temporal predictability case. As was the case in event-related analyses, this effect was significant in the right hemisphere, but not the left, and trended toward significance when both hemispheres were considered jointly. Power and phase coherence effects were also examined in the delta-theta bands (5 Hz) during the probe judgement. Results were similar to those found for 10 Hz, but more robust with effects for both power and phase alignment. 
 
-\subsection{Temporal anticipation and spatial postdiction}
+\subsection{Separate time courses for spatial and temporal predictability}
+Spatial and temporal predictability were characterized by distinct and generally non-overlapping time courses. Temporal predictability manifested solely before (or at) the onset of each stimulus and appeared to be driven by an approximate antiphase relationship between temporally predictable and unpredictable stimuli. Spatial predictability generally manifested during the presentation of stimuli, although in the case of the probe, showed transient difference without stimulation. Predictability effects were similar for entraining stimuli and the probe except that the effect of spatial predictability persisted for over 100 ms through the P1 response with several more transient effects after. The similarity between entrainers and the probe suggests that the brain might treat the probe as a continuation of the entraining sequence and process it in the same manner. 
 
-\subsection{Low frequency oscillations convey information about spatial predictability}
+From these results, we can conclude that temporal prediction is an anticipatory process, occurring during the absence of exogenous stimulation (in between entrainers or before the probe). The effect of temporal predictability extends 16 ms after the onset of each entrainer, but latencies for the first wave of responses in primary visual cortex (V1) are approximately 40-60 ms \cite{NowakBullier97,FoxeSimpson02} so there is no exogenous stimulation \textit{per se} during the duration of the effect despite the stimulus being onscreen. Spatial prediction begins shortly before exogenous stimulation, but in the case of the probe, persists through the initial V1 responses. Spatial prediction, thus, might better be characterized as a post-stimulus process opposed to truly anticipatory process. The computation might involve a comparison between what is expected and what is actually coded by incoming spikes, consistent with the LeabraTI model (Chapter \ref{chap:leabrati}) and predictive coding models \cite[e.g.,]{RaoBallard99}.
 
-\subsection{Why does combined spatial and temporal predictability increase inverse efficiency?}
+% * previous studies by \cite{DohertyRaoMesulamEtAl05,RohenkohlNobre11}
 
-% Discussion outline
-%
-% Behavioral results
-% * generally always signif effect of temporal (acc, d', rt, ie)
-% * spatial only significant for d'
-% * no synergistic effect of S+T+, just large improvements from S-T-
-% * IE crossover interaction mystery -- why is it even important?
-%
-% TLA
-% * temporal effect occurs only before/at stim. spatial after. effect is found for both entrainers and probe -- separate time courses 
-% 		Spatial predictability is a post-stimulus process and might represent a comparison computation between the previous stimulus and the currently presented one. Temporal predictability, in contrast, is a truly anticipatory process, occurring before (and at) the onset of each stimulus. 
-% * interaction only trending -- why? more power likely needed. laterality effects also possible. also possible that it has no bearing on behavior with the current paradigm, so it will hover around trend levels
-% * similarity of findings btwn probe and entrainers
-% * why spatial effect is transient
-%
+\subsection{Oscillatory mechanisms of spatial and temporal predictability}
+%%%
+% on the "duh" factor of entraining at 10 Hz causes more alpha power.
+%%%
+
+% from CalderoneLakatosButlerEtAl14
+% The periodicity of this effect correlated with individual resting alpha-oscillation frequency, suggesting that rhythmic stimulation recruited intrinsic oscillations rather than creating oscillations de novo.
+
+% Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner.
+
+% we also see it during the blank, so ha 
+%%%%% 
+
 % TimeFreq 
 % * 2-3 entrainers to establish entrainment: consistent with previous reports \cite{MathewsonFabianiGrattonEtAl10}
 % * 10 Hz power Spatial transient, temporal longer, but decays
@@ -290,17 +289,25 @@ Both spatial and temporal predictability had effects on the power and phase cohe
 %	  % 5 Hz better for temporal prediction time window than 10 Hz? Again, at least given current data, but hard to know
 % * Is 5 Hz functionally different? Or just a subharmonic that is better suited for significance given the experimental parameters (200 ms blank)
 
+% * reference mathewson, van rullen, lakatos/schroeder, etc.
+
+\subsection{Prediction is not simply attentional orienting}
+% maybe hold off on tieing effects into pref literature (nobre, etc.) until here
+
+\subsection{Why does combined spatial and temporal predictability increase inverse efficiency?}
+
+% Discussion outline
+%
+% Behavioral results
+% * generally always signif effect of temporal (acc, d', rt, ie)
+% * spatial only significant for d'
+% * no synergistic effect of S+T+, just large improvements from S-T-
+% * IE crossover interaction mystery -- why is it even important?
+
 %%%
-% on the "duh" factor of entraining at 10 Hz causes more alpha power.
+% save for general discussion
 %%%
-
-% from CalderoneLakatosButlerEtAl14
-% The periodicity of this effect correlated with individual resting alpha-oscillation frequency, suggesting that rhythmic stimulation recruited intrinsic oscillations rather than creating oscillations de novo.
-
-% Entrainment studies play an increasingly important role for 245 establishing a causal role of brain oscillations for cognitive pro- 246 cesses. Traditionally, the oscillation–behaviour relationship has 247 been established by means of correlation or by contrasting 248 oscillations between experimental conditions showing different 249 behavioural performance. In contrast, entrainment studies attempt 250 to modulate brain oscillations so that consequences for behavioural 251 performance can be studied in a controlled manner.
-
-% we also see it during the blank, so ha 
-%%%%% 
+% * Low frequency oscillations convey information about spatial predictability
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
