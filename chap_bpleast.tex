@@ -32,7 +32,7 @@ The S+/- and T+/- conditions were crossed and each of the target-distractor obje
 
 During each block, participants were instructed to study the target object during the training period and then complete a series of 30 test trials. On each test trial, either the target object or its paired distractor was presented. Participants were instructed to respond ``same'' if they believed the object depicted the trained target object or ``different'' if they believed it depicted the distractor object. Half of the test trials contained 15 views of the target object spaced 24 degrees apart, and the other half contained 15 views of the distractor, also spaced 24 degrees apart. Test trials were shown in a random order and feedback was withheld to prevent participants from changing their response criteria over the course of a block. 
 
-The experiment was displayed on an LCD monitor with a native resolution of 1280x1024 operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. All stimuli were presented on an isoluminant 50\% gray background and subtended approximately 5 degrees of visual angle. Test trials began with a fixation cross (200 ms) followed by a blank (400 ms) followed by the probe stimulus (100 ms). Participants were required to respond within 2000 ms. Subsquent test trials were separated by a variable intertrial interval of 1000-1400 ms.
+The experiment was displayed on an LCD monitor at native resolution operating at 60 Hz using the Psychophysics Toolbox Version 3 \cite{Brainard97,Pelli97}. All stimuli were presented on an isoluminant 50\% gray background and subtended approximately 5 degrees of visual angle. Test trials began with a fixation cross (200 ms) followed by a blank (400 ms) followed by the probe stimulus (100 ms). Participants were required to respond within 2000 ms. Subsquent test trials were separated by a variable intertrial interval of 1000-1400 ms.
 
 The experiment began with a practice block to ensure that participants understood the task. The training period during the practice block was always spatially and temporally predictable and used a reserved target object and distractor that were not further used in any of the experimental blocks. During the practice test trials, participants received feedback after responding according to whether they were correct or incorrect. After completing the practice block, participants were informed that future training periods could be presented in spatially and/or temporally unpredictable manners.
 
@@ -45,33 +45,7 @@ The experiment began with a practice block to ensure that participants understoo
 
 \section{Results}
 % timeouts removed from data
-Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. All three excluded subjects were assigned condition-object 3 resulting in the final counterbalancing -- Assignment 1: \textit{N}=15; Assignment 2: \textit{N}=14; Assignment 3: \textit{N}=15; Assignment 4: \textit{N}=15. The remaining 59 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and counterbalancing assignment as a between-subjects factor. Accuracy and reaction times are plotted in Figure \ref{fig:bpleast_behave}.
-
-
-
-% Acc
-% Assignment: F(1, 57) = 0.156, p = 0.694
-% Spatial: F(1, 57) = 4.496, p = 0.0383 * 
-% Temporal: F(1, 57) = 4.149, p = 0.0463 * 
-% Int: F(1, 57) = 0.197, p = 0.659
-
-% RT
-% Assignment: F(1, 57) = 0.713, p = 0.402
-% Spatial: F(1, 57) = 10.99, p = 0.00159 *
-% Temporal: F(1, 57) = 0.527, p = 0.471
-% Int: F(1, 57) = 1.209, p = 0.2761 
-
-% d'
-% Assignment: F(1, 57) = 0.762, p = 0.386
-% Spatial: F(1, 57) = 3.066, p = 0.0853 . 
-% Temporal: F(1, 57) = 3.00, p = 0.0887 .
-% Int: F(1, 57) = 0.00, p = 0.985
-
-% IE
-% Assignment: F(1, 57) = 0.91, p = 0.344
-% Spatial: F(1, 57) =  9.640, p = 0.00296 *
-% Temporal: F(1, 57) = 0.445, p = 0.507
-% Int: F(1, 57) = 0.71, p = 0.403  
+Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. All three excluded subjects were assigned condition-object 3 resulting in the final counterbalancing -- Assignment 1: \textit{N}=15; Assignment 2: \textit{N}=14; Assignment 3: \textit{N}=15; Assignment 4: \textit{N}=15. The remaining 59 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and counterbalancing assignment as a between-subjects factor. Accuracy and reaction times are plotted in Figure \ref{fig:bpleast_behave}. Transformed behavioral measures (e.g., \textit{d'}, inverse efficiency; see Chapter \ref{chap:pleast} Results) showed similar patterns to the raw measures and are were thus omitted from analysis.
 
 % oh, behave
 \begin{figure}[h!]
@@ -81,9 +55,27 @@ Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (
 \includegraphics[width=80mm]{figs/chap_bpleast/results_rt.pdf} \\
 \end{tabular}
 \end{center}
-\caption{}{Error bars depict within-subjects error using the method described in \protect\incite{Cousineau05} adapted for standard error.}
+\caption{Behavioral measures of spatial and temporal predictability}{Accuracy and reaction time as a function of predictability during the training period. S-/+ refers to spatially unpredictable and predictable, T-/+ to temporally unpredictable and predictable. Error bars depict within-subjects error using the method described in \protect\incite{Cousineau05} adapted for standard error.}
 \label{fig:bpleast_behave}
 \end{figure}
+
+% Acc
+% Assignment: F(1, 57) = 0.156, p = 0.694
+% Spatial: F(1, 57) = 4.496, p = 0.0383 * 
+% Temporal: F(1, 57) = 4.149, p = 0.0463 * 
+% Int: F(1, 57) = 0.197, p = 0.659
+
+Overall, subjects were less accurate when the training period was spatially predictable (\textit{F}(1, 57) = 4.50, \textit{p} = 0.038) or temporally predictable (\textit{F}(1, 57) = 4.20, \textit{p} = 0.046). The interaction between spatial and temporal predicability failed to reach significance (\textit{F}(1, 57) = 0.20, \textit{p} = 0.659). Subjects were least accurate for the combined spatial and temporal predictability condition (denoted S+T+ in Figure \ref{fig:bpleast_behave}). This condition significantly differed from the completely unpredictable condition (S-T-) (\textit{t}(58) = -2.8587, \textit{p} = 0.001), and trended toward significance for conditions with only spatial or only temporal predictability (S+T+ versus S+T-, \textit{t}(58) = -1.60, \textit{p} = 0.116; S-T- versus S+T+ versus S-T+, \textit{t}(58) = -1.77, \textit{p} = 0.082).
+
+% RT
+% Assignment: F(1, 57) = 0.713, p = 0.402
+% Spatial: F(1, 57) = 10.99, p = 0.00159 *
+% Temporal: F(1, 57) = 0.527, p = 0.471
+% Int: F(1, 57) = 1.209, p = 0.2761 
+
+Subjects were also slower to respond when the training period was spatially predictable (\textit{F}(1, 57) = 10.99, \textit{p} = 0.002). A similar effect for temporal predictability failed to reach significance (\textit{F}(1, 57) = 0.53, \textit{p} = 0.471), nor did the interaction between spatial and temporal predictability (\textit{F}(1, 57) = 1.21, \textit{p} = 0.276). 
+
+Effects were highly variable across target objects (Figure \ref{fig:bpleast_behave_obj}). Target-condition assignment did not significantly affect accuracy or reaction times (both \textit{p}'s $>$ 0.05), but often interacted with predictability effects and their interactions. One reason for this variability regards the orthographic projection used to render the objects. Previous research has indicated that accuracy fluctuates as a function of how well the two-dimensional projection captures the full three-dimensional structure of the object \cite{BalasSinha09}. For example, when there is a large amount of foreshortening in the projection, it could be difficult to infer the length of line segments that compose the object.
 
 % oh, behave, pt 2
 \begin{figure}[h!]
@@ -93,9 +85,11 @@ Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (
 \includegraphics[width=80mm]{figs/chap_bpleast/results_rt_obj.pdf} \\
 \end{tabular}
 \end{center}
-\caption{}{Error bars depict between-subjects standard error.}
+\caption{Behavioral measures for each target object}{X-axes denote target object and colors predictability during the training period. Error bars depict between-subjects standard error.}
 \label{fig:bpleast_behave_obj}
 \end{figure}
+
+
 
 \section{Discussion}
 
