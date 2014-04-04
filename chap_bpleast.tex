@@ -2,6 +2,7 @@
 \begin{document}
 
 \chapter{Effects of spatial and temporal prediction during novel object learning}
+\label{chap:bpleast}
 
 \section{Introduction}
 TODO
@@ -43,7 +44,58 @@ The experiment began with a practice block to ensure that participants understoo
 \end{figure}
 
 \section{Results}
-Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. All three excluded subjects were assigned condition-object 3 resulting in the final counterbalancing -- Assignment 1: \textit{N}=15; Assignment 2: \textit{N}=14; Assignment 3: \textit{N}=15; Assignment 4: \textit{N}=15. The remaining 59 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and counterbalancing assignment as a between-subjects factor. % Accuracy and reaction times were collected during the experiment and were used to compute \textit{d'}, a measure of sensitivity that takes into account response bias, and inverse efficiency, a measure that combines accuracy and reaction times \cite{TownshendAshby78}. These behavioral measures are plotted in Figure \ref{fig:behave}.
+% timeouts removed from data
+Three subjects were excluded from behavioral analysis for accuracy 2.7$\sigma$ (or further) below mean accuracy across subjects. All three excluded subjects were assigned condition-object 3 resulting in the final counterbalancing -- Assignment 1: \textit{N}=15; Assignment 2: \textit{N}=14; Assignment 3: \textit{N}=15; Assignment 4: \textit{N}=15. The remaining 59 subjects were submitted to a 2x2 ANOVA with spatial and temporal predictability as within-subjects factors and counterbalancing assignment as a between-subjects factor. Accuracy and reaction times are plotted in Figure \ref{fig:bpleast_behave}.
+
+
+
+% Acc
+% Assignment: F(1, 57) = 0.156, p = 0.694
+% Spatial: F(1, 57) = 4.496, p = 0.0383 * 
+% Temporal: F(1, 57) = 4.149, p = 0.0463 * 
+% Int: F(1, 57) = 0.197, p = 0.659
+
+% RT
+% Assignment: F(1, 57) = 0.713, p = 0.402
+% Spatial: F(1, 57) = 10.99, p = 0.00159 *
+% Temporal: F(1, 57) = 0.527, p = 0.471
+% Int: F(1, 57) = 1.209, p = 0.2761 
+
+% d'
+% Assignment: F(1, 57) = 0.762, p = 0.386
+% Spatial: F(1, 57) = 3.066, p = 0.0853 . 
+% Temporal: F(1, 57) = 3.00, p = 0.0887 .
+% Int: F(1, 57) = 0.00, p = 0.985
+
+% IE
+% Assignment: F(1, 57) = 0.91, p = 0.344
+% Spatial: F(1, 57) =  9.640, p = 0.00296 *
+% Temporal: F(1, 57) = 0.445, p = 0.507
+% Int: F(1, 57) = 0.71, p = 0.403  
+
+% oh, behave
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{ll}
+\includegraphics[width=80mm]{figs/chap_bpleast/results_accuracy.pdf} & 
+\includegraphics[width=80mm]{figs/chap_bpleast/results_rt.pdf} \\
+\end{tabular}
+\end{center}
+\caption{}{Error bars depict within-subjects error using the method described in \protect\incite{Cousineau05} adapted for standard error.}
+\label{fig:bpleast_behave}
+\end{figure}
+
+% oh, behave, pt 2
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{ll}
+\includegraphics[width=80mm]{figs/chap_bpleast/results_accuracy_obj.pdf} &
+\includegraphics[width=80mm]{figs/chap_bpleast/results_rt_obj.pdf} \\
+\end{tabular}
+\end{center}
+\caption{}{Error bars depict between-subjects standard error.}
+\label{fig:bpleast_behave_obj}
+\end{figure}
 
 \section{Discussion}
 
