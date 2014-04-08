@@ -75,7 +75,7 @@ Overall, subjects were less accurate when the training period was spatially pred
 
 Subjects were also slower to respond when the training period was spatially predictable (\textit{F}(1, 57) = 10.99, \textit{p} = 0.002). A similar effect for temporal predictability failed to reach significance (\textit{F}(1, 57) = 0.53, \textit{p} = 0.471), nor did the interaction between spatial and temporal predictability (\textit{F}(1, 57) = 1.21, \textit{p} = 0.276). 
 
-Effects were highly variable across target objects (Figure \ref{fig:bpleast_behave_obj}). Target-condition assignment did not significantly affect accuracy or reaction times (both \textit{p}'s $>$ 0.05), but often interacted with predictability effects and their interactions. One reason for this variability regards the orthographic projection used to render the objects. Previous research has indicated that recognition accuracy fluctuates as a function of how well the two-dimensional projection of an object captures its full three-dimensional structure \cite{BalasSinha09}. For example, when there is a large amount of foreshortening in the projection, it could be difficult to infer the length of line segments that compose the object, impairing recognition. These degenerate projections are generally diametrically opposed on the object. 
+Effects were highly variable across target objects (Figure \ref{fig:bpleast_behave_obj}). Target-condition assignment did not significantly affect accuracy or reaction times (both \textit{p}'s $>$ 0.05), but often interacted with predictability effects and their interactions. One reason for this variability regards the orthographic projection used to render the objects. Previous research has indicated that recognition accuracy fluctuates as a function of how well the two-dimensional projection of an object captures its full three-dimensional structure \cite{BalasSinha09b}. For example, when there is a large amount of foreshortening in the projection, it could be difficult to infer the length of line segments that compose the object, impairing recognition. These degenerate projections are generally diametrically opposed on the object. 
 
 % oh, behave, pt 2: objs
 \begin{figure}[h!]
@@ -107,7 +107,7 @@ Accuracy was computed as a function of viewing angle for each target object to i
 
 Standard statistical tests did not have enough power to detect differences between conditions for degenerate views because each data point corresponded to only four trials per subject. To address this design limitation, a bootstrapping method was used to resample the available data in these cases. The accuracy function over viewing angles was collapsed across conditions and the two minima associated with degenerate views were identified for each object. For target object 1, this corresponded to angles $\theta$ = \{24$^\circ$, 312$^\circ$\}, object 2: $\theta$ = \{48$^\circ$, 240$^\circ$\} object 3: $\theta$ = \{144$^\circ$, 312$^\circ$\}, and object 4 $\theta$ = \{24$^\circ$, 192$^\circ$\}. Accuracy for the completely unpredictable (S-T-) and combined spatial and temporal predictability (S+T+) conditions during training was averaged at these viewing angles and resampled with replacement from the 59 subjects for 10000 iterations. This produced distributions for degenerate view accuracy for each object (Figure \ref{fig:bpleast_behave_bootstrap}). Accuracy for was lower for degenerate views for the combined spatial and temporal predictability condition for all target objects except target 1, which didn't exhibit the patterned accuracy function that other targets did. The S+T+/S-T- difference in accuracy for degenerate views was significant at the 90\% alpha level (i.e., the confidence interval of the difference between means did not include zero) for all target objects except target 1.
 
-% oh, behave, pt 3: rots
+% oh, behave, pt 4: bootstraps
 \begin{figure}[h!]
 \begin{center}
 \begin{tabular}{ll}
@@ -121,18 +121,30 @@ Standard statistical tests did not have enough power to detect differences betwe
 \section{Discussion}\subsection{Summary of results}
 The work described in this chapter investigated how predictability biased learned representations of novel objects. The experimental paradigm used to address this question involved training participants to recognize novel objects while manipulating their spatial and temporal predictability. Somewhat surprisingly, accuracy was lowest when stimuli were learned in a combined spatially and temporally predictable context and highest when learned in a completely unpredictable context. Reaction times were also slower when objects were learned with spatial predictability.
 
-Behavioral measures were highly variable across objects. Differences between predictability conditions during training appeared to be driven primarily by degenerate viewing angles caused by three-dimensional foreshortening in the objects used. The amount of three-dimensional structure captured by a two-dimensional projection has previously been noted as a principal component of variability in accuracy \cite{BalasSinha09}, but only in a spatially and temporally predictable learning context.
+Behavioral measures were highly variable across objects. There was some indication that differences between predictability conditions during training were driven primarily by degenerate viewing angles caused by three-dimensional foreshortening in the objects used. A foreshortening model has previously accounted for the principal component of variability in recognition accuracy for the same ``paper clip'' objects used here \cite{BalasSinha09b}, but only in a combined spatial and temporal predictability learning context.
 
-\subsection{A behavioral disadvantage for spatial prediction during learning}
-% increases in RT with spatially coherent stuff \cite{HarmanHumphrey99}
-% * no temporal condition
-% * increase in RT for objects studied S+. RR was fastest (RR is random presentation, random object identity, so objects get switched over the sequence)
-% * no changes in accuracy for S+ (we show a decrease)
-% ``One possible reason for the slower decision latency in the SS condition is that seeing a coherent sequence of object views leads to less attention or effort during object encoding than does seeing a constantly changing set of object views. The SS condition involved the consecutive presentation of similar images of each object. This may have resulted in less effort or attention being expended in learning about each view of the objects as many of the views of each object were highly similar. Consequently, the images may not have been well encoded and the longer decision latency could have been a reflection of this relatively poor encoding. In contrast, each successive view in the RR condition was highly dissimilar and this could have resulted in more attention being devoted to the encoding of each view.''
+\subsection{A behavioral disadvantage for spatial prediction during object learning}
+
+Based on previous research, it is unclear whether spatial predictability is used by the brain during object learning and whether it is actually advantageous. Initial investigations described in \incite{LawsonHumphreysWatson94} identified the expected increase in recognition accuracy for spatially predictable sequences. The foreshortening model advanced in \cite{BalasSinha09b} was also improved by incorporating spatial information (e.g., the first- and second-order derivatives of the foreshortening function over object views). Furthermore, a number of computational models, including LeabraTI (Chapter \ref{chap:leabrati}), use learning rules that incorporate associations between subsequent inputs to learn object representations \cite{Foldiak91,StringerPerryRollsEtAl06,WallisBaddeley97,IsikLeiboPoggio12}.
+
+Experiments described in \incite{HarmanHumphrey99} failed to find any positive or negative effects of spatial predictability on accuracy. They did, however, increase in reaction time for objects learned in a spatially predictable context, similar to the one reported here. One possible reason for the slowing of reaction times for objects learned with spatial predictability is that less attention is necessary in these conditions. A constantly changing sequence of views might require more attentive processing to encode whereas the relatively low amount of change between views in spatially predictable sequences is less ``surprising'' and some views might be overlooked during encoding. However, there was some indication that the adverse effect of spatial predictability was driven primarily by the degenerate views of the stimuli used in the present work. A more focused experiment would be necessary to explicitly test the hypothesis that behavioral measures are preserved for canonical views and selectively impaired for degenerate views learned in a spatially predictable context, but the interpretation of this hypothesis if confirmed is still discussed here.
+
+% * degraaf -- lower hit rate for 10 Hz
+
+\subsection{Spatiotemporal prediction biases development of invariance}
+
+The view advanced here is that spatially predictable sequences promote learning of view-invariant object representations, whereas spatially unpredictable sequences promote view-dependent representations. 
+
+% Li & Dicarlo spatiotemporal learning
+% * CoxMeierOerteltEtAl05
+% * LiDiCarlo08,LiDiCarlo10
+% * MeyerOlson11 
+% * WallisBackusLangerEtAl09,Wallis96,Wallis02,WallisBulthoff01,WallisBulthoff99 (review)
+% * Not about invariance per se -- SakaiMiyashita91,MeyerOlson11 -- but related to why static views might not be enough
+% * Perret et al -- view dependent cells faster to respond than view invariance cells
 
 % previous research on spatial ordering during learning
-% * balas stuff -- S- manipulation in dissertation doesn't make any sense but can at least talk about derivative info
-% * LawsonHumphreysWatson94 -- familiar objects, S+ acc advantage
+% * \cite{LawsonHumphreysWatson94} -- familiar objects, S+ acc advantage
 %		* but S+ for two frames in a row but random on average better than globally coherent? (see Exp 3 LS vs GC)
 % 		* ``the identification benefit was as large for globally incoherent sequences with locally similar views (LS sequences compared with GC sequences, experiment
 %		3) as for sequences that were both globally coherent and locally similar (structured sequences compared with random sequences, experiment 2);''
@@ -141,20 +153,6 @@ Behavioral measures were highly variable across objects. Differences between pre
 %			the image as objects are rotated, that minimise the combined activation of common representations and so eliminate the structured sequence benefit.''
 % * ThorntonKourtzi02 -- faces -- dynamic primes needed to properly activate learned memory trace -- single image is not enough
 % * * See also BalasSinha09,VuongTarr,ChuangVuongBulthoff12
-
-\subsection{The upside: Spatiotemporal prediction biases development of invariance}
-
-% Li & Dicarlo spatiotemporal learning
-% * CoxMeierOerteltEtAl05
-% * LiDiCarlo08,LiDiCarlo10
-% * MeyerOlson11 
-% * WallisBackusLangerEtAl09,Wallis96,Wallis02,WallisBulthoff01,WallisBulthoff99 (review)
-% * trace rules in NNs: Foldiak, IsikLeiboPoggio12, WallisRolls97, StringerPerryRollsEtAl06, WallisBaddeley97
-% * Not about invariance per se -- SakaiMiyashita91,MeyerOlson11 -- but related to why static views might not be enough
-% * Perret et al -- view dependent cells faster to respond than view invariance cells
-
-% limitations of current experiment, how to fix them
-%	how to specifically test degenerate view hypothesis
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
