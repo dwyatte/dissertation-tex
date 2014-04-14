@@ -26,7 +26,7 @@ The model consisted of four layers (Figure \ref{fig:v1_v2}) whose parameters are
 
 \textbf{Secondary visual layers:} 6x6 topographic layer arranged into groups of 7x7 units (1764 total units), also decomposed into superficial and deep neuron subtypes. Each superficial unit received from 8x8 topographical neighborhoods of early visual columns (512 afferents per unit) and sent back reciprocal connections with the same topography. \textit{k}WTA for superficial units was set to 60\% of the average of the top \textit{k} active units compared to the average of all other superficial units with each and 15\% activity within each unit group. Deep units received from 3x3 columns of superficial units (441 inputs per deep unit) integrated into a single value that was used as the additional context input channel for each superficial unit.
 
-\textbf{Output layer:} 10x10 layer (100 total units) without unit group or columnar substructure. Each unit received a full projection from secondary visual columns (1764 afferents per unit) and fully projected back to all columns. A \textit{k}WTA value of \textit{k} = 1 was used to enforce a localist representation. The localist representation is a computational simplification that allowed an identity readout of lower-level features without population decoding similar to that provided by inferior temporal (IT) neurons  \cite{HungKreimanPoggioEtAl05,LiCoxZoccolanEtAl09}. 
+\textbf{Output layer:} 10x10 layer (100 total units) without unit group or columnar substructure. Each unit received a full projection from secondary visual columns (1764 afferents per unit) and fully projected back to all columns. A scalar of 10\% was used to limit the influence of the output units on secondary visual columns during the training phase, preventing runaway representation that can become disconnected from bottom-up inputs. A \textit{k}WTA value of \textit{k} = 1 was used to enforce a localist representation. The localist representation is a computational simplification that allowed an identity readout of lower-level features without population decoding similar to that provided by inferior temporal (IT) neurons  \cite{HungKreimanPoggioEtAl05,LiCoxZoccolanEtAl09}. 
 
 \subsection{LeabraTI learning algorithm}
 
@@ -34,28 +34,23 @@ LeabraTI was implemented as an extension of the standard Leabra algorithm which 
 
 LeabraTI extends standard Leabra learning by interleaving its minus and plus phases over temporally contiguous input sequences. In standard Leabra, the minus phase depends on clamped inputs from the sensory periphery to drive the expectation while the plus phase uses clamped outputs from other neural systems to drive the outcome. In LeabraTI, the minus phase expectation is not driven by the sensory periphery, but instead by lagged context represented by deep (Layer 6) neurons. During the plus phase, driving potential shifts back to the sensory periphery. Deep neurons' context is also updated after each plus phase.
 
-LeabraTI was only used to update the synaptic weights between superficial and deep synapses. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, standard Leabra uses the difference in firing rate between sending units in the minus phase and  (\textit{x}) and sending and receiving (\textit{y}) units in the plus phase:
+LeabraTI was only used to update the synaptic weights between superficial and deep synapses. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, standard Leabra uses the difference in firing rate between sending units in the minus phase and (\textit{x}) and sending and receiving (\textit{y}) units in the plus phase:
 
 \begin{align*}
 Leabra:~\Delta w_{ij} = x^-(y^+ - y^-)
 \end{align*}
 
-In LeabraTI, deep neurons are considered to be the receiving units but are only active during the minus phase. The most logical delta signal in this case is the plus phase state of the microcolumn, which in the simplified model used here is the firing rate of superficial neurons:
+In LeabraTI, deep neurons are considered to be the receiving units but are only active during the minus phase. This is because their state is only computed once (after the plus phase) and is held constant as an input to superficial neurons during the minus phase. To compute the delta signal, the plus phase state of the microcolumn is used, which in the simplified model used here is the firing rate of superficial neurons:
 
 \begin{align*}
 LeabraTI:~\Delta w_{ij} = super^+_{t-1}(super^+_{t} - deep^-_{t})
 \end{align*}
 
-One consequence of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's (\textit{t} - 1) context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. Presumably this process is facilitated by a neural mechanism that is sensitive to the repetition of inputs over time such as acetylcholine \cite{ThielHensonMorrisEtAl01,ThielHensonDolan02}
-
-% like an SRN but rotated so that the context only needs to be pre-computed
-
-% context filtered through learned synaptic weights
-% stable cx-thal wts
-
-%Time in the model is discretized into 100 ms frames coinciding with Layer 5 neurons' alpha spectrum bursting. Each frame contains both Leabra minus and plus phases, with the minus phase driven by deep contextual inputs (no external inputs) and the plus phase driven by the sensory periphery (external inputs), coinciding with thalamic bursting. Full recurrent dynamics are enabled in both phases among superficially connected layers, which are hypothesized to give rise to their differentially high gamma power reported in the literature. Layer 5 context is processed through the Layer 5 $\rightarrow$ Layer 6 synaptic weights at the end of every plus phase in an automatic pacemaker-fashion which is similarly hypothesized to be the mechanism behind deep layers' alpha coherence.
+One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's (\textit{t} - 1) context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process is probably facilitated by a neural mechanism that is sensitive to the repetition of inputs over time \cite[e.g., acetylcholine,]{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
 \subsection{Training and testing environment}
+
+% stable cx-thal wts
 
 \section{Results}
 
