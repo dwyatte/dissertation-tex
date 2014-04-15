@@ -10,7 +10,7 @@ TODO
 
 \subsection{Model architecture}
 
-The model consisted of four layers (Figure \ref{fig:v1_v2}) whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure which was necessary for implementing learning using the LeabraTI framework (Chapter \ref{chap:leabrati}). To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes are explicitly modeled. Projections between these neuron populations correspond to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which is assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic.
+The model consisted of four layers (Figure \ref{fig:v1_v2}) whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure which was necessary for implementing learning using the LeabraTI framework (Chapter \ref{chap:leabrati}). To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes are explicitly modeled. Projections between these neuron populations correspond to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which are assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic.
 
 % task fig
 \begin{figure}[h!]
@@ -34,21 +34,30 @@ LeabraTI was implemented as an extension of the standard Leabra algorithm which 
 
 LeabraTI extends standard Leabra learning by interleaving its minus and plus phases over temporally contiguous input sequences. In standard Leabra, the minus phase depends on clamped inputs from the sensory periphery to drive the expectation while the plus phase uses clamped outputs from other neural systems to drive the outcome. In LeabraTI, the minus phase expectation is not driven by the sensory periphery, but instead by lagged context represented by deep (Layer 6) neurons. During the plus phase, driving potential shifts back to the sensory periphery. Deep neurons' context is also updated after each plus phase.
 
-LeabraTI was only used to update the synaptic weights between superficial and deep synapses. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, standard Leabra uses the difference in firing rate between sending units in the minus phase and (\textit{x}) and sending and receiving (\textit{y}) units in the plus phase:
+LeabraTI was only used to update the synaptic weights between superficial and deep synapses. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, standard Leabra uses the difference in rate between the plus and minus phases of receiving units (\textit{y}) in proportion to the rate of sending units (\textit{x}) in the minus phase:
 
 \begin{align*}
-Leabra:~\Delta w_{ij} = x^-(y^+ - y^-)
+Leabra:~\Delta w_{ij} &= x^-(y^+ - y^-)
 \end{align*}
 
-In LeabraTI, deep neurons are considered to be the receiving units but are only active during the minus phase. This is because their state is only computed once (after the plus phase) and is held constant as an input to superficial neurons during the minus phase. To compute the delta signal, the plus phase state of the microcolumn is used, which in the simplified model used here is the firing rate of superficial neurons:
+% conceptual story and then implementation
+In LeabraTI, deep neurons are considered to be the receiving units but are only active during the minus phase. This is because their state is only computed once (after the plus phase) and is held constant as an input to superficial neurons during the minus phase. To compute the delta signal, the plus phase state of the microcolumn is used, which in the simplified model used here is the rate of superficial neurons:
 
 \begin{align*}
-LeabraTI:~\Delta w_{ij} = super^+_{t-1}(super^+_{t} - deep^-_{t})
+LeabraTI:~\Delta w_{ij} &= deep^-_{t}(super^+_{t} - super^-_{t}) \\
+						&= super^-_{t-1}(super^+_{t} - super^-_{t})
 \end{align*}
+
+% note relation to SRN
 
 One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's (\textit{t} - 1) context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process is probably facilitated by a neural mechanism that is sensitive to the repetition of inputs over time \cite[e.g., acetylcholine,]{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
 \subsection{Training and testing environment}
+The same four ``paper clip'' objects used in the experiment in Chapter \ref{chap:bleats} were used in training the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 views (spaced 12$^\circ$ apart). Training proceeded for 15 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was decreased to 0.5 after 8 epochs. 
+
+Training efficacy was evaluated by 
+% training
+% output_act, cos err
 
 % stable cx-thal wts
 
