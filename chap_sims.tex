@@ -47,7 +47,7 @@ In the LeabraTI framework, deep neurons are considered to be the receiving units
 			  &\approx deep^-_{t-1}(super^+_{t} - super^-_{t})
 \end{align*}
 
-This formulation allows the driving potential of deep neurons to be computed a single time and held constant as an input to superficial neurons during the minus phase. This is a gross simplification of the actual biological process of deep neurons, but is computationally efficient. Additionally, the formulation is equivalent to the simple recurrent network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}, thus providing a potential biological substrate for its computational function.
+This formulation allows the driving potential of deep neurons to be computed just once and held constant as the input to superficial neurons during the minus phase. This is a gross simplification of the actual biological process of deep neurons, but is computationally efficient. Additionally, the formulation is equivalent to the simple recurrent network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}, thus providing a potential biological substrate for its computational function.
 
 One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's  context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process might be facilitated by a neural mechanism that is sensitive to the repetition of inputs over time (e.g., acetylcholine) \cite{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
@@ -56,7 +56,7 @@ The same four ``paper clip'' objects used in the experiment in Chapter \ref{chap
 
 Training efficacy was evaluated by 
 % training
-% output_act, cos err
+% output_act, cos err since it goes 0-1
 
 % stable cx-thal wts
 
