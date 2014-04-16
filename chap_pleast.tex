@@ -80,8 +80,7 @@ All waveforms were averaged over a montage of 23 electrodes that covered the occ
 \subsection{Time-frequency analysis}
 Segmented data were used to compute time-frequency data for each trial. Data were first downsampled to 125 Hz and then used to compute the instantaneous Fourier coefficients at each time bin using a multi-taper approach. Hanning tapers were generated at 5-40 Hz and convolved with the data using a sliding time window (four cycles per frequency per time window). The relatively long time window required for low-frequency bands prevents computation of time-frequency data for short time segments, such as the 200 ms blank before the probe. To address this issue, time-frequency data was computed over the entire 2350 ms trial epoch and then cropped to investigate temporal regions of interest.
 
-Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):
-
+Power was computed from the magnitude of the instantaneous Fourier coefficients at each frequency (\textit{f}) and time bin (\textit{t}):w
 \begin{align*}
 Power(f,t) = \frac{1}{n} \sum_{k=1}^{n}{|F_k(f,t)|}^2
 \end{align*}
