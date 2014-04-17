@@ -55,27 +55,28 @@ This formulation allows the driving potential of deep neurons to be computed jus
 One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's  context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process might be facilitated by a neural mechanism that is sensitive to the repetition of inputs over time (e.g., acetylcholine) \cite{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
 \subsection{Training and testing environment}
-The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bpleast} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 15 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was decreased to 0.5 after 8 epochs.
-
-% clamping 
+The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bpleast} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 20 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was halved every 8 epochs.
 
 Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary and secondary visual layers as N-dimensional vectors:
 \begin{align*}
 cos \theta = \frac{1}{n}\sum_{k=1}^{n}\frac{L_k^- \cdot{} L_k^+}{||L_k^-||||L_k^+||}
 \end{align*}
 
-The cosine varies between 0 and 1 and expresses the degree of similarity of LeabraTI's prediction to the actual outcome in layers with columnar substructure. A value of zero indicates the minus phase prediction is completely orthogonal to the plus phase sensation and a value of 1 indicates complete overlap. The lower-bound on the cosine is not likely to be zero as it would require spurious activations in topographic regions that do not contain any features. A better approximation of the lower bound is the case when the system simply reproduces the plus phase sensation from the previous moment's (\textit{t} - 1) state. This can be thought of as the amount of perceptual overlap between adjacent views of the stimuli, and thus any additional features that contribute to a higher cosine value indicate positive prediction.
-
-The response rate of the output unit corresponding to the each object was also used to evaluate training (both measures are plotted in Figure \ref{fig:v1_v2_output_train}). This was necessary as stimulus predictability and stimulus-response mappings can be learned independently \cite{WyartNobreSummerfield12,KokRahnevJeheeEtAl12}. In neural models, this is characterized by runaway representations in higher-level layers that become disconnected from the bottom-up inputs. The problem is most apparent in deep architectures with many layers and several solutions exist such as staged pairwise training of adjacent layers \cite{HintonSalakhutdinov06}. 
+The cosine varies between 0 and 1 and expresses the degree of similarity of LeabraTI's prediction to the actual outcome in layers with columnar substructure (Figure \ref{fig:v1_v2_output_train}). A value of zero indicates the minus phase prediction is completely orthogonal to the plus phase sensation and a value of 1 indicates complete overlap. The lower-bound on the cosine is not likely to be zero as it would require spurious activations in topographic regions that do not contain any features. A better approximation of the lower bound is the case when the system simply reproduces the plus phase sensation from the previous moment's (\textit{t} - 1) state. This can be thought of as the amount of perceptual overlap between adjacent views of the stimuli, and thus any additional features that contribute to a higher cosine value indicate positive prediction.
 
 % training fig
 \begin{figure}[h!]
 \begin{center}
+\begin{tabular}{ll}
+\includegraphics[width=80mm]{figs/chap_sims/sims_cos_out_trl.pdf}
+\includegraphics[width=80mm]{figs/chap_sims/sims_cos_out_epc.pdf}
+\end{tabular}
 \end{center}
-\includegraphics[width=80mm]{figs/chap_sims/sims_cos_out.pdf}
-\caption{}{}
+\caption{Model training}{}
 \label{fig:v1_v2_output_train}
 \end{figure}
+
+The response rate of the output unit corresponding to the each object was also used to evaluate training. This was necessary as stimulus predictability and stimulus-response mappings can be learned independently \cite{WyartNobreSummerfield12,KokRahnevJeheeEtAl12}. In neural models, this is characterized by runaway representations in higher-level layers that become disconnected from the bottom-up inputs. The problem is most apparent in deep architectures with many layers and several solutions exist such as staged pairwise training of adjacent layers \cite{HintonSalakhutdinov06}.
 
 The present model was compact enough that staged training was not necessary, but an additional method was developed to ensure that predictive ability was consistent with stimulus-response mappings. Specifically, each plastic projection in the model contained two sets of synapses with different update intervals that contribute a weighted mixture to the input of each receiving unit. The first ``standard'' set of synapses were updated after every plus phase, whereas a second ``stable'' set of synapses were updated at the end of each epoch. In the present model, a 80\% stable to 20\% standard synaptic mixture was used. This allowed the network to more slowly integrate learning across an entire epoch's worth of input sequences without runaway representations caused by being exposed to the same rotating object's features over multiple time steps while still maintaing the moment-to-moment spatiotemporal predictive learning central to LeabraTI.
 
