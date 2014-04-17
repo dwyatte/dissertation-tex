@@ -34,26 +34,23 @@ LeabraTI was implemented as an extension of the standard Leabra algorithm which 
 
 LeabraTI extends standard Leabra learning by interleaving its minus and plus phases over temporally contiguous input sequences. In standard Leabra, the minus phase depends on clamped inputs from the sensory periphery to drive the expectation while the plus phase uses clamped outputs from other neural systems to drive the outcome. In LeabraTI, the minus phase expectation is not driven by the sensory periphery, but instead by lagged context represented by deep (Layer 6) neurons. During the plus phase, driving potential shifts back to the sensory periphery. Deep neurons' context is also updated after each plus phase.
 
-LeabraTI was only used to update the synaptic weights between superficial and deep synapses. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, the standard delta function uses the difference in rate between the plus and minus phases of receiving units (\textit{y}) in proportion to the rate of sending units (\textit{x}) in the minus phase:
-
+LeabraTI was only used to update the synaptic weights between superficial and deep neurons. Inter-areal feedforward and feedback projections bifurcate from the local column, directly synapsing disparate populations of superficial neurons and thus weight updates in these cases were handled by standard Leabra equations. In computing the weight update, the standard Leabra delta rule \cite{OReilly96} uses the difference in rate between the plus and minus phases of receiving units (\textit{y}) in proportion to the rate of sending units (\textit{x}) in the minus phase:
 \begin{align*}
 \Delta w_{ij} &= x^-(y^+ - y^-)
 \end{align*}
 
-In the LeabraTI framework, deep neurons are considered to be the receiving units as they are the terminus of the descending columnar synapses. However, deep units are proposed to only be active during the minus phase when they drive the prediction, and thus cannot be used to compute an error signal.  To address this issue, we invert the delta function:
-
+In the LeabraTI framework, deep neurons are considered to be the receiving units as they are the terminus of the descending columnar synapses. However, deep units are proposed to only be active during the minus phase when they drive the prediction, and thus cannot be used to compute an error signal.  To address this issue, we invert the LeabraTI delta rule:
 \begin{align*}
 \Delta w_{ij} &= super^-(deep^+ - deep^-) \\
 			  &\approx deep^-(super^+ - super^-)
 \end{align*}
 
-Additionally, the temporally extended nature of the algorithm requires the receiving units to represent the current state (time \textit{t}) and sending units to represent the previous moment's state (time \textit{t} - 1). While conceptualized as the previous equation, the actual implementation  as follows:
-
+Additionally, the temporally extended nature of the algorithm requires that the receiving units represent the current state (time \textit{t}) and sending units the previous moment's state (time \textit{t} - 1). While conceptualized as the previous equation, the actual implementation is as follows:
 \begin{align*}
-\Delta w_{ij} &= super_{t-1}^-(super_{t}^+ - super_{t}^-)
+\Delta w_{ij} &= super_{t-1}^+(super_{t}^+ - super_{t}^-)
 \end{align*}
 
-This formulation allows the driving potential of deep neurons to be computed just once using the previous moment's state of superficial neurons and held constant as an input during the minus phase. This is a gross simplification of the actual biological process of deep neurons, but is computationally efficient. This formulation is also equivalent to the simple recurrent network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}, thus providing a potential biological substrate for its computational function. 
+This formulation allows the driving potential of deep neurons to be computed just once using the previous plus phase state of superficial neurons (multiplied by the superficial $\rightarrow$ deep learned weights) and held constant as an input to superficial neurons during the minus phase. This is a gross simplification of the actual biological process of deep neurons, but is vastly more computationally efficient than explicit modeling by computing an additional rate for each deep neuron at each time step. This formulation is also equivalent to the simple recurrent network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}, thus providing a potential biological substrate for its computational function. 
 
 One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's  context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process might be facilitated by a neural mechanism that is sensitive to the repetition of inputs over time (e.g., acetylcholine) \cite{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
@@ -61,7 +58,6 @@ One limitation of LeabraTI's interleaving of minus and plus phases over time is 
 The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bleats} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). Training proceeded for 15 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was decreased to 0.5 after 8 epochs. 
 
 Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary (\textit{L}1) and secondary (\textit{L}2) visual layers as N-dimensional vectors:
-
 \begin{align*}
 cos \theta = 0.5\frac{L1^- \cdot{} L1^+}{||L1^-||||L1^+||} + 0.5\frac{L2^- \cdot{} L2^+}{||L2^-||||L2^+||}
 \end{align*}
