@@ -15,8 +15,9 @@ The model consisted of four layers (Figure \ref{fig:v1_v2}) whose parameters are
 % model fig
 \begin{figure}[h!]
 \begin{center}
+\includegraphics[width=160mm]{figs/chap_sims/v1_v2_output_ti_annotated.pdf}
 \end{center}
-\caption{}{}
+\caption{Model architecture}{}
 \label{fig:v1_v2_output}
 \end{figure}
 
@@ -57,12 +58,12 @@ One limitation of LeabraTI's interleaving of minus and plus phases over time is 
 \subsection{Training and testing environment}
 The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bpleast} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 20 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was halved every 8 epochs.
 
-Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary and secondary visual layers as N-dimensional vectors:
+Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary and secondary visual layers:
 \begin{align*}
-cos \theta = \frac{1}{n}\sum_{k=1}^{n}\frac{L_k^- \cdot{} L_k^+}{||L_k^-||||L_k^+||}
+cos \theta = \frac{1}{n}\sum_{k=1}^{n}\frac{layer_k^- \cdot{} layer_k^+}{||layer_k^-||||layer_k^+||}
 \end{align*}
 
-The cosine varies between 0 and 1 and expresses the degree of similarity of LeabraTI's prediction to the actual outcome in layers with columnar substructure (Figure \ref{fig:v1_v2_output_train}). A value of zero indicates the minus phase prediction is completely orthogonal to the plus phase sensation and a value of 1 indicates complete overlap. The lower-bound on the cosine is not likely to be zero as it would require spurious activations in topographic regions that do not contain any features. A better approximation of the lower bound is the case when the system simply reproduces the plus phase sensation from the previous moment's (\textit{t} - 1) state. This can be thought of as the amount of perceptual overlap between adjacent views of the stimuli, and thus any additional features that contribute to a higher cosine value indicate positive prediction.
+The cosine varies between 0 and 1 and expresses the degree of similarity of LeabraTI's prediction to the actual outcome in layers with columnar substructure (Figure \ref{fig:v1_v2_output_train}). A value of zero indicates the minus phase prediction is completely orthogonal to the plus phase sensation and a value of 1 indicates complete overlap. The lower-bound on the cosine is not likely to be zero as it would require spurious activations in topographic regions that do not contain any features. A better approximation of the lower bound is the case when the system simply reproduces the plus phase from the previous moment's (\textit{t} - 1) state. This can be thought of as the amount of perceptual overlap between adjacent views of the stimuli, and thus any additional features that contribute to a higher cosine value indicate positive prediction.
 
 % training fig
 \begin{figure}[h!]
@@ -72,7 +73,7 @@ The cosine varies between 0 and 1 and expresses the degree of similarity of Leab
 \includegraphics[width=80mm]{figs/chap_sims/sims_cos_out_epc.pdf}
 \end{tabular}
 \end{center}
-\caption{Model training}{}
+\caption{Model training}{Average cosine between minus and plus phase for layers with columnar substructure and output response rate over the course of training. Sharp drops in the cosine to zero indicate the start of a new input sequence and are unlearnable. The lower bound for the cosine was computed as the reproduction of the plus phase from the previous moment's (\textit{t} - 1) state and the overall average is indicated by the dotted line. A cosine greater than this level indicates positive prediction.}
 \label{fig:v1_v2_output_train}
 \end{figure}
 
@@ -80,7 +81,7 @@ The response rate of the output unit corresponding to the each object was also u
 
 The present model was compact enough that staged training was not necessary, but an additional method was developed to ensure that predictive ability was consistent with stimulus-response mappings. Specifically, each plastic projection in the model contained two sets of synapses with different update intervals that contribute a weighted mixture to the input of each receiving unit. The first ``standard'' set of synapses were updated after every plus phase, whereas a second ``stable'' set of synapses were updated at the end of each epoch. In the present model, a 80\% stable to 20\% standard synaptic mixture was used. This allowed the network to more slowly integrate learning across an entire epoch's worth of input sequences without runaway representations caused by being exposed to the same rotating object's features over multiple time steps while still maintaing the moment-to-moment spatiotemporal predictive learning central to LeabraTI.
 
-% stable cx-thal wts
+Testing
 
 \section{Results}
 
