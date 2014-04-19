@@ -56,6 +56,7 @@ This formulation allows the driving potential of deep neurons to be computed jus
 One limitation of LeabraTI's interleaving of minus and plus phases over time is that the initial minus phase in an input sequence does not have access to the previous moment's  context. Even if there was lagged context available, it would represent information from a prior, possibly unrelated input sequence. To address this, weight updates are disabled for the first minus-plus phase pair, and enabled thereafter. In the brain, this process might be facilitated by a neural mechanism that is sensitive to the repetition of inputs over time (e.g., acetylcholine) \cite{ThielHensonMorrisEtAl01,ThielHensonDolan02}.
 
 \subsection{Training and testing environment}
+% 50 cycles -, 20 +
 The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bpleast} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 20 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was halved every 8 epochs.
 
 Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary and secondary visual layers:
@@ -82,6 +83,15 @@ The response rate of the output unit corresponding to the each object was also u
 The present model was compact enough that staged training was not necessary, but an additional method was developed to ensure that predictive ability was consistent with stimulus-response mappings. Specifically, each plastic projection in the model contained two sets of synapses with different update intervals that contribute a weighted mixture to the input of each receiving unit. The first ``standard'' set of synapses were updated after every plus phase, whereas a second ``stable'' set of synapses were updated at the end of each epoch. In the present model, a 80\% stable to 20\% standard synaptic mixture was used. This allowed the network to more slowly integrate learning across an entire epoch's worth of input sequences without runaway representations caused by being exposed to the same rotating object's features over multiple time steps while still maintaing the moment-to-moment spatiotemporal predictive learning central to LeabraTI.
 
 Testing
+
+% each obj each cone
+% spatial mania -- random
+% temporal manip
+% 	same obj up to 4 times, but decay weight scale -- same function as decaying acts themselves which is not possible in emergent
+% record act_m
+
+% test has minus and plus phase (need to load up those deep states) but no learning
+
 
 \section{Results}
 
