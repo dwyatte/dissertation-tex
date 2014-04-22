@@ -1,7 +1,7 @@
 \documentclass[dwyatte_dissertation.tex]{subfiles} 
 \begin{document}
 
-\chapter{}
+\chapter{The LeabraTI framework: Spatiotemporal prediction with thalamocortical rhythms}
 \label{chap:leabrati}
 
 % Plus phase
@@ -21,7 +21,7 @@
 % FeldmeyerLubkeSilverEtAl02 - sync
 % TiesingaFellousSejnowski08 - sync
 %
-% " Thalamocortical synapses are more effective than intracortical synapses94, but they form only a small fraction of the synapses onto L4 stellates."
+% " Thalamocortical synapses are more effective than intracortical synapses, but they form only a small fraction of the synapses onto L4 stellates."
 
 % TODO
 % * microcircuit latencies
@@ -30,22 +30,21 @@
 % * Begin writing about alpha synchronization and desycnrhonization and how they are related to sensation and prediction -- cite relevant EEG evidence -- but save 		the bulk of this for the EEG section
 % * analogies about carrier signals/duty cycles?
 
-% \chapter{The \textit{LeabraTI} framework}
-
 \section{Introduction}
 The \textit{LeabraTI} framework is a mechanistic description and general model of how prediction and temporal integration might work in the brain. The general idea is closely related to the Simple Recurrent Network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}  an artificial neural network architecture that explicitly represents temporally lagged information in discrete ``context'' units whose activity gets integrated with more current information to predict what happens in the next time step (Figure \ref{fig:srn_circuit}a). This method of copying a contextual representation from an intermediate representation at discrete intervals was originally shown to be a robust way to leverage error-driven learning to represent latent temporal structure in auditory streams and artificial grammars. More generally, the SRN's explicit representation of temporal context can capture the latent structure of any stimulus that varies systematically over time, making it a good basis for a generic prediction and temporal integration mechanism.
 
 However, LeabraTI differs in several key ways from the traditional SRN architecture, primarily in the way temporally lagged context is represented and used in neural processing. These differences are due to biological constraints imposed by the circuitry of the neocortex, and thus form a number of testable predictions that can be used to evaluate the validity of the LeabraTI framework. The central prediction of LeabraTI is that temporal context is updated in a periodic manner, approximately every 100 ms, subserved by deep (Layer 5 and 6) neurons. This periodic updating is suggested to contribute to the brain's alpha rhythm, which has been studied extensively using scalp electroencephalography. This chapter \textbf{TODO -- also need something here about error driven learning}
 
 % srn/microcircuit fig
-\begin{figure}[hp]
-\centering
+\begin{figure}[h!]
+\begin{center}
 \begin{tabular}{ll}
 \textbf{A} \\
 \includegraphics[width=100mm]{figs/chap_leabrati/srn_scm.png} \\
 \textbf{B} \\
 \includegraphics[width=100mm]{figs/chap_leabrati/microcircuit_horiz.pdf} \\
 \end{tabular}
+\end{center}
 \caption{The Simple Recurrent Network (SRN) and microcircuitry of the neocortex}{\textbf{A}: The SRN represents temporal information explicitly using discrete context units that are updated once per time step. Context is integrated with more current inputs to predict information at the subsequent time step. Reproduced from \protect\incite{Servan-SchreiberCleeremansMcClelland91}. \textbf{B}: The neocortex is laminated with canonical circuitry between neurons across layers and between areas. Intraareal connections are shown in black with interareal feedforward connections in purple and feedback connections in green.}
 \label{fig:srn_circuit}
 \end{figure}
@@ -109,18 +108,29 @@ The overall computation of LeabraTI is shown in Figure \ref{fig:leabrati_comp} a
 Critically, for the LeabraTI computation to work, thalamic and Layer 5 oscillatory phases need to have an approximately antiphase relationship in order for the error-driven learning scheme described here to work so that Layer 2/3 neurons can represent the current moment's prediction with Layer 6 context as their primary input and then subsequently represent the veridical sensory input while Layer 5 neurons are queuing up the next contextual event. Such a relationship has not yet been shown yet, but very few studies have recorded simultaneously from thalamic and cortical neurons in \textit{in vivo} in the awake behaving animal. It is also possible that the brain implements error-driven learning in such a way that does not require representing predictions and sensations temporally interleaved on the same neural substrate or even that the brain accomplishes temporal integration completely without supervision, which in case thalamic gating is not required.
 
 % leabrati computation
-\begin{figure}[h]
-\centering
+\begin{figure}[h!]
+\begin{center}
 \begin{tabular}{ll}
 a) \hspace{76mm} b) \\
 \multicolumn{2}{c}{\includegraphics[width=160mm]{figs/chap_leabrati/leabrati_comp.pdf}} \\
 \end{tabular}
+\end{center}
 \caption{The LeabraTI model computation.}
 \label{fig:leabrati_comp}
 \end{figure}
 
-\section{LeabraTI predictions}
-\subsection{Relation to existing models}
+% To generate reasonable expectations, it is essential to sustain and integrate information from the past
+\subsection{LeabraTI Testable predictions}
+% short bit about general predictions regarding synchronicity between layers, latencies and how readout should be 100 ms in past, etc.
+% but focus of this section will be on EEG predictions
+% * Alpha entrainment, classic alpha effects -- see RFI for topics to hit
+% * 	Nobre, Busch, VanRullen, Mathewson, etc.
+% * 	prediction/sensation interleaving, basic evidence for this, to be tested further with my experiments
+% *		Role of attention vs. prediction
+\textbf{TODO}
+
+
+%\subsection{Relation to existing models}
 % SRN
 % *  need to talk about "copy" operation and inversion of it makes an autoencoder, more consistent with bio?
 % Context needs to have a "smart" representation -- this means one of two things: it can be a direct copy of the Hidden layer (as in a standard SRN), effectively borrowing all the learning that shapes the Hidden layer, or it can have its own learned representation, in which case it needs some kind of useful training signal.
@@ -136,18 +146,6 @@ a) \hspace{76mm} b) \\
 % HTM?
 % will take some work to understand this
 
-% To generate reasonable expectations, it is essential to sustain and integrate information from the past
-\subsection{Testable predictions}
-% short bit about general predictions regarding synchronicity between layers, latencies and how readout should be 100 ms in past, etc.
-% but focus of this section will be on EEG predictions
-% * Alpha entrainment, classic alpha effects -- see RFI for topics to hit
-% * 	Nobre, Busch, VanRullen, Mathewson, etc.
-% * 	prediction/sensation interleaving, basic evidence for this, to be tested further with my experiments
-% *		Role of attention vs. prediction
-\textbf{TODO}
-
-
-\newpage
 \bibliographystyle{apa}
 \bibliography{ccnlab}
 \end{document}
