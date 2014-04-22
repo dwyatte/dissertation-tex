@@ -82,15 +82,26 @@ The response rate of the output unit corresponding to the each object was also u
 
 The present model was compact enough that staged training was not necessary, but an additional method was developed to ensure that predictive ability was consistent with stimulus-response mappings. Specifically, each plastic projection in the model contained two sets of synapses with different update intervals that contribute a weighted mixture to the input of each receiving unit. The first ``standard'' set of synapses were updated after every plus phase, whereas a second ``stable'' set of synapses were updated at the end of each epoch. In the present model, a 80\% stable to 20\% standard synaptic mixture was used. This allowed the network to more slowly integrate learning across an entire epoch's worth of input sequences without runaway representations caused by being exposed to the same rotating object's features over multiple time steps while still maintaing the moment-to-moment spatiotemporal predictive learning central to LeabraTI.
 
-Testing involved presenting input sequences accordant with each of the four predictability conditions used in the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments. In the spatially unpredictable conditions (S-), random views were selected for each plus phase and used to compute deep neurons' context. To model the effect of temporal unpredictability (T-), a variable number of time steps (up to four) separated each context update computation. Each time the context update was skipped, a decay factor of 50\% was applied to superficial neurons' context input channel. This decay had the effect of weakening the prediction at each time step until the next view was actually presented and the updated context could be computed. 
+Testing involved presenting input sequences accordant with each of the four predictability conditions used in the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments. In the spatially unpredictable conditions (S-), random views were selected for each plus phase and used to compute deep neurons' context. To model the effect of temporal unpredictability (T-), a variable number of time steps (up to four) separated each context update. Each time the context update was skipped, a decay factor of 50\% was applied to superficial neurons' context input channel. This decay had the effect of weakening the prediction at each time step until the next view was presented and the updated context could be computed.
 
-The completely unpredictable condition (S-T-) utilized both the variable update interval and decay whereas the combined spatial and temporal predictability condition (S+T+) was identical to the training procedure (i.e., a coherently rotating object without a variable update interval or decay). In all cases, predictions about each upcoming view were made during the minus phase given whatever the state of deep neurons was and the response rate of the output unit corresponding to the each object was recorded. Weight updates on all plastic synapses were disabled during testing.
+The completely unpredictable condition (S-T-) utilized both the variable update interval and decay whereas the combined spatial and temporal predictability condition (S+T+) was identical to the training procedure (i.e., a coherently rotating object with a constant update interval). In all cases, predictions about each upcoming view were made during the minus phase given the current the state of deep neurons and the response rate of the output unit corresponding to the each object was recorded. Weight updates on all plastic synapses were disabled during testing.
 
 % trainsequenceeally just a spatiotemporal pre-training -- how much do features move and change identity on average in the world
 % 	testing then leverages those learned statistics to best represent the sequence
 
-
 \section{Results}
+
+% training fig
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{ll}
+\includegraphics[width=80mm]{figs/chap_sims/sims_out_v2h_10_sterr.pdf}
+\includegraphics[width=80mm]{figs/chap_sims/sims_out_v2h_75_sterr.pdf}
+\end{tabular}
+\end{center}
+\caption{Model results}{}
+\label{fig:v1_v2_output_test}
+\end{figure}
 
 \section{Discussion}
 
