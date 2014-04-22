@@ -10,7 +10,7 @@ TODO
 
 \subsection{Model architecture}
 
-The model consisted of four layers (Figure \ref{fig:v1_v2}) whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure which was necessary for implementing learning using the LeabraTI framework (Chapter \ref{chap:leabrati}). To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes were explicitly modeled. Projections between these neuron populations correspond to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which are assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic.
+The model consisted of three layers and one preprocessing stage whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure which was necessary for implementing learning using the LeabraTI framework (Chapter \ref{chap:leabrati}). To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes were explicitly modeled. Projections between these neuron populations correspond to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which are assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic.
 
 % model fig
 \begin{figure}[h!]
@@ -57,7 +57,7 @@ One limitation of LeabraTI's interleaving of minus and plus phases over time is 
 
 \subsection{Training and testing environment}
 % 50 cycles -, 20 +
-The same four ``paper clip'' objects used in the experiment described in Chapter \ref{chap:bpleast} were used in training and testing the model. During training, input sequences depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 20 epochs of 10 input sequences each. The learning rate on all plastic projections started at 1.0 and was halved every 8 epochs.
+The same four ``paper clip'' objects used in the Chapter \ref{chap:bpleast} experiment were used in training and testing the model. During training, an input sequence depicted one of the four objects rotating coherently through all 30 view renderings (adjacent views spaced 12$^\circ$ apart). During the minus phase, the model made a prediction about the upcoming view and during the plus phase, the view was processed by the retina/V1 filter banks and clamped as an input to the model. The output unit corresponding to each object was also clamped during the plus phase to bias views belonging to the same object toward similar lower-level feature representations. Training proceeded for 20 epochs of 10 randomly selected input sequences each. The learning rate on all plastic projections started at 1.0 and was halved every 8 epochs.
 
 Training efficacy was evaluated by computing the average cosine (normalized dot product) between the minus and plus phase for the primary and secondary visual layers:
 \begin{align*}
@@ -82,15 +82,12 @@ The response rate of the output unit corresponding to the each object was also u
 
 The present model was compact enough that staged training was not necessary, but an additional method was developed to ensure that predictive ability was consistent with stimulus-response mappings. Specifically, each plastic projection in the model contained two sets of synapses with different update intervals that contribute a weighted mixture to the input of each receiving unit. The first ``standard'' set of synapses were updated after every plus phase, whereas a second ``stable'' set of synapses were updated at the end of each epoch. In the present model, a 80\% stable to 20\% standard synaptic mixture was used. This allowed the network to more slowly integrate learning across an entire epoch's worth of input sequences without runaway representations caused by being exposed to the same rotating object's features over multiple time steps while still maintaing the moment-to-moment spatiotemporal predictive learning central to LeabraTI.
 
-Testing
+Testing involved presenting input sequences accordant with each of the four predictability conditions used in the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments. In the spatially unpredictable conditions (S-), random views were selected for each plus phase and used to compute deep neurons' context. To model the effect of temporal unpredictability (T-), a variable number of time steps (up to four) separated each context update computation. Each time the context update was skipped, a decay factor of 50\% was applied to superficial neurons' context input channel. This decay had the effect of weakening the prediction at each time step until the next view was actually presented and the updated context could be computed. 
 
-% each obj each cone
-% spatial mania -- random
-% temporal manip
-% 	same obj up to 4 times, but decay weight scale -- same function as decaying acts themselves which is not possible in emergent
-% record act_m
+The completely unpredictable condition (S-T-) utilized both the variable update interval and decay whereas the combined spatial and temporal predictability condition (S+T+) was identical to the training procedure (i.e., a coherently rotating object without a variable update interval or decay). In all cases, predictions about each upcoming view were made during the minus phase given whatever the state of deep neurons was and the response rate of the output unit corresponding to the each object was recorded. Weight updates on all plastic synapses were disabled during testing.
 
-% test has minus and plus phase (need to load up those deep states) but no learning
+% trainsequenceeally just a spatiotemporal pre-training -- how much do features move and change identity on average in the world
+% 	testing then leverages those learned statistics to best represent the sequence
 
 
 \section{Results}
