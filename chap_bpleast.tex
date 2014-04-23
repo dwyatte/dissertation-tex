@@ -5,7 +5,7 @@
 \label{chap:bpleast}
 
 \section{Introduction}
-TODO
+TODO: No real new motivation -- just say something about spatial sequences and how they are highly specific per object. Ref Balas's work, primarily
 
 \section{Methods}
 
@@ -132,29 +132,28 @@ Experiments described in \incite{HarmanHumphrey99} failed to find any positive o
 % * degraaf -- lower hit rate for 10 Hz
 
 \subsection{Spatiotemporal prediction biases development of invariance}
+The theory advanced here is that spatially predictable sequences promote the development of invariance over the sequence transformation given prolonged learning. For example, if a three-dimensional object rotates in depth in a spatially predictable manner, associations can be formed between subsequent views using a temporal association rule. Integrating over small changes in viewing angle is easier than large changes \cite{LogothetisPaulsBulthoffEtAl94,LogothetisPaulsPoggio95} and thus, the problem of constructing invariance can be solved gradually instead of all at once. A large body of previous work supports this idea. 
 
-The theory advanced here is that spatially predictable sequences promote learning of view-invariant object representations, whereas spatially unpredictable sequences promote learning view-dependent representations. 
+Behavioral experiments by Wallis, Bulthoff, and colleagues have used a predictability paradigm for studying face recognition similar to the one used in the present work, but in which spatially unpredictable sequences are characterized by swapping the identity of faces mid-sequence. Most observers were unaware of these identity swaps, but they significantly impaired the discriminability of swapped identities compared to stable identities \cite{WallisBulthoff01}. The effects were originally reported for identities swapped during depth-rotated sequences but have since been extended to swaps during changes in orientation and illumination \cite{WallisBackusLangerEtAl09}. Together, these results suggest that associations are made between subsequent members of a sequence to construct invariance to transformations.
 
-% core theory
+Single unit recordings from Li and DiCarlo using a similar swap paradigm have shown exactly how this invariance is constructed. 
 
-% Li & Dicarlo spatiotemporal learning
-% * CoxMeierOerteltEtAl05
-% * LiDiCarlo08,LiDiCarlo10
+\incite{LiDiCarlo08}
+\incite{LiDiCarlo10}
+
+% and what about temporal?
+% doesn't even have to be conscious prediction -- provided automatically by T+
+
+% neurons!
 % * MeyerOlson11 
-% * WallisBackusLangerEtAl09,Wallis96,Wallis02,WallisBulthoff01,WallisBulthoff99 (review)
 % * Not about invariance per se -- SakaiMiyashita91,MeyerOlson11 -- but related to why static views might not be enough
-% * Perret et al -- view dependent cells faster to respond than view invariance cells
+% Li & Dicarlo spatiotemporal learning -- but for size and position
+% * LiDiCarlo08,LiDiCarlo10
 
-% previous research on spatial ordering during learning
-% * \cite{LawsonHumphreysWatson94} -- familiar objects, S+ acc advantage
-%		* but S+ for two frames in a row but random on average better than globally coherent? (see Exp 3 LS vs GC)
-% 		* ``the identification benefit was as large for globally incoherent sequences with locally similar views (LS sequences compared with GC sequences, experiment
-%		3) as for sequences that were both globally coherent and locally similar (structured sequences compared with random sequences, experiment 2);''
-% 		* ``The data therefore suggest that the activation of highly view-specific representations is necessary to generate the structured sequence benefit. The benefit is
-%			eliminated if consecutive views are rotated by more than 30° in depth. It is not changes in the visibility of parts, but metric changes in the position of features in
-%			the image as objects are rotated, that minimise the combined activation of common representations and so eliminate the structured sequence benefit.''
-% * ThorntonKourtzi02 -- faces -- dynamic primes needed to properly activate learned memory trace -- single image is not enough
-% * * See also BalasSinha09,VuongTarr,ChuangVuongBulthoff12
+% \incite{WallisBulthoff99} (review) -- loss of canonicality
+%One important aspect of view-dependent recognition is that it is most noticeable for unfamiliar objects, or for objects usually seen from a particular viewpoint23 – for which the familiar view is referred to as ‘canonical’. For other familiar objects it has long been known that recognition is view- invariant24,26. This is, however, still consistent with a view- based model if one assumes that for familiar objects, enough views are stored to remove any view-specific effects. To demonstrate that view-dependence is purely a function of familiarity, Edelman and Bülthoff investigated the effects of extensive training, and showed that it can indeed counter initial view specificity27 (Fig. 5).
+
+% * Perret et al -- view dependent cells faster to respond than view invariance cells
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
