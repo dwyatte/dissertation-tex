@@ -9,37 +9,39 @@ The brain is often framed as a general purpose ``prediction machine'' \cite{Hawk
 
 There are a number of important questions that need answered to fully characterize prediction and its role in sensory processing. What are the mechanisms responsible for making predictions? Computationally, there is a fundamental tradeoff in making decisions about and generating actions from the constant stream sensory information versus actively generating predictions about what will happen next. Do standard mechanisms balance these tradeoffs or is there special purpose, dissociable machinery specifically for predictive processing. Another line of questioning is concerned with how the brain knows \textit{when} to make predictions. Prediction requires integrating information over some time frame and using the result to drive the actual prediction, but when should integration start? And for how long? 
 
-The goal of this thesis is to develop a line of research designed to provide answers to some of these questions and of course, to raise others. The work is largely predicated on a modeling framework referred to as \textit{LeabraTI} (Temporal Integration), an extension of standard Leabra cortical learning algorithms \cite{OReillyMunakata00,OReillyMunakataFrankEtAl12} that describes how prediction is accomplished in biological neural circuits. The framework brings together a large number of independent findings from the systems neuroscience literature to describe exactly how multiple interacting mechanisms trade off prediction with sensory processing and learn associations across temporally extended sequences of input. 
+The goal of this thesis is to develop a line of research designed to provide answers to some of these questions and of course, to raise others. The work is largely predicated on a modeling framework referred to as LeabraTI (Temporal Integration), an extension of the standard Leabra cortical learning algorithm \cite{OReillyMunakata00,OReillyMunakataFrankEtAl12} that describes how prediction is accomplished in biological neural circuits. The framework brings together a large number of independent findings from the systems neuroscience literature to describe exactly how multiple interacting mechanisms trade off prediction with sensory processing and learn associations across temporally extended sequences of input. 
 
 %The fundamental proposal of LeabraTI is that time in the brain is discretized into roughly 100 ms intervals that allow interleaving predictions and sensory processing over time. These intervals correspond to individual cycles of the widely observed alpha rhythm over posterior cortical areas (\nopcite{KlimeschSausengHanslmayr07}; \abbrevnopcite{MathewsonLlerasBeckEtAl11}). The temporal interleaving of prediction and sensory processing allows standard error-driven learning to operate 
 
 \textbf{TODO}: Figure out if there is anything left to say here -- probably alpha since it will come up in next section.
 
 \section{Modulations of sensory processing related to prediction}
-Surprisingly, the extant literature makes little mention of predictability during sensory processing. Part of the reason for this is that stimulus predictability and top-down attentional effects are often treated as equivalent in experiments \cite{SummerfieldEgner09,KokRahnevJeheeEtAl12} with the latter being the construct that has gained greater traction. These issues will be discussed in detail in Chapter \ref{chap:pleast}, but for the purposes of establishing context for the overall current work, the literature on the effects of attention during sensory processing is briefly reviewed here with parallels drawn to sensory prediction where appropriate.
+Somewhat surprisingly, the extant literature makes little mention of predictability during sensory processing. Part of the reason for this is that stimulus predictability and attentional cues are often treated as equivalent in experiments \cite{SummerfieldEgner09,KokRahnevJeheeEtAl12} with the latter being the construct that has gained greater traction in the literature. These issues will be discussed in detail in Chapter \ref{chap:pleast}, but for the purposes of establishing context for the overall current work, the literature on the attentional effects during sensory processing is briefly reviewed here with parallels drawn to sensory prediction where appropriate.
 
-Attention can be characterized as spatial as well as temporal in nature. Spatial attention is characterized by enhanced processing of particular regions of visual space (e.g., the left side of space) or for specific features (e.g., horizontal edges). The computations provided by spatial attention and its implementation in the brain in terms of gain control circuits are relatively well-characterized and have gained widespread acceptance throughout the literature \cite[see][for comprehensive reviews]{DesimoneDuncan95,ReynoldsChelazzi04}. The temporal properties of attention, in contrast, are less well-understood. Attention has been shown known to fluctuate endogenously at a rate of approximately 10 times per second such that a weak stimulus presented at one moment in time might have a high enough signal-to-noise ratio to be perceived but not when presented 50 ms later \cite{VanrullenBuschDrewesEtAl11}.
+Attention can be characterized as spatial as well as temporal in nature. Spatial attention is characterized by enhanced processing of particular regions of visual space (e.g., the left side of space) or for specific features (e.g., horizontal edges). The computations provided by spatial attention and its implementation in the brain in terms of gain control circuits are relatively well-characterized and have gained widespread acceptance throughout the literature \cite[see][for comprehensive reviews]{DesimoneDuncan95,ReynoldsChelazzi04}. The temporal properties of attention, in contrast, are less well-understood. Attention has been shown known to fluctuate endogenously at a rate of approximately 10 times per second such that a weak stimulus presented at one moment in time might have a high enough signal-to-noise ratio to be perceived but not when presented 50 ms earlier or later \cite{VanrullenBuschDrewesEtAl11}. 
 
-% orientation/allocation in space time
-Experiments by Nobre and colleagues have attempted to dissociate the spatial and temporal properties of 
+% orientation/allocation in space time -- esp alpha effects
+Experiments by Nobre and colleagues have attempted to tease apart the ability to orient attention spatially and temporally. Their experiments employ a stimulus that can be tracked independently in space and time, such as a ball that blinks across a display in a fixed or random trajectory with either a constant or irregular appearance interval \cite{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. If the ball moves in a fixed trajectory, the next spatial location can be anticipated at any point in the sequence given the previous locations and attention can be allocated there to enhance processing relative to when the next spatial location is unknown. Importantly, attention can be allocated to the ball's next spatial location even when the temporal onset of the next appearance is unknown. Similarly, if the ball appears and disappears with a constant interval, the onset of the next appearance can be anticipated, despite the next spatial location being unknown. \incite{DohertyRaoMesulamEtAl05} found that amplitude of the P1 EEG response was enhanced when spatial attention could be successfully allocated at the ball's next location, consistent with previous descriptions of the effects of attention on EEG responses \cite{LuckHeinzeMangunEtAl90}. Being able to anticipate the temporal onset of the ball did not modulate the amplitude of the P1 response by itself, but further potentiated the enhancement of spatial attention on the P1 when both the spatial location and temporal onset of the ball could be anticipated.
 
-% don't just review for the sake of reviewing -- review experiments necessary to understand current work 
+% attention effect = enhancement, but prediction effect is negative
 
-% space
-% previous research on spatial ordering during learning
-% * ThorntonKourtzi02 -- faces -- dynamic primes needed to properly activate learned memory trace -- single image is not enough
-% * * See also BalasSinha09,VuongTarr,ChuangVuongBulthoff12
-% * * GavornikBear14 -- in mice, learned ABCD sequence invokes larger V1 response than DCBA but not in control groups where random sequences were learned
+% parallels to prediction
 
-% time
-% nobre, etc.
-% standard alpha effects of van rullen, mathewson, etc. -- could have a predictability framework component
+% entrainment as prediction
 
 % space not linked to time, although...
 % * Surprise 10 Hz presentation rate finding from Bulthoff
 % * Nobre synergy P1, P1 alpha reset link
 
-\section{Thesis organization} 
+
+% other space/sequence learning
+% previous research on spatial ordering during learning
+% * ThorntonKourtzi02 -- faces -- dynamic primes needed to properly activate learned memory trace -- single image is not enough
+% * * See also BalasSinha09,VuongTarr,ChuangVuongBulthoff12
+% * * GavornikBear14 -- in mice, learned ABCD sequence invokes larger V1 response than DCBA but not in control groups where random sequences were learned
+
+
+\section{Organization of the thesis} 
 % visual domain, but general across modalities -- a proxy
 
 
