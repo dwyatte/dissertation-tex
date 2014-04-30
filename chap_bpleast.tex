@@ -7,7 +7,7 @@
 \label{chap:bpleast}
 
 \section{Introduction}
-TODO: No real new motivation -- just say something about spatial sequences and how they are highly specific per object. Ref Balas's work, primarily
+TODO: Ref spatiotemporal invariance building -- and maybe balas's work
 
 \section{Methods}
 
@@ -105,11 +105,11 @@ Effects were highly variable across target objects (Figure \ref{fig:bpleast_beha
 \includegraphics[width=80mm]{figs/chap_bpleast/results_ie_obj.pdf} \\
 \end{tabular}
 \end{center}
-\caption{Behavioral measures for each target object}{Accuracy and reaction times for each target object. Horizontal axes denote target and colors predictability during the training period. Error bars depict between-subjects standard error.}
+\caption{Behavioral measures for each target object}{Accuracy, \textit{d'}, reaction time, and inverse efficiency for each target object. Horizontal axes denote target and colors predictability during the training period. Error bars depict between-subjects standard error.}
 \label{fig:bpleast_behave_obj}
 \end{figure}
 
-To investigate this hypothesis, accuracy was computed as a function of viewing angle for each target object to investigate whether it interacted with predictability during the training period (Figure \ref{fig:bpleast_behave_rot}). Only accuracy was considered in this analysis as each view of each object was only seen four times over the course of the experiment and thus transformation to \textit{d'} was not plausible given the already low trial counts. Test trials during which distractor objects were presented were also excluded from this analysis since there is no consistent relationship between the targets and distractors across viewing angles and thus they would only contribute noise. With the exception of target object 1, all objects indicated fluctuations in accuracy as a function of viewing angle with two diametrically opposed degenerate views. The most consistent differences in accuracy between training conditions appeared to be localized to the troughs of the accuracy function, corresponding to these degenerate views.
+To investigate this hypothesis, accuracy was computed as a function of viewing angle for each target object to investigate whether it interacted with predictability during the training period (Figure \ref{fig:bpleast_behave_rot}). Only accuracy was considered in this analysis as each data point only corresponded to four trials per subject and thus transformation to \textit{d'} was not plausible. Test trials during which distractor objects were presented were also excluded from this analysis since there is no consistent relationship between the targets and distractors across viewing angles and thus they would only contribute noise. With the exception of target object 1, all objects indicated fluctuations in accuracy as a function of viewing angle with two diametrically opposed degenerate views. The most consistent differences in accuracy between training conditions appeared to be localized to the troughs of the accuracy function, corresponding to these degenerate views.
 
 % oh, behave, pt 3: rots
 \begin{figure}[h!]
@@ -125,7 +125,7 @@ To investigate this hypothesis, accuracy was computed as a function of viewing a
 \label{fig:bpleast_behave_rot}
 \end{figure}
 
-Standard statistical tests did not have enough power to detect differences between conditions for degenerate views because each data point corresponded to only four trials per subject. To address this design limitation, a bootstrapping method was used to resample the available data in these cases. The accuracy function over viewing angles was collapsed across conditions and the two minima associated with degenerate views were identified for each object. For target object 1, this corresponded to angles $\theta$ = \{24$^\circ$, 312$^\circ$\}, object 2: $\theta$ = \{48$^\circ$, 240$^\circ$\} object 3: $\theta$ = \{144$^\circ$, 312$^\circ$\}, and object 4 $\theta$ = \{24$^\circ$, 192$^\circ$\}. Accuracy for the completely unpredictable (S-T-) and combined spatial and temporal predictability (S+T+) conditions during training was averaged at these viewing angles and resampled with replacement from the 59 subjects for 10000 iterations. This produced distributions for degenerate view accuracy for each object (Figure \ref{fig:bpleast_behave_bootstrap}). Accuracy for was lower for degenerate views for the combined spatial and temporal predictability condition for all target objects except target 1, which didn't exhibit the patterned accuracy function that other targets did. The S+T+/S-T- difference in accuracy for degenerate views was significant at the 90\% alpha level (i.e., the confidence interval of the difference between means did not include zero) for all target objects except target 1.
+Standard statistical tests did not have enough power to detect differences between conditions for degenerate views due to the low trial counts for each data point. To address this design limitation, a bootstrapping method was used to resample the available data in these cases. The accuracy function over viewing angles was collapsed across conditions and the two minima associated with degenerate views were identified for each object. For target object 1, this corresponded to angles $\theta$ = \{24$^\circ$, 312$^\circ$\}, object 2: $\theta$ = \{48$^\circ$, 240$^\circ$\} object 3: $\theta$ = \{144$^\circ$, 312$^\circ$\}, and object 4 $\theta$ = \{24$^\circ$, 192$^\circ$\}. Accuracy for the completely unpredictable (S-T-) and combined spatial and temporal predictability (S+T+) conditions during training was averaged at these viewing angles and resampled with replacement from the 59 subjects for 10000 iterations. This produced distributions for degenerate view accuracy for each object (Figure \ref{fig:bpleast_behave_bootstrap}). Accuracy for was lower for degenerate views for the combined spatial and temporal predictability condition for all target objects except target 1, which didn't exhibit the patterned accuracy function that other targets did. The S+T+/S-T- difference in accuracy for degenerate views was significant at the 90\% alpha level (i.e., the confidence interval of the difference between means did not include zero) for all target objects except target 1.
 
 % oh, behave, pt 4: bootstraps
 \begin{figure}[h!]
