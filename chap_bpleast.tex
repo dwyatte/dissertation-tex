@@ -7,7 +7,13 @@
 \label{chap:bpleast}
 
 \section{Introduction}
-TODO: Ref spatiotemporal invariance building -- and maybe balas's work
+The core challenge of object recognition is concerned with solving the invariance problem \cite{DicarloZoccolanRust12}. Essentially, object identity must remain be invariant across large changes in a an object's visual position, scale, rotation, and viewpoint to generate successful behavior. Understanding how exactly the brain solves this problem has been a major focus of the object recognition literature with the bulk of data and models suggesting that it is solved gradually by a hierarchy of neural processing mechanisms from V1 through inferior temporal (IT) cortex that extract increasingly complex features at each stage with increasing tolerance to transformations \cite{RiesenhuberPoggio99,SerreOlivaPoggio07,OReillyWyatteHerdEtAl13}.
+
+One question that remains to be fully answered is how invariance is learned in the first place. One intriguing hypothesis is that a temporal association rule might form associations between multiple samples of a single object as it undergoes transformations \cite{StringerPerryRollsEtAl06,WallisBaddeley97,IsikLeiboPoggio12}. It is known that some neurons can form temporal associations between arbitrary pairs of stimuli \cite{SakaiMiyashita91}, including a population in IT cortex \cite{MeyerOlson11}. Experiments by DiCarlo and colleagues have indicated that these temporal associations can build new invariance for specific object transformations including changes in position and size \cite{CoxMeierOerteltEtAl05,LiDiCarlo08,LiDiCarlo10}. This new invariance was learned without supervised reward, suggesting that it could be a natural consequence of generic neural processing mechanisms given the spatiotemporal statistics of the physical world \cite{LiDiCarlo12}.
+
+Evidence of invariance due to temporal associations has yet to be demonstrated in IT neurons for three-dimensional changes in viewpoint \cite[although see][for relevant behavioral work]{WallisBulthoff01,WallisBackusLangerEtAl09}. IT neurons typically have a tuning curve of approximately 90 degrees for newly learned three-dimensional objects \cite{LogothetisPaulsBulthoffEtAl94,LogothetisPaulsPoggio95}, but recognition is possible in a viewpoint-invariant manner especially after prolonged learning \cite{WallisBulthoff99}. Coherent motion information from one moment to the next is generally considered important for encoding three-dimensional objects \cite{LawsonHumphreysWatson94,Stone98,ThorntonKourtzi02,VuongTarr04,BalasSinha08,BalasSinha09b,ChuangVuongBulthoff12}, and thus a temporal association rule could plausibly be used to learn view-point invariance from natural spatiotemporal structure.
+
+The work described in this chapter investigated the role of predictive processing during 
 
 \section{Methods}
 
