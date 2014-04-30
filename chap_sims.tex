@@ -128,6 +128,11 @@ The theory advanced in Chapter \ref{chap:bpleast} is ...
 \label{fig:sims_distmatrix}
 \end{figure}
 
+% only compile bib if we are compiling from this file -- main file defines \MAIN
+\ifx\MAIN\undefined
 \bibliographystyle{apa}
 \bibliography{ccnlab}
+\else
+\fi
+
 \end{document}

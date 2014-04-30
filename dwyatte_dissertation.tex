@@ -34,6 +34,11 @@ M.A., University of Colorado Boulder, 2010}
 \emptyLoT	% use this if there is no List of Tables
 
 \begin{document}
+
+\ifx \MAIN \undefined
+\def\MAIN
+\fi
+
 \subfile{chap_intro.tex}
 \subfile{chap_leabrati.tex}
 \subfile{chap_pleast.tex}
@@ -43,4 +48,5 @@ M.A., University of Colorado Boulder, 2010}
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
+
 \end{document}
