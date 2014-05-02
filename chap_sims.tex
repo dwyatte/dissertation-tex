@@ -18,7 +18,7 @@ The model described next was capable of producing the results of both experiment
 
 \subsection{Model architecture}
 
-The model architecture is illustrated in Figure \ref{fig:v1_v2_output}. The model consisted of three layers and one preprocessing stage whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure necessary for learning using the LeabraTI algorithm. To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes were explicitly modeled. Projections between these neuron populations corresponded to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which are assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic.
+The model architecture is illustrated in Figure \ref{fig:v1_v2_output}. The model consisted of three layers and one preprocessing stage whose parameters are described in detail in the following paragraphs. Two of the layers contained columnar substructure necessary for learning using the LeabraTI algorithm. To simplify the overall LeabraTI computation, only superficial (Layers 2 and 3) and deep (Layer 6) neuron subtypes were explicitly modeled. Projections between these neuron populations corresponded to the descending Layer 5 $\rightarrow$ Layer 6 synapses in the brain, which are assumed to be plastic, and the ascending Layer 6 $\rightarrow$ Layer 4 transthalamic synapses which are assumed to be relatively stable and nonplastic. This simplification captures the core computational properties of the LeabraTI framework while reducing the overhead of simulating the full columnar substructure of the neocortex.
 
 % model fig
 \begin{figure}[h!]
@@ -129,7 +129,7 @@ Increasing the scale of the weights on the Output $\rightarrow$ Secondary visual
 \begin{center}
 \includegraphics[width=160mm]{figs/chap_sims/sims_ramp_distmatrix_montage.pdf}
 \end{center}
-\caption{Effect of prolonged learning and representational similarity}{\textbf{A:} Target output rate as a function of Output $\rightarrow$ Secondary visual synaptic weight scale. Lines indicate best fit third order polynomials. \textbf{B:} Pairwise cosine over secondary visual unit minus phase activations across all views of all objects. Yellow indicates greater similarity. Results shown for both 10\% and 75\% Output $\rightarrow$ Secondary visual weight scales.}
+\caption{Effect of prolonged learning and representational similarity}{\textbf{A}: Target output rate as a function of Output $\rightarrow$ Secondary visual synaptic weight scale. Lines indicate best fit third order polynomials. \textbf{B}: Pairwise cosine over secondary visual unit minus phase activations across all views of all objects. Yellow indicates greater similarity. Results shown for both 10\% and 75\% Output $\rightarrow$ Secondary visual weight scales.}
 \label{fig:sims_ramp_distmatrix}
 \end{figure}
 
