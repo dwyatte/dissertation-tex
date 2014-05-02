@@ -59,22 +59,22 @@
 
 % TODO: Overview of the model with major predictions instead, pull from above text from full TI paper
 
-The \textit{LeabraTI} framework is a mechanistic description and general model of how prediction and temporal integration might work in the brain. It is closely related to the Simple Recurrent Network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}  a neural network architecture that explicitly represents temporally lagged information in discrete ``context'' units whose activity gets integrated with more current information to predict what happens in the next time step (Figure \ref{fig:srn_circuit}a). This method of copying a contextual representation from an intermediate representation at discrete intervals was originally shown to be a robust way to leverage error-driven learning to represent latent temporal structure in auditory streams and artificial grammars. More generally, the SRN's explicit representation of temporal context can capture the latent structure of any stimulus that varies systematically over time, making it a good basis for a generic prediction and temporal integration mechanism.
+This chapter describes the LeabraTI (Temporal Integration) framework, which is a mechanistic description and general model of how prediction and temporal integration works in the brain. It is closely related to the Simple Recurrent Network (SRN) \cite{Elman90,Servan-SchreiberCleeremansMcClelland91}  a neural network architecture that explicitly represents temporally lagged information in discrete ``context'' units whose activity gets integrated with more current information to predict what happens in the next time step (Figure \ref{fig:srn_circuit}a). This method of copying a contextual representation from an intermediate representation at discrete intervals was originally shown to be a robust way to leverage error-driven learning to represent latent temporal structure in auditory streams and artificial grammars. More generally, the SRN's explicit representation of temporally lagged context can capture the latent structure of any stimulus that varies systematically over time, making it a good basis for a generic prediction and temporal integration mechanism.
 
-LeabraTI differs in several key ways from the traditional SRN architecture, primarily in the way temporally lagged context is represented and used in neural processing. These differences are due to biological constraints imposed by the circuitry of the neocortex, and thus form a number of testable predictions that can be used to evaluate the validity of the LeabraTI framework. The central prediction of LeabraTI is that temporal context is updated in a periodic manner, approximately every 100 ms, subserved by deep (Layer 5 and 6) neurons. This periodic updating is suggested to contribute to the brain's alpha rhythm, which has been studied extensively using scalp electroencephalography. This chapter \textbf{TODO -- also need something here about error driven learning}
+LeabraTI differs in several key ways from the classical SRN architecture, primarily in the way context is represented and used in predictive processing. These differences are due to biological constraints imposed by the microcircuitry of the neocortex, and thus form a number of testable predictions that can be used to evaluate the validity of the LeabraTI framework. The central prediction of LeabraTI is that temporally lagged context is represented by deep (Layer 6) neurons, which is possible in part to the bifurcation of intra-areal and inter-areal processing streams. As neural processing is a continuous operation, LeabraTI requires a regular interval over which to integrate deep context and make predictions, which is suggested to be approximately every 100 ms. Predictions are made by driving superficial (Layers 2 and 3) neurons with the state of deep neurons through the intra-areal pathway, which is interlaced with standard peripheral sensory inputs over a total period that is also 100 ms. The strong 100 ms dependency in LeabraTI corresponds to the brain's alpha rhythm, which has been studied extensively using scalp EEG (\nopcite{MathewsonGrattonFabianiEtAl09,BuschDuboisVanrullen09,GouldRushworthNobre11,RohenkohlNobre11}; \abbrevnopcite{MathewsonPrudhommeFabianiEtAl12,BelyusarSnyderFreyEtAl13}; \nopcite{VanRullenDubois11}). 
 
+\textbf{TODO: Foreshadow structure of chapter...}
 
 % srn/microcircuit fig
 \begin{figure}[h!]
 \begin{center}
 \begin{tabular}{ll}
-\textbf{A} \\
-\includegraphics[width=100mm]{figs/chap_leabrati/srn_scm.png} \\
-\textbf{B} \\
-\includegraphics[width=100mm]{figs/chap_leabrati/microcircuit_horiz.pdf} \\
+\textbf{A} & \textbf{B} \\
+\includegraphics[width=80mm]{figs/chap_leabrati/srn_scm.png} &
+\includegraphics[width=80mm]{figs/chap_leabrati/microcircuit_horiz.pdf} \\
 \end{tabular}
 \end{center}
-\caption{The Simple Recurrent Network (SRN) and microcircuitry of the neocortex}{\textbf{A}: The SRN represents temporal information explicitly using discrete context units that are updated once per time step. Context is integrated with more current inputs to predict information at the subsequent time step. Reproduced from \protect\incite{Servan-SchreiberCleeremansMcClelland91}. \textbf{B}: The neocortex is laminated with canonical circuitry between neurons across layers and between areas. Intraareal connections are shown in black with interareal feedforward connections in purple and feedback connections in green.}
+\caption{The Simple Recurrent Network (SRN) and microcircuitry of the neocortex}{\textbf{A}: The SRN represents temporal information explicitly using discrete context units that are updated once per time step. Context is integrated with more current inputs to predict information at the subsequent time step. Reproduced from \protect\incite{Servan-SchreiberCleeremansMcClelland91}. \textbf{B}: The neocortex is laminated with canonical circuitry between neurons across layers and between areas. Intra-areal connections are shown in black with inter-areal feedforward connections in purple and feedback connections in green.}
 \label{fig:srn_circuit}
 \end{figure}
 
@@ -148,6 +148,18 @@ a) \hspace{76mm} b) \\
 \label{fig:leabrati_comp}
 \end{figure}
 
+
+\section{Relation to other frameworks}
+% SRN
+% *  need to talk about "copy" operation and inversion of it makes an autoencoder, more consistent with bio?
+% Context needs to have a "smart" representation -- this means one of two things: it can be a direct copy of the Hidden layer (as in a standard SRN), effectively borrowing all the learning that shapes the Hidden layer, or it can have its own learned representation, in which case it needs some kind of useful training signal.
+% 'NOT a direct copy of the contents of the microcolumn itself but rather the sustained reflection of the net input from the broader context back to the microcolumn. Consistent with this, 6CTC guys have very broad RF's relative to their own microcolumn, and integrate information widely. The combined effects of 5b BI and 6 CC rapid depression result in a very phasic update of the 6CTC cells (on the alpha cycle). The output of the 6CTC's has strong mGluR concentrations, leading to longer-lasting effects, combined with the facilitating synaptic dynamics, resulting in the sustained delivery of this contextual netin to the rest of the microcolumn units via sustained influence on thalamus etc.
+% more like a temporal autoencoder
+
+% Predictive coding
+% Has been described for single stimuli, but not temporal sequences. Still, compatible with temporal idea, but very different predictions -- need to re-read Bastos paper to determine how prediction error is manifested in super/deep layers and how it would work over time. Still, there is the standard Leabra/predictive coding difference to talk about 
+% same ``delta'' signal (predicted - actual) but interleaved over time instead of a residual error  code -- different predictions, esp in terms of activation levels (see predictive remapping)
+
 % To generate reasonable expectations, it is essential to sustain and integrate information from the past
 \section{LeabraTI testable predictions}
 % short bit about general predictions regarding synchronicity between layers, latencies and how readout should be 100 ms in past, etc.
@@ -157,23 +169,6 @@ a) \hspace{76mm} b) \\
 % * 	prediction/sensation interleaving, basic evidence for this, to be tested further with my experiments
 % *		Role of attention vs. prediction
 \textbf{TODO}
-
-
-%\subsection{Relation to existing models}
-% SRN
-% *  need to talk about "copy" operation and inversion of it makes an autoencoder, more consistent with bio?
-% Context needs to have a "smart" representation -- this means one of two things: it can be a direct copy of the Hidden layer (as in a standard SRN), effectively borrowing all the learning that shapes the Hidden layer, or it can have its own learned representation, in which case it needs some kind of useful training signal.
-% 'NOT a direct copy of the contents of the microcolumn itself but rather the sustained reflection of the net input from the broader context back to the microcolumn. Consistent with this, 6CTC guys have very broad RF's relative to their own microcolumn, and integrate information widely. The combined effects of 5b BI and 6 CC rapid depression result in a very phasic update of the 6CTC cells (on the alpha cycle). The output of the 6CTC's has strong mGluR concentrations, leading to longer-lasting effects, combined with the facilitating synaptic dynamics, resulting in the sustained delivery of this contextual netin to the rest of the microcolumn units via sustained influence on thalamus etc.
-% more like a temporal autoencoder
-
-% Predictive coding
-% Has been described for single stimuli, but not temporal sequences. Still, compatible with temporal idea, but very different predictions -- need to re-read Bastos paper to determine how prediction error is manifested in super/deep layers and how it would work over time. Still, there is the standard Leabra/predictive coding difference to talk about 
-
-% Trace
-% visual domain specific, uses average activity of receiving unit as a trace in otherwise hebbian learning rule. Very different from TI, which uses difference between discrete periods of deep (pre-synaptic) and super (post-synaptic). error-driven learning here, at the very least, self-supervised. both would predict very different things for biology, would need to think about this in writing...
-
-% HTM?
-% will take some work to understand this
 
 
 \bibliographystyle{apa}
