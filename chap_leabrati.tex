@@ -81,27 +81,20 @@ The burst response of thalamic intrinsic bursting neurons synchronized with the 
 
 The overall computation of LeabraTI is shown in Figure \ref{fig:leabrati_comp} and summarized here. 
 
-\textbf{TODO: New figure with actual amounts of time for minus/plus, with sensation first}
+% leabrati computation
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=160mm]{figs/chap_leabrati/leabrati_comp_new.pdf}
+\end{center}
+\caption{The LeabraTI computation.}
+\label{fig:leabrati_comp}
+\end{figure}
 
 %Thus, Layer 6 specifically becomes the neural substrate of the SRN's temporally lagged context representation, representing information that is, on average, one alpha cycle (approximately 100 ms) in the past. This contextual storage occurs at an automatic interval due to the intrinsic pacemaking properties of Layer 5 neurons, and might implement a reference frame that essentially would allow the brain to know \textit{when} to anticipate inputs. As such, intrinsic oscillations have been shown to phase lock to environmental stimulation \cite{WillBerg07,LakatosKarmosMehtaEtAl08,SchroederLakatos09,StefanicsHangyaHernadiEtAl10}, ensuring environmental events coincide with key events like Layer 5 bursts in cortex. % need to unpack this entrainment idea and motivate prediction without corruption
 
 % Importantly, during both the prediction and sensation phases, feedforward and feedback projections are constantly transmitting between lower and higher cortical areas. As previously mentioned, these projections originate and terminate predominantly in superficial layers, boosting their spike coherence to higher frequency spectra. This could potentially explain the differentially high gamma power in superficial layers compared to deep layers, and provides a compelling link between gamma oscillations and predicting specific details about the next sensory event.
 
 When thalamic cells burst (roughly every 100 ms), information from the sensory periphery is the primary driving force for Layer 4 neurons in primary cortex. This information is relayed downstream to higher-level cortical areas via the strong feedforward Layer 4 $\rightarrow$ Layer 2/3 $\rightarrow$ Layer 4 pathway \cite{FellemanVanEssen91}. Within the local microcolumn, Layer 5 neurons integrate this information, until thalamic bursting quiets (generally around 50 ms). At this point, Layer 5 cells burst, sending outputs to Layer 6 and shifting and inputs to the microcolumn  endogenously. The information represented by Layer 6 neurons is temporally lagged (from the previous 50 ms) and is relayed to Layer 4 via non-bursting (regular spiking) thalamic neurons or via the direct Layer 6 $\rightarrow$ Layer 4 connection (not pictured in Figure \ref{fig:leabrati_comp}), and might be maintained by reciprocal thalamocortical drive back to Layer 6. This information can be used as a prediction as to what will happen next when thalamic bursting resumes and veridical sensory information serves as the input once again. In the context of Leabra's error-driven learning these two phases correspond to the plus phase (sensation) and minus phase (prediction), which can be used to compute a sensory prediction error signal. This error signal modifies Layer 5 $\rightarrow$ Layer 6 synapses to minimize differences between predictions and sensations over time.
-
-% \textbf{TODO: will need a detailed figure of all the deep layer interconnectivity -- see micro/macro fig on LeabraTI page and use it for inspiration}
-
-% leabrati computation
-\begin{figure}[h!]
-\begin{center}
-\begin{tabular}{ll}
-a) \hspace{76mm} b) \\
-\multicolumn{2}{c}{\includegraphics[width=160mm]{figs/chap_leabrati/leabrati_comp.pdf}} \\
-\end{tabular}
-\end{center}
-\caption{The LeabraTI model computation.}
-\label{fig:leabrati_comp}
-\end{figure}
 
 Critically, for the LeabraTI computation to work, thalamic and Layer 5 oscillatory phases need to have an approximately antiphase relationship in order for the error-driven learning scheme described here to work so that Layer 2/3 neurons can represent the current moment's prediction with Layer 6 context as their primary input and then subsequently represent the veridical sensory input while Layer 5 neurons are queuing up the next contextual event. Such a relationship has not yet been shown yet, but very few studies have recorded simultaneously from thalamic and cortical neurons in \textit{in vivo} in the awake behaving animal. It is also possible that the brain implements error-driven learning in such a way that does not require representing predictions and sensations temporally interleaved on the same neural substrate or even that the brain accomplishes temporal integration completely without supervision, which in case thalamic gating is not required.
 
