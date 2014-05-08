@@ -22,11 +22,11 @@ Chapter \ref{chap:sims} revisited the LeabraTI framework and described a neural 
 The model further indicated that the synaptic weight scaling that accompanies prolonged learning caused object invariance to ``trickle down'' to lower-level feature representations. This was problematic for the objects used, since some of them suffered from extreme foreshortening, causing severely degenerate views. This caused confusion between objects, potentially accounting for the overall reversal observed between the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments.
 
 \section{Open questions}
+% are people actually predicting? don't need to, LeabraTI assumes prediction is implicit, when alpha is entrained -- if not, prediction is not reliable
 
 \subsection{Does the brain predict at 10 Hz or 5 Hz?}
-% * LeabraTI: why do low frequency oscillations convey information about spatial predictability
-%	  % Low frequency oscillations seem to capture spatial stuff too, not just temporal stuff although it's hard to know for sure without a better expt
-%
+The results of the Chapter \ref{chap:pleast} experiment indicated that 
+
 %	  % 5 Hz better for temporal prediction time window than 10 Hz? Again, at least given current data, but hard to know
 % * 5 Hz vs 10 Hz
 % *		Is 5 Hz functionally different? Or just a subharmonic that is better suited for significance given the experimental parameters (200 ms blank)
@@ -35,27 +35,24 @@ The model further indicated that the synaptic weight scaling that accompanies pr
 % * 	5 Hz pow related to accuracy? seems plausible, follows same order
 %
 % * what about prediction for other modalities -- 5 Hz highlighted for speech, fundamentally different? slower predictions needed? vanrullen notes no 10 Hz temporal aliasing
-
 % Stronger 10 Hz effects without attention
 
-\subsection{Are ``paper clip'' objects special?} % can they actually be learned with invariance
+\subsection{Are ``paper clip'' objects somehow special?} % can they actually be learned with invariance -- probably move this out of bpleast discussion
 
 % things that could be brought up
 % predictions for bpleast if it was an EEG expt
-% reiterate general improvements of experiments
-%		and modeling
-
-% are people actually predicting? don't need to, LeabraTI assumes prediction is implicit, when alpha is entrained -- if not, prediction is not reliable
 
 \subsection{Is synaptic weight scaling a good proxy for prolonged learning?} 
 % a better model with IT
+% better pre-training with natural images or something
+% better staged training -- this might be how the brain learns and is shown to work for deep nets
 
 %%%
 % save for general discussion
 %%%
-% TODO: talk about randy's bottom-up alpha suppression 
+% TODO: importance of ``surprise'' and randy's theory of bottom-up alpha suppression 
 
-\section{Conclusions}
+\section{Conclusion}
 
 \bibliographystyle{apa}
 \bibliography{ccnlab}
