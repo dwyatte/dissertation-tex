@@ -17,6 +17,8 @@ Given this basic support for the LeabraTI framework, the Chapter \ref{chap:bplea
 
 The Chapter \ref{chap:bpleast} experiment used a subset of the object stimuli from the previous chapter's experiment along with an explicit training period during which observers studied the objects while they were rotated were rotated through their views. The study period was followed by a series of test trials that required same-different judgements about static probe stimuli. Somewhat surprisingly, the results of the experiment were an almost complete reversal of the previous chapter's experiment. Discriminability was lowest when stimuli were learned in a combined spatiotemporally predictable context and highest when learned in a completely unpredictable context. Furthermore, there was some indication that the principal differences between predictability conditions during training were driven primarily by degenerate viewing angles caused by three-dimensional foreshortening in the objects used \cite{BalasSinha09b,FarahRochlinKlen94,PizloStevenson99}. In three out of four of the objects used in the experiment, accuracy was lower for degenerate views learned in a spatiotemporally predictable context compared to a completely unpredictable one.
 
+% TODO: summarize conclusion -- S+T+ builds invariance, S-T- doesn't
+
 Chapter \ref{chap:sims} revisited the LeabraTI framework and described a neural network model that implemented the columnar substructure necessary for predictive learning. The model was trained to recognize the same three-dimensional objects used in the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments with the goal of being able to reproduce the conflicting behavioral results of the experiments. LeabraTI predicts that spatially predictable sequences presented at a regular temporal interval should elicit a synergistic effect on behavioral measures due to the multiple prediction-sensation cycles that successfully integrate visuospatial information at optimal temporal intervals \cite[see also]{DohertyRaoMesulamEtAl05,RohenkohlGouldPessoaEtAl14}. Such a synergistic effect was demonstrated in the Chapter \ref{chap:pleast} EEG results, but was simply additive for behavioral measures. Still, the model provided a reasonable account of these data. Furthermore, the model was able to produce the reversal effect observed in Chapter \ref{chap:bpleast} by increasing the scale of a single projection of synaptic weights as a simple proxy for prolonged learning. 
 
 The model further indicated that the synaptic weight scaling that accompanies prolonged learning caused object invariance to ``trickle down'' to lower-level feature representations. This was problematic for the objects used, since some of them suffered from extreme foreshortening, causing severely degenerate views. This caused confusion between objects, potentially accounting for the overall reversal observed between the Chapter \ref{chap:pleast} and \ref{chap:bpleast} experiments.
@@ -37,17 +39,26 @@ In the Chapter \ref{chap:pleast} experiment, 5 Hz power and phase coherence were
 The ``paper clip'' objects used throughout the current work have a long history of use in studies of three-dimensional object recognition in human observers \cite{BulthoffEdelman92,EdelmanBulthoff92,SinhaPoggio96} as well as studies monkey physiology studies \cite{LogothetisPaulsBulthoffEtAl94,LogothetisPaulsPoggio95}. The objects are easy to generate systematically and thus can be combined with a staircase procedure to titrate difficulty or can be generated \textit{en masse} to find the parameters that elicit maximal responses from neurons. Various effects with the objects have been replicated using computational models of object recognition with identical stimuli \cite{RiesenhuberPoggio99} and mathematical properties of the objects are known to capture a large amount of variability in behavior \cite{BalasSinha09b}. Thus, it can be reasonably concluded that paper clip objects are a useful class of stimuli for studying three-dimensional object recognition.
 
 % need to foreshadow viewpoint invariance
-
 However, other work brings under question the ecological validity of paper clip objects. The objects are constructed from thin line segments separated by empty space and thus self-occlusion of features is less of a problem than for three-dimensional volumetric objects with surfaces. This might imply that view invariance is not actually necessary to represent the full three-dimensional structure of paper clip objects, since the majority of features can be extracted from a static view. Accordingly, studies comparing three-dimensional objects composed of line segment with volumetric objects found that the line segment objects were not represented in a viewpoint invariant manner \cite{FarahRochlinKlen94,PizloStevenson99}.
 
-Thus, it is is possible that a spatiotemporally predictable training context is simply not optimal for learning to represent paper clip objects. Temporal association mechanisms \cite{StringerPerryRollsEtAl06,WallisBaddeley97,IsikLeiboPoggio12} might bias the development of viewpoint invariance by forming unwanted associations between canonical and degenerate views, which could lower overall accuracy levels and slow reaction times. This explanation would require that these mechanisms were somehow not elicited in the unpredictable learning contexts. % need to reword/unpack this last sentence -- basically, on average, the degenerate views are harder to bind with very different views?
+% fix this 
+Thus, it is is possible that a spatiotemporally predictable training context is simply not optimal for learning to represent paper clip objects. Temporal association mechanisms \cite{StringerPerryRollsEtAl06,WallisBaddeley97,IsikLeiboPoggio12} might bias the development of viewpoint invariance by forming unwanted associations between canonical and degenerate views, which could lower overall accuracy levels and slow reaction times. 
 
-% alternate, paperclip obis don't need IT, which codes surfaces (relevant reviews) -- farah paper suggests this too
+% alternatively, paperclip objs don't need IT, which codes surfaces (relevant reviews) -- farah paper suggests this too
 
 \subsection{Is synaptic weight scaling a good proxy for prolonged learning?} 
-% a better model with IT
-% better pre-training with natural images or something
-% better staged training -- this might be how the brain learns and is shown to work for deep nets
+The model described in Chapter \ref{chap:sims} made use of a relatively simple proxy for prolonged learning in order to account Chapter \ref{chap:bpleast} experiment results. This proxy was necessary because it was somewhat inappropriate to use the LeabraTI algorithm for learning under spatially and temporally unpredictable contexts, especially considering the interpretation of the Chapter \ref{chap:bpleast} experiment results was that such predictive learning mechanisms are \textit{not invoked} in those learning contexts. The proxy for learning involved training the model with spatiotemporally predictable input sequences using the LeabraTI algorithm and then increasing the scale of the synaptic weights on one of the principal projections before presenting spatially and temporally unpredictable input sequences with synaptic plasticity disabled. Synaptic weight scaling was suggested to be a reasonable first order approximation of prolonged learning since it is one of the many effects, especially when considering the long timescale self-organizing mechanisms presumed by Leabra that reinforce the most active units \cite{OReillyMunakata00,OReillyMunakataFrankEtAl12}.
+
+An alternative to synaptic weight scaling that would also be more biologically plausible would be to explicitly model other visual areas that do not require predictive learning. For example, inferior temporal (IT) cortex has been suggested to have a different alpha rhythm properties than earlier visual areas (i.e., V1, V2, and V4) both in terms of its physiological generators and its behavioral correlates \cite{BollimuntaChenSchroederEtAl08}. Thus, modeling IT cortex would not necessarily require predictive learning and could be used to represent and operate on the three-dimensional object stimuli with more standard learning mechanisms. 
+
+To implement such a heterogenous model would require the following more complex approach: First, layers that learn via the LeabraTI algorithm would need to be pre-trained on a set of unrelated input sequences (e.g., natural images) to predictively establish how inputs are capable of transforming from moment-to-moment (100 ms periods in LeabraTI). This pre-training would discover features that capture the principal variance across input transformations but are still relatively task-independent. After pre-training, the model would be need to be expanded to include the IT cortex and Output layers which would be trained on a more specific object recognition task using the standard Leabra algorithm.  These standard learning mechanisms would thus operate selectively on the Early Visual $\rightarrow$ IT and IT $\rightarrow$ Output synapses and their respective feedback projections. Such a multistage training regime has been successfully used to train deep neural networks \cite{HintonSalakhutdinov06} and has showed promise for combining models of predictive feature learning with figure-ground segmentation and object recognition processing \cite{OReillyWyatteRohrlichEtAlInPrep}.
+
+% S+T+ gets TI, builds invariance
+% S-T- doesn't, less invariance
+% unclear how to best model S-T+ and S+T- effects
+
+In training the model to produce the results of the Chapter \ref{chap:bpleast} experiment, 
+% 
 
 %%%
 % save for general discussion
@@ -56,7 +67,7 @@ Thus, it is is possible that a spatiotemporally predictable training context is 
 
 \section{Conclusion}
 
-%\bibliographystyle{apa}
-%\bibliography{ccnlab}
+\bibliographystyle{apa}
+\bibliography{ccnlab}
 
 \end{document}
