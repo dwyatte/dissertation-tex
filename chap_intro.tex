@@ -7,7 +7,7 @@
 \label{chap:intro}
 
 \section{Sensory predictions and temporal integration}
-The brain is often framed as a general purpose ``prediction machine'' \cite{HawkinsBlakeslee04,Clark13}. The fundamental assertion of this framework is that the sole evolved function of the neocortex is to minimize error in its representation of predictions about the physical world. This distillation of function is central to a number of models of neocortical function (e.g., \nopcite{DayanHintonNealEtAl95,RaoBallard99,LeeMumford03,Friston05,GeorgeHawkins09}), but is surprisingly often overlooked in psychology and neuroscience investigations of sensory processing. For example, most experiments are designed to measure evoked responses to a randomly chosen, isolated stimulus under the tacit assumption that response variability is irrelevant noise that averages out across many presentations. Computational models of perceptual processing often operate under similar assumptions in which stimuli are presented as random ``snapshots'' from which some common set of features should be learned to minimize representational variability across presentations (e.g., {\nopcite{RiesenhuberPoggio99,SerreOlivaPoggio07,OReillyWyatteHerdEtAl13}; although see \nopcite{Foldiak91}, for a notable exception). These experimental and modeling assumptions stand in contrast to the event structure of the physical world, which is highly structured from one moment to the next. It could be the case that response variability does not simply reflect noise, but is actually related to meaningful predictive processing that captures this temporal structure \cite{ArieliSterkinGrinvaldEtAl96,WilderJonesAhmedEtAl13,FischerWhitney14}.
+The brain is often framed as a general purpose ``prediction machine'' \cite{HawkinsBlakeslee04,Clark13}. The fundamental assertion of this framework is that the sole evolved function of the neocortex is to minimize error in its representation of predictions about the physical world. This distillation of function is central to a number of models of neocortical function (e.g., \nopcite{DayanHintonNealEtAl95,RaoBallard99,LeeMumford03,Friston05,GeorgeHawkins09}), but is surprisingly often overlooked in psychology and neuroscience investigations of sensory processing. For example, most experiments are designed to measure evoked responses to a randomly chosen, isolated stimulus under the tacit assumption that response variability is irrelevant noise that averages out across many presentations. Computational models of perceptual processing often operate under similar assumptions in which stimuli are presented as random ``snapshots'' from which some common set of features should be learned to minimize representational variability across presentations (e.g., \nopcite{RiesenhuberPoggio99,SerreOlivaPoggio07,OReillyWyatteHerdEtAl13}; although see \nopcite{Foldiak91}, for a notable exception). These experimental and modeling assumptions stand in contrast to the event structure of the physical world, which is highly structured from one moment to the next. It could be the case that response variability does not simply reflect noise, but is actually related to meaningful predictive processing that captures this temporal structure \cite{ArieliSterkinGrinvaldEtAl96,WilderJonesAhmedEtAl13,FischerWhitney14}.
 
 There are a number of important questions that need answered to fully characterize prediction and its role in sensory processing. What are the mechanisms responsible for making predictions? Computationally, there is a fundamental tradeoff in making decisions about and generating actions from the constant stream sensory information versus actively generating predictions about what will happen next. Do standard mechanisms balance these tradeoffs or is there special purpose, dissociable machinery specifically for predictive processing? Another line of questioning is concerned with how the brain knows \textit{when} to make predictions. Prediction requires integrating information over some time frame and using the result to drive the actual prediction, but when should integration start? And for how long? 
 
@@ -18,6 +18,8 @@ The neurobiological details of LeabraTI give rise to a number of testable predic
 The experimental work described in this thesis takes advantage of the brain's putative $\sim$10 Hz prediction-sensation rate by either presenting exogenous stimulation in either in phase or out of phase with this endogenous processing. This allows testing of how the spatiotemporal predictability of stimuli influence their encoding for perceptual judgements or prolonged learning. The thesis also describes a neural network model that implements of the broader LeabraTI framework with the goal of accounting for the results of the experimental work.
 
 \section{Organization of the thesis} 
+The organization of this thesis is as follows
+
 % cutting room floor from bpleast chapter
 %
 %\subsection{Spatiotemporal prediction biases development of invariance}
@@ -30,10 +32,10 @@ The experimental work described in this thesis takes advantage of the brain's pu
 %\incite{LiDiCarlo08}
 %\incite{LiDiCarlo10}
 %\incite{LiDiCarlo12}
-
+%
 % and what about temporal?
 % doesn't even have to be conscious prediction -- provided automatically by T+
-
+%
 % neurons!
 % * MeyerOlson11 
 % * Not about invariance per se -- SakaiMiyashita91,MeyerOlson11 -- but related to why static views might not be enough
@@ -48,16 +50,16 @@ The experimental work described in this thesis takes advantage of the brain's pu
 %Attention can be characterized as spatial as well as temporal in nature. Spatial attention is characterized by enhanced processing of particular regions of visual space (e.g., the left side of space) or for specific features (e.g., horizontal edges). The computations provided by spatial attention and its implementation in the brain in terms of gain control circuits are relatively well-characterized and have gained widespread acceptance throughout the literature \cite[see][for comprehensive reviews]{DesimoneDuncan95,ReynoldsChelazzi04}. The temporal properties of attention, in contrast, are less well-understood. Attention has been shown known to fluctuate endogenously at a rate of approximately 10 times per second such that a weak stimulus presented at one moment in time might have a high enough signal-to-noise ratio to be perceived but not when presented 50 ms earlier or later \cite{VanRullenBuschDrewesEtAl11}. 
 % orientation/allocation in space time -- esp alpha effects
 %Experiments by Nobre and colleagues have attempted to tease apart the ability to orient attention spatially and temporally. Their experiments employ a stimulus that can be tracked independently in space and time, such as a ball that blinks across a display in a fixed or random trajectory with either a constant or irregular appearance interval \cite{DohertyRaoMesulamEtAl05,RohenkohlNobre11}. If the ball moves in a fixed trajectory, the next spatial location can be anticipated at any point in the sequence given the previous locations and attention can be allocated there to enhance processing relative to when the next spatial location is unknown. Importantly, attention can be allocated to the ball's next spatial location even when the temporal onset of the next appearance is unknown. Similarly, if the ball appears and disappears with a constant interval, the onset of the next appearance can be anticipated, despite the next spatial location being unknown. \incite{DohertyRaoMesulamEtAl05} found that amplitude of the P1 EEG response was enhanced when spatial attention could be successfully allocated at the ball's next location, consistent with previous descriptions of the effects of attention on EEG responses \cite{LuckHeinzeMangunEtAl90}. Being able to anticipate the temporal onset of the ball did not modulate the amplitude of the P1 response by itself, but further potentiated the enhancement of spatial attention on the P1 when both the spatial location and temporal onset of the ball could be anticipated.
-
+%
 % visual domain, but general across modalities -- a proxy
 % attention effect = enhancement, but prediction effect is negative
 % parallels to prediction
 % entrainment as prediction
-
+%
 % space not linked to time, although...
 % * Surprise 10 Hz presentation rate finding from Bulthoff
 % * Nobre synergy P1, P1 alpha reset lin
-
+%
 % other space/sequence learning
 % * * GavornikBear14 -- in mice, learned ABCD sequence invokes larger V1 response than DCBA but not in control groups where random sequences were learned
 
